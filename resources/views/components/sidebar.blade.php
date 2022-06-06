@@ -8,13 +8,7 @@
                 <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.dashboard')
             </a>
         </li>
-
-        <li class="nav-item {{ setActive('resources.*') }}">
-            <a class="nav-link" href="{{ route('resources.index') }}">
-                <span class="text-warning"><i class="fa fa-cogs"></i></span>Resources
-            </a>
-        </li>
-
+        
         {{-- <li class="nav-item {{ setActive('organization.create') }}">
         <a class="nav-link" href="{{ route('organization.create') }}">
             <span class="text-success"><i class="fa fa-plus"></i></span>@lang('navigation.new_organization')
@@ -106,6 +100,7 @@
         </li>
         @endcan --}}
 
+       
         {{-- @hasanyrole('super-admin|admin')
         <li class="nav-item {{ setActive('organization.unrenewed.index') }}">
         <a class="nav-link" href="{{ route('organization.unrenewed.index') }}">
@@ -184,78 +179,6 @@
         </li>
         @endcan
 
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('local-population.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.local_population')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('population.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.population')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('age-population.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.age_population')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('disability.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.disability')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('disability-detail.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.disability_detail')
-            </a>
-        </li>
-
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('bank-detail.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.bank_detail')
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('bank.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.bank')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('local-bank.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.local_bank')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('school.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.school_detail')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('feeder-hostel.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.feeder_hostel')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('kamlari-hostel.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.kamlari_hostel')
-            </a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link" href="{{ route('goverment-student.index') }}">
-                <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.goverment_student')
-            </a>
-        </li>
-
         @hasanyrole('super-admin')
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.logs') }}" target="_blank">
@@ -263,7 +186,6 @@
             </a>
         </li>
         @endhasanyrole
-       
 
     </ul>
 </div>

@@ -32,18 +32,6 @@
             </div>
             @endcan
         </div>
-
-
-        <div>
-            <ul>
-                @foreach (\App\Resource::latest()->get() as $resource)
-                <li>
-                    <a href="/data/{{ $resource->slug }}/create">{{ $resource->display_name }}</a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-
     </div>
 </div>
 @endsection
