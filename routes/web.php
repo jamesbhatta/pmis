@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
@@ -15,6 +16,13 @@ Route::resources([
     'municipality' => 'MunicipalityController',
     'ward' => 'WardController',
 ]);
+
+Route::get('organization', [OrganizationController::class, 'index'])->name('organization.index');
+Route::get('organization/create', [OrganizationController::class, 'create'])->name('organization.create');
+Route::post('organization', [OrganizationController::class, 'store'])->name('organization.store');
+Route::get('organization/{organization}/edit', [OrganizationController::class, 'edit'])->name('organization.edit');
+Route::put('organization/{organization}', [OrganizationController::class, 'update'])->name('organization.update');
+Route::delete('organization/{organization}', [OrganizationController::class, 'destroy'])->name('organization.destroy');
 
 // Route::get('/data/{key}', 'TableController@index');
 // Route::post('/data/{key}', 'TableController@store');
@@ -55,28 +63,6 @@ Route::group(
         Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
     }
 );
-
-// Route::resource('area', AreaofMunicipalityController::class);
-Route::get('area','AreaofMunicipalityController@index')->name('area.index');
-Route::get('area/create','AreaofMunicipalityController@create')->name('area.create');
-Route::post('area','AreaofMunicipalityController@store')->name('area.store');
-Route::get('area/{municipalityArea}/edit','AreaofMunicipalityController@edit')->name('area.edit');
-Route::put('area/{municipalityArea}','AreaofMunicipalityController@update')->name('area.update');
-Route::delete('area/{municipalityArea}','AreaofMunicipalityController@destroy')->name('area.destroy');
-
-Route::resource('local-population', LocalPopulationController::class);
-Route::resource('population', PopulationController::class);
-Route::resource('age-population', AgePopulationController::class);
-Route::resource('disability', DisabilityController::class);
-Route::resource('disability-detail', DisabilityDetailController::class);
-// Route::resource('bank-detail', BankDetailController::class);
-Route::resource('bank-detail', BankDetailController::class);
-Route::resource('bank', BankController::class);
-Route::resource('local-bank', LocalBankController::class);
-Route::resource('school', SchoolController::class);
-Route::resource('feeder-hostel', FeederHostelController::class);
-Route::resource('kamlari-hostel', KamlariHostelController::class);
-Route::resource('goverment-student', GovermentStudentController::class);
 
 Route::any('/{all}', function () {
     return view('app');

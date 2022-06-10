@@ -8,20 +8,12 @@
                 <span class="text-warning"><i class="fa fa-tachometer-alt"></i></span>@lang('navigation.dashboard')
             </a>
         </li>
-        
-        {{-- <li class="nav-item {{ setActive('organization.create') }}">
-        <a class="nav-link" href="{{ route('organization.create') }}">
-            <span class="text-success"><i class="fa fa-plus"></i></span>@lang('navigation.new_organization')
-        </a>
-        </li> --}}
 
-        {{-- @hasanyrole('admin|super-admin')
-        <li class="nav-item {{ setActive('old-organizations.create') }}">
-        <a class="nav-link" href="{{ route('old-organizations.create') }}">
-            <span class="text-success"><i class="fa fa-plus"></i></span>@lang('navigation.old_data_entry')
-        </a>
+        <li class="nav-item {{ setActive('organization.index') }}">
+            <a class="nav-link" href="{{ route('organization.index') }}">
+                <span class="text-success"><i class="fa fa-plus"></i></span>Organizations
+            </a>
         </li>
-        @endhasanyrole --}}
 
         {{-- <li class="nav-item {{ setActive('online-application.*') }}">
         <a class="nav-link" href="{{ route('online-application.index') }}">
@@ -100,7 +92,7 @@
         </li>
         @endcan --}}
 
-       
+
         {{-- @hasanyrole('super-admin|admin')
         <li class="nav-item {{ setActive('organization.unrenewed.index') }}">
         <a class="nav-link" href="{{ route('organization.unrenewed.index') }}">

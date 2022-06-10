@@ -1,8 +1,10 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
-class WardSeeder extends Seeder
+class DistrictSeeder extends Seeder
 {
     /**
      * Run the database seeds.

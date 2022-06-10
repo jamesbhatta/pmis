@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\District;
 use App\Province;
 use App\Ward;

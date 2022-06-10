@@ -1,7 +1,10 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Str;
 
 class RolesSeeder extends Seeder
 {
@@ -17,7 +20,7 @@ class RolesSeeder extends Seeder
 
         // create super admin and assign existing permissions
         $superAdmin = Role::firstOrCreate(['name' => 'super-admin']);
-        $superadminUser = \App\User::whereEmail($superAdminEmail)->first() ?? Factory(App\User::class)->create([
+        $superadminUser = \App\User::whereEmail($superAdminEmail)->first() ?? \App\User::factory()->create([
             'name' => 'Super Admin',
             'email' => $superAdminEmail,
             'username' => $superAdminUsername,
