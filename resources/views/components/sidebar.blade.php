@@ -11,6 +11,12 @@
 
         <li class="nav-item {{ setActive('organization.index') }}">
             <a class="nav-link" href="{{ route('organization.index') }}">
+                <span class="text-success"><i class="fa fa-plus"></i></span>Projects
+            </a>
+        </li>
+
+        <li class="nav-item {{ setActive('organization.index') }}">
+            <a class="nav-link" href="{{ route('organization.index') }}">
                 <span class="text-success"><i class="fa fa-plus"></i></span>Organizations
             </a>
         </li>
