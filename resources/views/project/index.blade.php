@@ -5,7 +5,13 @@
         {{-- @include('alerts.all') --}}
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
+              <li class="breadcrumb-item active" aria-current="page">परियोजना </li>
+            </ol>
+          </nav>
         <div class="card z-depth-0 my-5">
             <div class="card-head">
                 <h3 class="text-center my-3">नयाँ परियोजना थप्नुहोस्</h3>
