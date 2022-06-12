@@ -40,7 +40,18 @@
                         </div>
                         <div class="form-group col-lg-4">
                             <label>परियोजना प्रकार</label>
-                            <input type="text" class="form-control" name="project_type" value="{{old('project_type',$project->project_type)}}">
+                            {{-- <input type="text" class="form-control" name="project_type" value="{{old('project_type',$project->project_type)}}"> --}}
+                            <select  class="form-control" name="project_type">
+                                @if ($project->id)
+                                    <option value="{{$project->project_type}}">{{$project->project_type}}</option>
+                                @endif
+                                <option value="">परियोजना प्रकार चयन गर्नुहोस्</option>
+                                <option value="सिचाई">सिचाई</option>
+                                <option value="खाने पानी">खाने पानी</option>
+                                <option value="पूर्वधार">पूर्वधार</option>
+                                <option value="सहरी विकास  ">सहरी विकास</option>
+                                <option value="यातायात">यातायात</option>
+                            </select>
                             <label class="px-1 text-danger">{{ $errors->first('project_type') }}</label>
                         </div>
                     </div>
