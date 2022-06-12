@@ -35,4 +35,16 @@ class OrganizationController extends Controller
             'organization' => $organization
         ]);
     }
+    public function update(OrganizationRequest $request, Organization $organization)
+    {
+        $organization = $organization->update($request->validated());
+        return redirect()->route('organization.index')->with('success', 'organization has been Updated.');
+    }
+
+    public function destroy(Organization $organization)
+    {
+        $organization->delete();
+        return redirect()->back()->with('success', 'Organization has been removed.');
+    }
+
 }
