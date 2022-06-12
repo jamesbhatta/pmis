@@ -66,7 +66,7 @@
                             <label class="" for="inlineFormInputGroup">बजेट</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">RS.</div>
+                                    <div class="input-group-text">रु.</div>
                                 </div>
                                 <input type="text" class="form-control" id="inlineFormInputGroup" name="budget" value="{{old('budget',$project->budget)}}">
                             </div>
