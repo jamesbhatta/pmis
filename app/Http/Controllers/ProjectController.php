@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Organization;
+use App\Project_type_model;
+
 class ProjectController extends Controller
 {
     public function index(Project $project)
     {
+        $ProjectTypes=Project_type_model::all();
         $organizations=Organization::all();
         $projects=Project::with('organization')->get();
-        return view("project.index",compact(['organizations','projects','project']));
+        return view("project.index",compact(['organizations','projects','project','ProjectTypes']));
     }
     public function create()
     {
@@ -20,7 +23,7 @@ class ProjectController extends Controller
     public function showForm(Project $project)
     {
         return $project;
-       
+
     }
     public function store(Request $request)
     {

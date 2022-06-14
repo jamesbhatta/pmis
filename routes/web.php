@@ -3,6 +3,7 @@
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['register' => false]);
 Route::redirect('/', '/login');
@@ -73,8 +74,11 @@ Route::group(
     }
 );
 
+Route::resource('/project-type',ProjectTypeController::class);
+
 Route::any('/{all}', function () {
     return view('app');
 })->where(['all' => '.*']);
+
 
 

@@ -58,6 +58,10 @@
             <a class="nav-link" href="#!">
                 <span class="text-default"><i class="fas fa-tools"></i></span>@lang('navigation.configurations')</a>
         </li>
+        
+        <li class="nav-item pl-5 {{ setActive('project-type.*') }}">
+            <a class="nav-link" href="{{ route('project-type.index') }}">@lang('navigation.project_type')</a>
+        </li>
         @hasanyrole('super-admin|admin')
         <li class="nav-item pl-5 {{ setActive('fiscal-year.*') }}">
             <a class="nav-link" href="{{ route('fiscal-year.index') }}">@lang('navigation.fiscal_year')</a>

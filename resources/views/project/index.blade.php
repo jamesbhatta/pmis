@@ -22,12 +22,12 @@
                     @csrf
                     @if ($project->id)
                         @method('PUT')
-                        
+
                     @endif
                     <div class="row">
                         <div class="form-group col-lg-4">
-                            <label>शीर्षक</label> 
-                            
+                            <label>शीर्षक</label>
+
                             <input type="text" class="form-control" name="title" value="{{old('title',$project->title)}}">
                             <label class="px-1 text-danger">{{ $errors->first('title') }}</label>
                         </div>
@@ -52,11 +52,9 @@
                                     <option value="{{$project->project_type}}">{{$project->project_type}}</option>
                                 @endif
                                 <option value="">परियोजना प्रकार चयन गर्नुहोस्</option>
-                                <option value="सिचाई">सिचाई</option>
-                                <option value="खाने पानी">खाने पानी</option>
-                                <option value="पूर्वधार">पूर्वधार</option>
-                                <option value="सहरी विकास  ">सहरी विकास</option>
-                                <option value="यातायात">यातायात</option>
+                                @foreach ($ProjectTypes as $item)
+                                <option value="{{ $item->id }}">{{ $item->project_type }}</option>
+                                @endforeach
                             </select>
                             <label class="px-1 text-danger">{{ $errors->first('project_type') }}</label>
                         </div>
@@ -115,7 +113,7 @@
                         <td class="font-roboto">{{ $item->budget_source}}</td>
                         <td class="font-roboto">{{ $item->description}}</td>
 
-                      
+
                         <td>
                             <a class="action-btn text-primary" href="{{ route('project.edit', $item) }}"><i class="far fa-edit"></i></a>
                             <form action="{{ route('project.destroy', $item) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
@@ -138,7 +136,7 @@
                         </td>
 
                     </tr>
-                    @endforelse 
+                    @endforelse
                     </tbody>
                 </table>
             </div>

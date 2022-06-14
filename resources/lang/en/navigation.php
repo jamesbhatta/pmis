@@ -31,4 +31,7 @@ return [
     'feeder_hostel'=>"Feeder Hostel",
     'kamlari_hostel'=>"Kamlari Hostel",
     'goverment_student'=>"Student detail",
+    'project_type'=>"Project Type",
+    // 'project_type'=>''
+
 ];
