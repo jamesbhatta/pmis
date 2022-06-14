@@ -29,7 +29,7 @@ Route::delete('organization/{organization}', [OrganizationController::class, 'de
 // project routes
 Route::get('project', [ProjectController::class, 'index'])->name('project.index');
 Route::get('project/create', [ProjectController::class, 'create'])->name('project.create');
-Route::post('project/store', [ProjectController::class, 'store'])->name('project.store');
+Route::post('project', [ProjectController::class, 'store'])->name('project.store');
 Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
