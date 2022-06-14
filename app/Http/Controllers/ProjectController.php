@@ -5,44 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Organization;
-<<<<<<< HEAD
-use App\Project_type_model;
-=======
->>>>>>> 13648db5b4f4a4154fc96de48086f250090025fa
 
 class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-<<<<<<< HEAD
-        $ProjectTypes=Project_type_model::all();
-        $organizations=Organization::all();
-        $projects=Project::with('organization')->get();
-        return view("project.index",compact(['organizations','projects','project','ProjectTypes']));
-=======
         $organizations = Organization::all();
         $projects = Project::with('organization')->get();
         return view("project.index", compact(['organizations', 'projects', 'project']));
->>>>>>> 13648db5b4f4a4154fc96de48086f250090025fa
     }
 
     public function create()
     {
         return $this->showForm(new Project());
     }
-    
+
     public function showForm(Project $project)
     {
-<<<<<<< HEAD
-        return $project;
-
-=======
         return view('project.create', [
             'organizations' => Organization::get(),
         ]);
->>>>>>> 13648db5b4f4a4154fc96de48086f250090025fa
     }
-    
+
     public function store(Request $request)
     {
         Project::create($request->validate([
@@ -56,14 +40,14 @@ class ProjectController extends Controller
 
         return redirect()->back()->with('success', 'Record has been added');
     }
-   
+
     public function edit(Project $project)
     {
         $organizations = Organization::all();
         $projects = Project::with('organization')->get();
         return view("project.index", compact(['organizations', 'projects', 'project']));
     }
-   
+
     public function update(Request $request, Project $project)
     {
         $project->update($request->validate([
