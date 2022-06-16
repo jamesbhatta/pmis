@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Organization;
+use App\Project_type_model;
 
 class ProjectController extends Controller
 {
@@ -12,7 +13,9 @@ class ProjectController extends Controller
     {
         $organizations = Organization::all();
         $projects = Project::with('organization')->get();
-        return view("project.index", compact(['organizations', 'projects', 'project']));
+        $projectType=Project_type_model::all();
+        return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
+
     }
 
     public function create()

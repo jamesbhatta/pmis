@@ -15,10 +15,10 @@ class ProjectTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Project_type_model $projectType)
     {
         $ProjectType=Project_type_model::all();
-        return view('project-type.index', compact(['ProjectType']));
+        return view('project-type.index', compact(['ProjectType','projectType']));
     }
 
     /**
@@ -65,9 +65,10 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project_type_model $projectType)
     {
-        //
+        $ProjectType=Project_type_model::all();
+        return view('project-type.index', compact(['ProjectType','projectType']));
     }
 
     /**
@@ -77,9 +78,16 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Project_type_model $projectType)
     {
-        //
+        $data=$request ->validate([
+            'project_type'=>'required',
+            'project_type_en'=>'nullable'
+        ]
+        );
+        $projectType->update($data);
+        return redirect()->back()->with('success','Successfully Updated');
+
     }
 
     /**

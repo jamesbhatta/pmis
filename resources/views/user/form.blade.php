@@ -22,19 +22,19 @@
                             @method('PUT')
                             @endisset
                             <div class="form-group">
-                                <label>Full Name</label>
+                                <label>@lang('navigation.name_of_the_office')</label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>@lang('navigation.office_email')</label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" @isset($user->id) readonly @endisset>
                             </div>
                             <div class="form-group">
-                                <label>Username</label>
+                                <label>@lang('navigation.office_username')</label>
                                 <input type="text" name="username" class="form-control" value="{{ old('username', $user->username) }}">
                             </div>
                             <div class="form-group">
-                                <label>Roles</label>
+                                <label>@lang('navigation.role')</label>
                                 {{--
                                 <select name="role" id="" class="form-control">
                                     @foreach ($roles as $role)
@@ -42,6 +42,7 @@
                                 @endforeach
                                 </select>
                                 --}}
+
                                 @foreach($roles as $role)
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="roles[]" class="custom-control-input" id="role-checkbox-{{ $role->name }}" value="{{ $role->name }}" @if($user->hasRole($role->name)) checked @endif>
@@ -49,8 +50,18 @@
                                 </div>
                                 @endforeach
                             </div>
+
+
                             <div class="form-group">
-                                <label>Municipality</label>
+                                <label>@lang('navigation.district_name')</label>
+                                <select name="district_id" id="" class="custom-select">
+                                    @foreach ($municipalities as $municipality)
+                                    <option value="{{ $district->name }}" @if(old('district_id', $user-district_id) == $district->name) selected @endif>{{ $district->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>@lang('navigation.Sub_Metro_municipality_Gau')</label>
                                 <select name="municipality_id" id="" class="custom-select">
                                     @foreach ($municipalities as $municipality)
                                     <option value="{{ $municipality->id }}" @if(old('municipality_id', $user->municipality_id) == $municipality->id) selected @endif>{{ $municipality->name }}</option>
@@ -94,13 +105,15 @@
                                 <button type="submit" class="btn btn-success btn-block z-depth-0">Add</button>
                                 @endisset
                             </div>
-                        </form>
+
                     </div>
+                    </form>
                 </div>
             </div>
-            {{-- End of user form --}}
         </div>
+        {{-- End of user form --}}
     </div>
+</div>
 </div>
 @endsection
 
@@ -111,6 +124,5 @@
             $('#ward-selector').toggleClass('d-none');;
         })
     })
-
 </script>
 @endpush

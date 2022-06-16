@@ -32,6 +32,35 @@ return [
     'kamlari_hostel'=>"मुक्त कमलरी छात्रावास",
     'goverment_student'=>"सामूदायिक विद्यालयमा विद्यार्थीको विवरण",
     'project_type'=>"परियोजनाका प्रकार",
-    'ProjectTypes'=>"परियोजनाको प्रकार थप्नुहोस्"
+    'ProjectTypes'=>"परियोजनाको प्रकार थप्नुहोस्",
+    'name_of_the_office'=>"कार्यालयको नाम",
+    'office_address'=>"कार्यालयको ठेगाना",
+    'office_phone'=>"कार्यालयको फोन",
+    'office_email'=>"कार्यालयको इमेल",
+    'office_website'=>"कार्यालयको वेबसाइट",
+    'office_type'=>"कार्यालयको प्रकार",
+    'office_type_list'=>"कार्यालयको प्रकार सूची",
+    'office_type_list_add'=>"कार्यालयको प्रकार सूची थप्नुहोस्",
+    'office_type_list_edit'=>"कार्यालयको प्रकार सूची सम्पादन गर्नुहोस्",
+    'office_type_list_delete'=>"कार्यालयको प्रकार सूची मेट्नुहोस्",
+    'office_type_list_view'=>"कार्यालयको प्रकार सूची हेर्नुहोस्",
+    'office_type_list_view_detail'=>"कार्यालयको प्रकार सूची हेर्नुहोस्",
+    'office_type_list_delete_detail'=>"कार्यालयको प्रकार सूची मेट्नुहोस्",
+    'office_type_list_edit_detail'=>"कार्यालयको प्रकार सूची सम्पादन गर्नुहोस्",
+    'office_type_list_add_detail'=>"कार्यालयको प्रकार सूची थप्नुहोस्",
+    'office_type_list_view_detail'=>"कार्यालयको प्रकार सूची हेर्नुहोस्",
+    'office_type_list_delete_detail'=>"कार्यालयको प्रकार सूची मेट्नुहोस्",
+    'office_username'=>"उपयोगकर्ता",
+    'office_password'=>"कार्यालयको पासवर्ड",
+    'office_type_name'=>"कार्यालयको प्रकार नाम",
+    'office_confirm_password'=>"कार्यालयको पासवर्ड पुष्टि गर्नुहोस्",
+    'Sub_Metro_municipality_Gau'=>"उ.म.पा./न.पा./गा.पा.",
+    'district_name'=>"जिल्लाको नाम",
+    'role'=>"भूमिका",
+
+
+
+
+
 
 ];
