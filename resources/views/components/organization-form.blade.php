@@ -50,9 +50,9 @@
                     <div class="col-md-6 form-group">
                         <label for="" class="required">Type</label>
                         <select name="type" class="custom-select">
-                            <option value="headquarter">Headquarter</option>
-                            <option value="division">Division</option>
-                            <option value="sub-division">Sub Division</option>
+                            @foreach (config('constants.organization_types') as $key => $value)
+                            <option value="{{ $key }}">{{ $value }}</option>
+                            @endforeach
                         </select>
                         <x-invalid-feedback field="type"></x-invalid-feedback>
                     </div>

@@ -46,13 +46,9 @@ return [
         ]
     ],
 
-    // Some Data is going to be replaced by letter head
-    'letter' => [
-        'municipality_name' => 'घोडाघोडी नगरपालिका',
-        'address_line_one' => 'सुखड्, कैलाली',
-        'address_line_two' => 'सुदुरपश्चिम प्रदेश, नेपाल',
-        'phone' => '०९१–४०३०६४',
-        'email' => 'ghodaghodimun@gmail.com',
-        'website' => 'www.ghodaghodimun.gov.np',
+    'organization_types' => [
+        'headquarter' => 'Headquarter',
+        'division' => 'Division',
+        'sub-division' => 'Sub Division',
     ]
 ];

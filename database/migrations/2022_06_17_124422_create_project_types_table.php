@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProjectType extends Migration
+class CreateProjectTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ProjectType extends Migration
      */
     public function up()
     {
-        Schema::create('project_type', function (Blueprint $table) {
+        Schema::create('project_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('project_type');
             $table->string('project_type_en')->nullable();
@@ -28,6 +28,6 @@ class ProjectType extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('project_types');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Project_type_model;
+use App\ProjectType;
 use App\Http\Controllers\Gate;
 use App\Http\Controllers\ProjectType;
 use ProjectType as GlobalProjectType;
@@ -15,10 +15,10 @@ class ProjectTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Project_type_model $projectType)
+    public function index(ProjectType $projectType)
     {
-        $ProjectType=Project_type_model::all();
-        return view('project-type.index', compact(['ProjectType','projectType']));
+        $projectTypes = ProjectType::get();
+        return view('project-type.index', compact(['projectType','projectTypes']));
     }
 
     /**
@@ -39,13 +39,11 @@ class ProjectTypeController extends Controller
      */
     public function store(Request $request)
     {
-        Project_type_model::create($request ->validate([
+        ProjectType::create($request ->validate([
             'project_type'=>'required',
             'project_type_en'=>'nullable'
-        ]
-
-        ));
-        return redirect()->back()->with('success','Successfully Saved');
+        ]));
+        return redirect()->back()->with('success', 'Successfully Saved');
     }
 
     /**
@@ -65,10 +63,10 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project_type_model $projectType)
+    public function edit(ProjectType $projectType)
     {
-        $ProjectType=Project_type_model::all();
-        return view('project-type.index', compact(['ProjectType','projectType']));
+        $ProjectTypes = ProjectType::get();
+        return view('project-type.index', compact(['projectType','projectTypes']));
     }
 
     /**
@@ -78,16 +76,14 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Project_type_model $projectType)
+    public function update(Request $request,ProjectType $projectType)
     {
-        $data=$request ->validate([
+        $projectType->update($request ->validate([
             'project_type'=>'required',
             'project_type_en'=>'nullable'
-        ]
-        );
-        $projectType->update($data);
-        return redirect()->back()->with('success','Successfully Updated');
+        ]););
 
+        return redirect()->back()->with('success','Successfully Updated');
     }
 
     /**
@@ -96,11 +92,10 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project_type_model $ProjectType)
+    public function destroy(ProjectType $ProjectType)
     {
-
         $ProjectType->delete();
-        return redirect()->route('project-type.index')->with('success', 'Project Type  has been deleted');
 
+        return redirect()->route('project-type.index')->with('success', 'Project Type  has been deleted');
     }
 }

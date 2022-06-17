@@ -74,11 +74,9 @@ Route::group(
     }
 );
 
-Route::resource('/project-type',ProjectTypeController::class);
-Route::get('/project-type/{projectType}/edit',[ProjectTypeController::class,'edit'])->name('project-type.edit');
+Route::resource('/project-type', ProjectTypeController::class);
+Route::get('/project-type/{projectType}/edit', [ProjectTypeController::class, 'edit'])->name('project-type.edit');
+
 Route::any('/{all}', function () {
     return view('app');
 })->where(['all' => '.*']);
-
-
-
