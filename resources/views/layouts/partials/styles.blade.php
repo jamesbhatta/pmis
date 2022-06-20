@@ -7,11 +7,15 @@
     @font-face {
         font-family: Kalimati;
         src: url("{{ asset('assets/fonts/Kalimati.ttf') }}") format('truetype');
+
     }
 
-    .unicode-font {
-        /* font-family: 'noto'; */
-    }
+   #project{
+    background-color: #12213A;
+   }
+    /* .unicode-font {
+        /* font-family: 'noto';
+    } */
 
 </style>
 <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">

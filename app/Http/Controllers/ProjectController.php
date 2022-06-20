@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Organization;
-use App\Project_type_model;
+use App\ProjectType;
 
 class ProjectController extends Controller
 {
@@ -13,7 +13,7 @@ class ProjectController extends Controller
     {
         $organizations = Organization::all();
         $projects = Project::with('organization')->get();
-        $projectType=Project_type_model::all();
+        $projectType=ProjectType::all();
         return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
 
     }

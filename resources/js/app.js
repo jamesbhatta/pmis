@@ -11,6 +11,7 @@ window.Vue = Vue; //this is important! Do not use require('vue') for livewire-vu
 Vue.component("navbar", require("./components/Navbar.vue").default);
 Vue.component("fields-form", require("./components/FieldsForm.vue").default);
 Vue.component("project-form", require("./components/ProjectForm.vue").default);
+Vue.component("DrinkingWaterOffice-form", require("./components/DrinkingWaterOffice.vue").default);
 Vue.component(
     "resource-data-form",
     require("./components/ResourceDataForm.vue").default

@@ -1,7 +1,9 @@
 <?php
 
+use App\DrinkingWaterOffice;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\DrinkingWaterOfficeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +35,18 @@ Route::post('project', [ProjectController::class, 'store'])->name('project.store
 Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
+
+
+// drinking water office routes
+Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('drinkingwateroffice.index');
+Route::get('DrinkingWaterOffice/create',[DrinkingWaterOfficeController::class,'create'])->name('drinkingwateroffice.create');
+
+
+
+
+
+
+
 
 // Route::get('/data/{key}', 'TableController@index');
 // Route::post('/data/{key}', 'TableController@store');
