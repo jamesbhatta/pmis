@@ -1,9 +1,9 @@
 <?php
 
-use App\DrinkingWaterOffice;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DrinkingWaterOfficeController;
+use App\Http\Controllers\PhysicalInfrastructureController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,11 +38,13 @@ Route::put('project/{project}', [ProjectController::class, 'update'])->name('pro
 
 
 // drinking water office routes
-Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('drinkingwateroffice.index');
-Route::get('DrinkingWaterOffice/create',[DrinkingWaterOfficeController::class,'create'])->name('drinkingwateroffice.create');
+Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('DrinkingWaterOffice.index');
+Route::get('DrinkingWaterOffice/create',[DrinkingWaterOfficeController::class,'create'])->name('DrinkingWaterOffice.create');
 
 
+// Physical Infrastructure
 
+Route::get('PhysicalInfrastructure',[PhysicalInfrastructureController::class,'index'])->name('PhysicalInfrastructure.index');
 
 
 
@@ -89,7 +91,7 @@ Route::group(
 );
 
 Route::resource('/project-type', ProjectTypeController::class);
-Route::get('/project-type/{projectType}/edit', [ProjectTypeController::class, 'edit'])->name('project-type.edit');
+// Route::get('/project-type/{projectType}/edit', [ProjectTypeController::class, 'edit'])->name('project-type.edit');
 
 Route::any('/{all}', function () {
     return view('app');

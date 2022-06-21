@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\DrinkingWaterOffice;
+use App\WaterResourcesIrrigation;
 use Illuminate\Http\Request;
 
-class DrinkingWaterOfficeController extends Controller
+class WaterResourcesIrrigationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(DrinkingWaterOffice $drinkingWaterOffice)
+    public function index()
     {
-        $drinkingWaterOffices = DrinkingWaterOffice::all();
-        return view("DrinkingWaterOffice.index", compact(['drinkingWaterOffices', 'drinkingWaterOffice']));
+        //
     }
 
     /**
@@ -23,15 +22,9 @@ class DrinkingWaterOfficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()    {
-        return view('DrinkingWaterOffice.create');
-
-    }
-
-    public function showForm()
+    public function create()
     {
-
-
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class DrinkingWaterOfficeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\DrinkingWaterOffice  $drinkingWaterOffice
+     * @param  \App\WaterResourcesIrrigation  $waterResourcesIrrigation
      * @return \Illuminate\Http\Response
      */
-    public function show(DrinkingWaterOffice $drinkingWaterOffice)
+    public function show(WaterResourcesIrrigation $waterResourcesIrrigation)
     {
         //
     }
@@ -59,10 +52,10 @@ class DrinkingWaterOfficeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DrinkingWaterOffice  $drinkingWaterOffice
+     * @param  \App\WaterResourcesIrrigation  $waterResourcesIrrigation
      * @return \Illuminate\Http\Response
      */
-    public function edit(DrinkingWaterOffice $drinkingWaterOffice)
+    public function edit(WaterResourcesIrrigation $waterResourcesIrrigation)
     {
         //
     }
@@ -71,10 +64,10 @@ class DrinkingWaterOfficeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DrinkingWaterOffice  $drinkingWaterOffice
+     * @param  \App\WaterResourcesIrrigation  $waterResourcesIrrigation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DrinkingWaterOffice $drinkingWaterOffice)
+    public function update(Request $request, WaterResourcesIrrigation $waterResourcesIrrigation)
     {
         //
     }
@@ -82,10 +75,10 @@ class DrinkingWaterOfficeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\DrinkingWaterOffice  $drinkingWaterOffice
+     * @param  \App\WaterResourcesIrrigation  $waterResourcesIrrigation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DrinkingWaterOffice $drinkingWaterOffice)
+    public function destroy(WaterResourcesIrrigation $waterResourcesIrrigation)
     {
         //
     }
