@@ -30,8 +30,8 @@ class StoreUserRequest extends FormRequest
             'username' => 'required|string|max:255|unique:users',
             // 'role' => 'required|exists:roles,name',
             'password' => 'required|string|min:8|confirmed',
-            'municipality_id' => 'required|exists:municipalities,id',
-            'ward_id' => 'nullable|required_with:is_ward_login|exists:wards,id',
+            'user_type' => 'required|in:headquarter,division,sub-division',
+            'organization_id' => 'required|exists:organizations,id',
         ];
     }
 }

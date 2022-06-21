@@ -18,15 +18,15 @@
 
         <div class="card z-depth-0">
             <div class="card-body">
-                <table class="table table-responsive">
+                <table class="table table-responsive-sm">
                     <thead>
                         <tr class="text-uppercase">
                             <th>S.N</th>
                             <th>Name</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Municipality</th>
-                            <th>Ward</th>
+                            <th>User Type</th>
+                            <th>Organization</th>
                             <th>Role</th>
                             <th></th>
                         </tr>
@@ -38,16 +38,10 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
+                            <td>{{ $user->user_type }}</td>
                             <td>
-                                @if($user->municipality_id)
-                                {{ $user->municipality->name }} <span class="small text-muted">(ID: {{ $user->municipality_id }})</span>
-                                @endif
-                            </td>
-                            <td>
-                                @if($user->ward_id)
-                                {{ $user->ward->name }} <span class="small text-muted">(ID: {{ $user->ward_id }})</span>
-                                @else
-                                <span class="small text-muted">N/A</span>
+                                @if($user->organization_id)
+                                {{ $user->organization->name }}
                                 @endif
                             </td>
                             <td>

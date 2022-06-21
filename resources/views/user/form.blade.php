@@ -22,27 +22,19 @@
                             @method('PUT')
                             @endisset
                             <div class="form-group">
-                                <label>@lang('navigation.name_of_the_office')</label>
+                                <label>User's Full Name</label>
                                 <input type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
                             </div>
                             <div class="form-group">
-                                <label>@lang('navigation.office_email')</label>
+                                <label>User's Email</label>
                                 <input type="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" @isset($user->id) readonly @endisset>
                             </div>
                             <div class="form-group">
-                                <label>@lang('navigation.office_username')</label>
+                                <label>Username</label>
                                 <input type="text" name="username" class="form-control" value="{{ old('username', $user->username) }}">
                             </div>
                             <div class="form-group">
                                 <label>@lang('navigation.role')</label>
-                                {{--
-                                <select name="role" id="" class="form-control">
-                                    @foreach ($roles as $role)
-                                    <option value="{{ $role->name }}" @if(old('role', $user->getRoleNames()->first()) == $role->name) selected @endif>{{ $role->name }}</option>
-                                @endforeach
-                                </select>
-                                --}}
-
                                 @foreach($roles as $role)
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="roles[]" class="custom-control-input" id="role-checkbox-{{ $role->name }}" value="{{ $role->name }}" @if($user->hasRole($role->name)) checked @endif>
@@ -51,38 +43,21 @@
                                 @endforeach
                             </div>
 
+                            <div class="form-group">
+                                <label for="" class="required">User Type</label>
+                                <select name="user_type" class="custom-select">
+                                    @foreach (config('constants.organization_types') as $key => $value)
+                                    <option value="{{ $key }}">{{ $value }}</option>
+                                    @endforeach
+                                </select>
+                                <x-invalid-feedback field="type"></x-invalid-feedback>
+                            </div>
 
                             <div class="form-group">
-                                <label>@lang('navigation.district_name')</label>
-                                <select name="district_id" id="" class="custom-select">
-                                    @foreach ($municipalities as $municipality)
-                                    <option value="{{ $district->name }}" @if(old('district_id', $user-district_id) == $district->name) selected @endif>{{ $district->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>@lang('navigation.Sub_Metro_municipality_Gau')</label>
-                                <select name="municipality_id" id="" class="custom-select">
-                                    @foreach ($municipalities as $municipality)
-                                    <option value="{{ $municipality->id }}" @if(old('municipality_id', $user->municipality_id) == $municipality->id) selected @endif>{{ $municipality->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="is_ward_login" id="ward-toggler" @if(($user->id && isset($user->ward_id)) || !isset($user->id)) checked @endif>
-                                    <label class="custom-control-label" for="ward-toggler">Ward Login</label>
-                                    <small class="form-text text-muted">
-                                        Check this field for ward employees and make sure to select the ward from dropdown below.
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="form-group @if($user->id && !isset($user->ward_id)) d-none @endif;" id="ward-selector">
-                                <label>Ward</label>
-                                <select name="ward_id" class="custom-select">
-                                    <option value="">Select Ward</option>
-                                    @foreach ($wards as $ward)
-                                    <option value="{{ $ward->id }}" @if(old('ward_id', $user->ward_id) == $ward->id) selected @endif>{{ $ward->name }}</option>
+                                <label>Organization</label>
+                                <select name="organization_id" class="custom-select">
+                                    @foreach (\App\Organization::get() as $organization)
+                                    <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->name) selected @endif>{{ $organization->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -124,5 +99,6 @@
             $('#ward-selector').toggleClass('d-none');;
         })
     })
+
 </script>
 @endpush
