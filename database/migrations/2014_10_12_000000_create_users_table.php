@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('user_type', ['headquarter', 'division', 'sub-division'])->nullable();
+            $table->foreignId('organization_id')->nullable()->constrained('organizations');
             $table->rememberToken();
             $table->timestamps();
         });
