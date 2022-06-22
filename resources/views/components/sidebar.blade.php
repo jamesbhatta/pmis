@@ -14,7 +14,6 @@
                 <span class="text-"><i class="fa fa-plus"></i></span>Projects
             </a>
         </li> -->
-<<<<<<< HEAD
        <li class="nav-item {{ setActive('project.index') }}">
             <a href="#project" data-toggle="collapse" aria-expanded="false"
                 class="dropdown-toggle collapsed nav-link"><span class="text-success"><i
@@ -50,42 +49,10 @@
                         <a class="nav-link" href="#"><span class="mx-3"><i
                                     class="fas fa-circle"></i></span>@lang('navigation.traffic_management')</a>
                     </li>
-=======
-        @if(auth()->user()->user_type == 'division')
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('project.index') }}">
-                <span><i class="far fa-circle"></i></span>Projects
-            </a>
-        </li>
-        @endif
-        @hasanyrole('super-admin|admin')
-        <li class="nav-item {{ setActive('project.index') }}">
-            <a href="#project" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed nav-link"><span class="text-success"><i class="fas fa-plus"></i></span>@lang('navigation.Projects')</a>
-            <ul class="list-unstyled collapse" id="project">
-                <li class="nav-item sub-nav">
-                    <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.Ministry_of_Physical_Transport')</a>
-                </li>
-
-                <li class="nav-item sub-nav">
-                    <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.Drinking_Water_Office')</a>
-                </li>
-
-                <li class="nav-item sub-nav">
-                    <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.water_irrigation')</a>
-                </li>
-
-                <li class="nav-item sub-nav">
-                    <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.urban_development')</a>
-                </li>
-
-                <li class="nav-item sub-nav">
-                    <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.traffic_management')</a>
-                </li>
->>>>>>> 6c19a1c748614e01c654f8fc956432971b2ebb9c
 
             </ul>
         </li>
-        @endhasanyrole
+
 
         @hasrole('super-admin')
         <li class="nav-item {{ setActive('organization.index') }}">

@@ -44,7 +44,7 @@ class ProjectTypeModelController extends Controller
      * @param  \App\Project_type_model  $project_type_model
      * @return \Illuminate\Http\Response
      */
-    public function show(Project_type_model $project_type_model)
+    public function show()
     {
         //
     }
@@ -55,7 +55,7 @@ class ProjectTypeModelController extends Controller
      * @param  \App\Project_type_model  $project_type_model
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project_type_model $project_type_model)
+    public function edit()
     {
         //
     }
@@ -67,7 +67,7 @@ class ProjectTypeModelController extends Controller
      * @param  \App\Project_type_model  $project_type_model
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project_type_model $project_type_model)
+    public function update(Request $request)
     {
         //
     }
@@ -78,7 +78,7 @@ class ProjectTypeModelController extends Controller
      * @param  \App\Project_type_model  $project_type_model
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project_type_model $project_type_model)
+    public function destroy()
     {
         //
     }
