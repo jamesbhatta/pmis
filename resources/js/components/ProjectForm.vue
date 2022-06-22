@@ -48,9 +48,9 @@
           <small class="text-danger">{{ form.errors.first('budget_source') }}</small>
         </div>
 
-        <div class="form-group col-lg-6">
+        <div class="form-group col-lg-12">
           <label>विवरण</label>
-          <input type="text" v-model="form.description" class="form-control" />
+          <textarea v-model="form.description" cols="30" rows="10" class="form-control"></textarea>
           <small class="text-danger">{{ form.errors.first('description') }}</small>
         </div>
       </div>

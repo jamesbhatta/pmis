@@ -2050,6 +2050,113 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var form_backend_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! form-backend-validation */ "./node_modules/form-backend-validation/dist/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    organizations: {
+      type: Object,
+      "default": function _default() {
+        return {};
+      }
+    }
+  },
+  data: function data() {
+    return {
+      updateMode: false,
+      form: new form_backend_validation__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        title: null,
+        organization_id: null,
+        project_type: null,
+        budget: null,
+        budget_source: null,
+        description: null
+      })
+    };
+  },
+  methods: {
+    submit: function submit() {
+      this.form.post("/project").then(function (response) {
+        return alert('Project created');
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FieldsForm.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FieldsForm.vue?vue&type=script&lang=js& ***!
@@ -2336,6 +2443,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -2548,6 +2661,7 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_1__["default"]; //this is important! D
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("navbar", (__webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("fields-form", (__webpack_require__(/*! ./components/FieldsForm.vue */ "./resources/js/components/FieldsForm.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("project-form", (__webpack_require__(/*! ./components/ProjectForm.vue */ "./resources/js/components/ProjectForm.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("DrinkingWaterOffice-form", (__webpack_require__(/*! ./components/DrinkingWaterOffice.vue */ "./resources/js/components/DrinkingWaterOffice.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("resource-data-form", (__webpack_require__(/*! ./components/ResourceDataForm.vue */ "./resources/js/components/ResourceDataForm.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("data-viewer", (__webpack_require__(/*! ./components/DataViewer.vue */ "./resources/js/components/DataViewer.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component("pie-chart", (__webpack_require__(/*! ./charts/PieChart.vue */ "./resources/js/charts/PieChart.vue")["default"]));
@@ -35172,6 +35286,45 @@ component.options.__file = "resources/js/components/DataViewer.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/DrinkingWaterOffice.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/DrinkingWaterOffice.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24& */ "./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24&");
+/* harmony import */ var _DrinkingWaterOffice_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DrinkingWaterOffice.vue?vue&type=script&lang=js& */ "./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DrinkingWaterOffice_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__.render,
+  _DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/DrinkingWaterOffice.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/FieldsForm.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/FieldsForm.vue ***!
@@ -35378,6 +35531,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkingWaterOffice_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkingWaterOffice.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkingWaterOffice_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/FieldsForm.vue?vue&type=script&lang=js&":
 /*!*************************************************************************!*\
   !*** ./resources/js/components/FieldsForm.vue?vue&type=script&lang=js& ***!
@@ -35515,6 +35684,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DataViewer_vue_vue_type_template_id_33724507_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DataViewer_vue_vue_type_template_id_33724507_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DataViewer.vue?vue&type=template&id=33724507&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DataViewer.vue?vue&type=template&id=33724507&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24& ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkingWaterOffice_vue_vue_type_template_id_a00ddd24___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24&");
 
 
 /***/ }),
@@ -35836,6 +36022,336 @@ var render = function () {
   ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkingWaterOffice.vue?vue&type=template&id=a00ddd24& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "bg-white p-3 p-md-4 rounded border" }, [
+    _c(
+      "form",
+      {
+        attrs: { method: "POST" },
+        on: {
+          submit: function ($event) {
+            $event.preventDefault()
+            return _vm.submit.apply(null, arguments)
+          },
+        },
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("शीर्षक")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.title,
+                  expression: "form.title",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", name: "title" },
+              domProps: { value: _vm.form.title },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "title", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("title"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v(" संगठन")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.organization_id,
+                    expression: "form.organization_id",
+                  },
+                ],
+                staticClass: "custom-select",
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.form,
+                      "organization_id",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("कृपया संगठन चयन गर्नुहोस्"),
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.organizations, function (organization) {
+                  return _c(
+                    "option",
+                    {
+                      key: organization.id,
+                      domProps: { value: organization.id },
+                    },
+                    [_vm._v(_vm._s(organization.name))]
+                  )
+                }),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("organization_id"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("परियोजना प्रकार")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.project_type,
+                    expression: "form.project_type",
+                  },
+                ],
+                staticClass: "custom-select",
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.form,
+                      "project_type",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("परियोजना प्रकार चयन गर्नुहोस्"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सिचाई" } }, [_vm._v("सिचाई")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "खाने पानी" } }, [
+                  _vm._v("खाने पानी"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "पूर्वधार" } }, [
+                  _vm._v("पूर्वधार"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सहरी विकास" } }, [
+                  _vm._v("सहरी विकास"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "यातायात" } }, [
+                  _vm._v("यातायात"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("project_type"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("बजेट"),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group mb-2" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.budget,
+                    expression: "form.budget",
+                  },
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number", id: "inlineFormInputGroup" },
+                domProps: { value: _vm.form.budget },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "budget", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("बजेट स्रोत")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.budget_source,
+                  expression: "form.budget_source",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.budget_source },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "budget_source", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("खर्च किसिम छान्नुहोस्")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.budget_source,
+                  expression: "form.budget_source",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.budget_source },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "budget_source", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("विवरण")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.description,
+                  expression: "form.description",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.description },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "description", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("description"))),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary z-depth-0" }, [
+          _vm._v("Submit"),
+        ]),
+      ]
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [_vm._v("रु.")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -36537,9 +37053,39 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group col-lg-6" }, [
-            _c("label", [_vm._v("विवरण")]),
+            _c("label", [_vm._v("खर्च किसिम छान्नुहोस्")]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.budget_source,
+                  expression: "form.budget_source",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.budget_source },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "budget_source", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-12" }, [
+            _c("label", [_vm._v("विवरण")]),
+            _vm._v(" "),
+            _c("textarea", {
               directives: [
                 {
                   name: "model",
@@ -36549,7 +37095,7 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { type: "text" },
+              attrs: { cols: "30", rows: "10" },
               domProps: { value: _vm.form.description },
               on: {
                 input: function ($event) {
