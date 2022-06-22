@@ -42,7 +42,8 @@ return [
     'data_entry' => "Data Entry",
     'district_name' => "District Name",
     'Sub_Metro_municipality_Gau'=>"Sub Metro/Municipality/Rural Municipality",
-
+    'Projects'=>"Projects",
+    'Organizations'=>"Organizations",
 
 
 
