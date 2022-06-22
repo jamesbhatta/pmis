@@ -21,6 +21,9 @@ class CreateProjectsTable extends Migration
             $table->string('budget')->nullable();
             $table->string('budget_source')->nullable();
             $table->text('description')->nullable();
+            $table->string('population_to_be_benefited')->nullable();
+            $table->string('chairman_name')->nullable();
+            $table->string('chairman_contact')->nullable();
             $table->timestamps();
         });
     }
