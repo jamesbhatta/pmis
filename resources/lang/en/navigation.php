@@ -45,7 +45,7 @@ return [
     'Projects'=>"Projects",
     'Organizations'=>"Organizations",
     'water_irrigation'=>"Water Resources and Irrigation Development Division Office",
-    'urban_development'=>"सहरी विकास तथा भवन निर्माण कार्यालय",
+    'urban_development'=>"Urban Development and Building Construction Office",
     'traffic_management'=>"Traffic Management Office",
     'Drinking_Water_Office'=>"Drinking Water and Sanitation Division Office",
     'Ministry_of_Physical_Transport'=>"Ministry of Physical Infrastructure and Transport",
