@@ -14,7 +14,6 @@
                 <span class="text-"><i class="fa fa-plus"></i></span>Projects
             </a>
         </li> -->
-<<<<<<< HEAD
        <li class="nav-item {{ setActive('project.index') }}">
             <a href="#project" data-toggle="collapse" aria-expanded="false"
                 class="dropdown-toggle collapsed nav-link"><span class="text-success"><i
@@ -50,7 +49,6 @@
                         <a class="nav-link" href="#"><span class="mx-3"><i
                                     class="fas fa-circle"></i></span>@lang('navigation.traffic_management')</a>
                     </li>
-=======
         @if(auth()->user()->user_type == 'division')
         <li class="nav-item">
             <a class="nav-link" href="{{ route('project.index') }}">
@@ -81,7 +79,6 @@
                 <li class="nav-item sub-nav">
                     <a class="nav-link" href="{{ route('project.index') }}"><span class="mx-3"><i class="fas fa-circle"></i></span>@lang('navigation.traffic_management')</a>
                 </li>
->>>>>>> 51309db2e38f2bb64cff5d465df7002021cda021
 
             </ul>
         </li>
