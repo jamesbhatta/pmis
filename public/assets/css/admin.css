@@ -14,8 +14,13 @@ body {
     display: none;
 }
 
-/* Sidebar */
+/* Resize MDB button */
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
 
+/* Sidebar */
 #sidebar {
     display: flex;
     flex-direction: column;

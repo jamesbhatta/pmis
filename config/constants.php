@@ -50,5 +50,9 @@ return [
         'headquarter' => 'Headquarter',
         'division' => 'Division',
         'sub-division' => 'Sub Division',
+    ],
+
+    'project_type_groups' => [
+        'Khanepani', 'Yatayat'
     ]
 ];
