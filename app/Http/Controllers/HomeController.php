@@ -24,20 +24,20 @@ class HomeController extends Controller
         $title = 'Dashboard';
 
         $onlineFormsCount = 10;
-        $unverifiedOrganizationsCount = 5;
         $registeredOrganizationsCount = 8;
         $closedOrganizationsCount = 2;
-
+        
         $totalUsersCount = User::count();
+        $totalProjectsCount = 5;
 
-     
         return view('home', [
             'title' => $title,
+            'totalProjectsCount' => $totalProjectsCount,
+            'totalUsersCount' => $totalUsersCount,
+
             'onlineFormsCount' => $onlineFormsCount,
-            'unverifiedOrganizationsCount' => $unverifiedOrganizationsCount,
             'registeredOrganizationsCount' => $registeredOrganizationsCount,
             'closedOrganizationsCount' => $closedOrganizationsCount,
-            'totalUsersCount' => $totalUsersCount,
         ]);
     }
 }

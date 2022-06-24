@@ -24,6 +24,9 @@
     </div>
     <div id="content-area" class="flex-grow-1">
         <x-navbar></x-navbar>
+        <div class="bg-white px-3">
+            @yield('breadcrumb')
+        </div>
         <div class="p-3">
             @yield('content')
         </div>
