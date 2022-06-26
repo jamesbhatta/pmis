@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\DrinkingWaterOfficeController;
-use App\Http\Controllers\PhysicalInfrastructureController;
+// use App\Http\Controllers\DrinkingWaterOfficeController;
+// use App\Http\Controllers\PhysicalInfrastructureController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,16 +35,16 @@ Route::post('project', [ProjectController::class, 'store'])->name('project.store
 Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
-
+Route::get('projectform', [ProjectController::class, ]);
 
 // drinking water office routes
-Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('DrinkingWaterOffice.index');
-Route::get('DrinkingWaterOffice/create',[DrinkingWaterOfficeController::class,'create'])->name('DrinkingWaterOffice.create');
+// Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('DrinkingWaterOffice.index');
+// Route::get('DrinkingWaterOffice/create',[DrinkingWaterOfficeController::class,'create'])->name('DrinkingWaterOffice.create');
 
 
 // Physical Infrastructure
 
-Route::get('PhysicalInfrastructure',[PhysicalInfrastructureController::class,'index'])->name('PhysicalInfrastructure.index');
+// Route::get('PhysicalInfrastructure',[PhysicalInfrastructureController::class,'index'])->name('PhysicalInfrastructure.index');
 
 
 

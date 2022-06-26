@@ -21,6 +21,7 @@ return [
     'municipality_area'=>"नगरपालिका क्षेत्र",
     'Projects'=>"परियोजनाहरू",
     'Organizations'=>"संस्थाहरु",
+    'Organization'=>"संस्था",
     'project_type'=>"परियोजनाका प्रकार",
     'ProjectTypes'=>"परियोजनाको प्रकार थप्नुहोस्",
     'name_of_the_office'=>"कार्यालयको नाम",

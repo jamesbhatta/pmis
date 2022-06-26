@@ -2449,6 +2449,66 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -36867,7 +36927,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group col-lg-6" }, [
-            _c("label", [_vm._v(" संगठन")]),
+            _c("label", [_vm._v("संस्था")]),
             _vm._v(" "),
             _c(
               "select",
@@ -36901,7 +36961,27 @@ var render = function () {
               },
               [
                 _c("option", { attrs: { value: "" } }, [
-                  _vm._v("कृपया संगठन चयन गर्नुहोस्"),
+                  _vm._v("कृपया संस्था चयन गर्नुहोस्"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सिचाई" } }, [
+                  _vm._v("जलस्रोत तथा सिचाई विकास डिविजन कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "खाने पानी" } }, [
+                  _vm._v("खानेपानी तथा सरसफाई डिविजन कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "पूर्वधार" } }, [
+                  _vm._v("भौतिक पूर्वाधार तथा यातायात मन्त्रालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सहरी विकास" } }, [
+                  _vm._v("सहरी विकास तथा भवन निर्माण कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "यातायात" } }, [
+                  _vm._v("यातायात व्यवस्था कार्यालय"),
                 ]),
                 _vm._v(" "),
                 _vm._l(_vm.organizations, function (organization) {
@@ -36920,6 +37000,19 @@ var render = function () {
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [
               _vm._v(_vm._s(_vm.form.errors.first("organization_id"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("पालिका को नाम")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", name: "title" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("title"))),
             ]),
           ]),
           _vm._v(" "),
@@ -36961,28 +37054,60 @@ var render = function () {
                   _vm._v("परियोजना प्रकार चयन गर्नुहोस्"),
                 ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "सिचाई" } }, [_vm._v("सिचाई")]),
+                _c("option", { attrs: { value: "सिचाई" } }, [
+                  _vm._v("जलस्रोत तथा सिचाई"),
+                ]),
                 _vm._v(" "),
                 _c("option", { attrs: { value: "खाने पानी" } }, [
-                  _vm._v("खाने पानी"),
+                  _vm._v("खानेपानी तथा सरसफाई"),
                 ]),
                 _vm._v(" "),
                 _c("option", { attrs: { value: "पूर्वधार" } }, [
-                  _vm._v("पूर्वधार"),
+                  _vm._v("भौतिक पूर्वाधार तथा यातायात"),
                 ]),
                 _vm._v(" "),
                 _c("option", { attrs: { value: "सहरी विकास" } }, [
-                  _vm._v("सहरी विकास"),
+                  _vm._v("सहरी विकास तथा भवन निर्माण"),
                 ]),
                 _vm._v(" "),
                 _c("option", { attrs: { value: "यातायात" } }, [
-                  _vm._v("यातायात"),
+                  _vm._v("यातायात व्यवस्था"),
                 ]),
               ]
             ),
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [
               _vm._v(_vm._s(_vm.form.errors.first("project_type"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("सुरु मिति")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.budget_source,
+                  expression: "form.budget_source",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.budget_source },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "budget_source", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
             ]),
           ]),
           _vm._v(" "),
@@ -37026,25 +37151,36 @@ var render = function () {
             _c("label", [_vm._v("बजेट स्रोत")]),
             _vm._v(" "),
             _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.budget_source,
-                  expression: "form.budget_source",
-                },
-              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("हाल सम्म को वित्तिय प्रगति")]),
+            _vm._v(" "),
+            _c("input", {
               staticClass: "form-control",
               attrs: { type: "text" },
-              domProps: { value: _vm.form.budget_source },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "budget_source", $event.target.value)
-                },
-              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("हाल सम्म को भौतिक प्रगति")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
             }),
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [
@@ -37056,25 +37192,45 @@ var render = function () {
             _c("label", [_vm._v("खर्च किसिम छान्नुहोस्")]),
             _vm._v(" "),
             _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.budget_source,
-                  expression: "form.budget_source",
-                },
-              ],
               staticClass: "form-control",
               attrs: { type: "text" },
-              domProps: { value: _vm.form.budget_source },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "budget_source", $event.target.value)
-                },
-              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("गत आर्थिक वर्षको खर्च हजारमा"),
+            ]),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("गत आर्थिक वर्षको भौतिक प्रगति(%) "),
+            ]),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("लाभाम्वित हुने जनसंख्या")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
             }),
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [
@@ -37111,10 +37267,10 @@ var render = function () {
               _vm._v(_vm._s(_vm.form.errors.first("description"))),
             ]),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary z-depth-0" }, [
-          _vm._v("Submit"),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-primary z-depth-0" }, [
+            _vm._v("Submit"),
+          ]),
         ]),
       ]
     ),
@@ -37127,6 +37283,48 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-prepend" }, [
       _c("div", { staticClass: "input-group-text" }, [_vm._v("रु.")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group col-lg-6" }, [
+      _c("label", [_vm._v("लागत अनुमान")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } }),
+      _vm._v(" "),
+      _c("small", { staticClass: "text-danger" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group mb-2" }, [
+      _c("div", { staticClass: "input-group-prepend" }, [
+        _c("div", { staticClass: "input-group-text" }, [_vm._v("रु.")]),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "number", id: "inlineFormInputGroup" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group mb-2" }, [
+      _c("div", { staticClass: "input-group-prepend" }, [
+        _c("div", { staticClass: "input-group-text" }, [_vm._v("%")]),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "number", id: "inlineFormInputGroup" },
+      }),
     ])
   },
 ]
