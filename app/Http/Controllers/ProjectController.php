@@ -14,8 +14,8 @@ class ProjectController extends Controller
         $organizations = Organization::all();
         $projects = Project::with('organization')->get();
         $projectType=ProjectType::all();
-        return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
 
+        return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
     }
 
     public function create()
@@ -25,8 +25,11 @@ class ProjectController extends Controller
 
     public function showForm(Project $project)
     {
+        $projectTypes = ProjectType::get();
         return view('project.create', [
+            'project' => $project,
             'organizations' => Organization::get(),
+            'projectTypes' => $projectTypes
         ]);
     }
 
@@ -34,11 +37,11 @@ class ProjectController extends Controller
     {
         Project::create($request->validate([
             'title' => 'required',
-            'organization_id' => 'required',
-            'project_type' => 'required',
+            'organization_id' => ['required', 'exists:organizations,id'],
+            'project_type_id' => ['required', 'exists:project_types,id'],
             'budget' => 'required',
             'budget_source' => 'required',
-            'description' => 'required',
+            'description' => 'nullable',
         ]));
 
         return redirect()->back()->with('success', 'Record has been added');
@@ -46,19 +49,17 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        $organizations = Organization::all();
-        $projects = Project::with('organization')->get();
-        return view("project.index", compact(['organizations', 'projects', 'project']));
+        return $this->showForm($project);
     }
 
     public function update(Request $request, Project $project)
     {
         $project->update($request->validate([
             'title' => 'required',
-            'organization_id' => 'required',
-            'project_type' => 'required',
-            'budget' => 'nullable',
-            'budget_source' => 'nullable',
+            'organization_id' => ['required', 'exists:organizations,id'],
+            'project_type_id' => ['required', 'exists:project_types,id'],
+            'budget' => 'required',
+            'budget_source' => 'required',
             'description' => 'nullable',
         ]));
 

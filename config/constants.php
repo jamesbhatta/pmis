@@ -50,5 +50,7 @@ return [
         'headquarter' => 'Headquarter',
         'division' => 'Division',
         'sub-division' => 'Sub Division',
-    ]
+    ],
+
+    'project_type_groups' => ['सिचाई', 'खाने पानी', 'पूर्वधार', 'सहरी विकास', 'यातायात'],
 ];

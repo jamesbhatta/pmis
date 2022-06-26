@@ -32,10 +32,13 @@ Route::delete('organization/{organization}', [OrganizationController::class, 'de
 Route::get('project', [ProjectController::class, 'index'])->name('project.index');
 Route::get('project/create', [ProjectController::class, 'create'])->name('project.create');
 Route::post('project', [ProjectController::class, 'store'])->name('project.store');
-Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
 Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
+<<<<<<< HEAD
 Route::get('projectform', [ProjectController::class, ]);
+=======
+Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+>>>>>>> d5e224f4d2b80ff5ec330a0b80c41460dfe516b6
 
 // drinking water office routes
 // Route::get('DrinkingWaterOffice',[DrinkingWaterOfficeController::class,'index'])->name('DrinkingWaterOffice.index');
@@ -43,12 +46,12 @@ Route::get('projectform', [ProjectController::class, ]);
 
 
 // Physical Infrastructure
+<<<<<<< HEAD
 
 // Route::get('PhysicalInfrastructure',[PhysicalInfrastructureController::class,'index'])->name('PhysicalInfrastructure.index');
-
-
-
-
+=======
+Route::get('PhysicalInfrastructure',[PhysicalInfrastructureController::class,'index'])->name('PhysicalInfrastructure.index');
+>>>>>>> d5e224f4d2b80ff5ec330a0b80c41460dfe516b6
 
 // Route::get('/data/{key}', 'TableController@index');
 // Route::post('/data/{key}', 'TableController@store');

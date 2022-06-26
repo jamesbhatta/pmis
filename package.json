@@ -28,6 +28,7 @@
         "form-backend-validation": "^2.4.0",
         "vue-chartjs": "^4.1.1",
         "vue-router": "^3.0.0",
+        "vue2-quill-editor": "^2.0.26",
         "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.8/xlsx-0.18.8.tgz"
     }
 }

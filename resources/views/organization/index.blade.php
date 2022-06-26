@@ -1,21 +1,23 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
+        <li class="breadcrumb-item active" aria-current="page">संगठन</li>
+    </ol>
+</nav>
+@endsection
+
 @section('content')
 <div class="container">
     @include('alerts.all')
 </div>
 
 <div class="container-flluid">
-    <nav aria-label="breadcrumb ">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
-          <li class="breadcrumb-item active" aria-current="page">संगठन</li>
-        </ol>
-      </nav>
     {{-- Organizations Table --}}
     {{-- <x-organizations-table :organizations="$organizations"></x-organizations-table> --}}
     {{-- End of Organizaitons Table --}}
-
     <div class="card z-depth-0 font-noto">
         <div class="card-body">
             <div class="d-flex">
