@@ -2380,9 +2380,204 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProjectForm.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /var/www/html/pmis/resources/js/components/ProjectForm.vue: Unexpected token (235:0)\n\n\u001b[0m \u001b[90m 233 |\u001b[39m   methods\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 234 |\u001b[39m     submit() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 235 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 236 |\u001b[39m       \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mform\u001b[33m.\u001b[39mpost(\u001b[32m\"/project\"\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 237 |\u001b[39m         \u001b[33m.\u001b[39mthen(response \u001b[33m=>\u001b[39m alert(\u001b[32m'Project created'\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 238 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n    at instantiate (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:3336:19)\n    at Parser.unexpected (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:3374:16)\n    at Parser.parseExprAtom (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:13120:22)\n    at Parser.parseExprSubscripts (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12645:23)\n    at Parser.parseUpdate (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12624:21)\n    at Parser.parseMaybeUnary (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12595:23)\n    at Parser.parseMaybeUnaryOrPrivate (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12389:61)\n    at Parser.parseExprOps (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12396:23)\n    at Parser.parseMaybeConditional (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12366:23)\n    at Parser.parseMaybeAssign (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12318:21)\n    at Parser.parseExpressionBase (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12254:23)\n    at /var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12248:39\n    at Parser.allowInAnd (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:14343:16)\n    at Parser.parseExpression (/var/www/html/pmis/node_modules/@babel/parser/lib/index.js:12248:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var form_backend_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! form-backend-validation */ "./node_modules/form-backend-validation/dist/index.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue2-quill-editor'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    VueEditor: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue2-quill-editor'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  },
+  props: {
+    organizations: {
+      type: Object,
+      "default": function _default() {
+        return {};
+      }
+    },
+    projectTypes: {
+      type: Object,
+      "default": function _default() {
+        return {};
+      }
+    },
+    project: {
+      type: Object,
+      "default": function _default() {
+        return {};
+      }
+    }
+  },
+  data: function data() {
+    return {
+      updateMode: false,
+      form: new form_backend_validation__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        title: null,
+        organization_id: "",
+        project_type_id: "",
+        budget: null,
+        budget_source: null,
+        description: null
+      })
+    };
+  },
+  mounted: function mounted() {
+    if (this.project) {
+      this.updateMode = true;
+      this.form.title = this.project.title;
+      this.form.organization_id = this.project.organization_id;
+      this.form.project_type_id = this.project.project_type_id;
+      this.form.budget = this.project.budget;
+      this.form.budget_source = this.project.budget_source;
+      this.form.description = this.project.description;
+    }
+  },
+  methods: {
+    submit: function submit() {
+      this.updateMode ? this.update() : this.create();
+    },
+    create: function create() {
+      this.form.post("/project").then(function (response) {
+        alert("Data Saved");
+        window.location.href = "/project";
+      });
+    },
+    update: function update() {
+      this.form.put("/project/".concat(this.project.id)).then(function (response) {
+        alert("Data Updated");
+        window.location.href = "/project";
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -36721,8 +36916,457 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
-var staticRenderFns = []
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "bg-white p-3 p-md-4 rounded border" }, [
+    _c(
+      "form",
+      {
+        attrs: { method: "POST" },
+        on: {
+          submit: function ($event) {
+            $event.preventDefault()
+            return _vm.submit.apply(null, arguments)
+          },
+        },
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("शीर्षक")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.title,
+                  expression: "form.title",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", name: "title" },
+              domProps: { value: _vm.form.title },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "title", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("title"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("संस्था")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.organization_id,
+                    expression: "form.organization_id",
+                  },
+                ],
+                staticClass: "custom-select",
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.form,
+                      "organization_id",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("कृपया संस्था चयन गर्नुहोस्"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सिचाई" } }, [
+                  _vm._v("जलस्रोत तथा सिचाई विकास डिविजन कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "खाने पानी" } }, [
+                  _vm._v("खानेपानी तथा सरसफाई डिविजन कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "पूर्वधार" } }, [
+                  _vm._v("भौतिक पूर्वाधार तथा यातायात मन्त्रालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सहरी विकास" } }, [
+                  _vm._v("सहरी विकास तथा भवन निर्माण कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "यातायात" } }, [
+                  _vm._v("यातायात व्यवस्था कार्यालय"),
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.organizations, function (organization) {
+                  return _c(
+                    "option",
+                    {
+                      key: organization.id,
+                      domProps: { value: organization.id },
+                    },
+                    [_vm._v(_vm._s(organization.name))]
+                  )
+                }),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("organization_id"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("पालिका को नाम")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", name: "title" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("title"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("परियोजना प्रकार")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.project_type,
+                    expression: "form.project_type",
+                  },
+                ],
+                staticClass: "custom-select",
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.form,
+                      "project_type",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("परियोजना प्रकार चयन गर्नुहोस्"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सिचाई" } }, [
+                  _vm._v("जलस्रोत तथा सिचाई"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "खाने पानी" } }, [
+                  _vm._v("खानेपानी तथा सरसफाई"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "पूर्वधार" } }, [
+                  _vm._v("भौतिक पूर्वाधार तथा यातायात"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "सहरी विकास" } }, [
+                  _vm._v("सहरी विकास तथा भवन निर्माण"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "यातायात" } }, [
+                  _vm._v("यातायात व्यवस्था"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("project_type"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("सुरु मिति")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.budget_source,
+                  expression: "form.budget_source",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.budget_source },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "budget_source", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("बजेट"),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group mb-2" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.budget,
+                    expression: "form.budget",
+                  },
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number", id: "inlineFormInputGroup" },
+                domProps: { value: _vm.form.budget },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "budget", $event.target.value)
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("बजेट स्रोत")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("हाल सम्म को वित्तिय प्रगति")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("हाल सम्म को भौतिक प्रगति")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("खर्च किसिम छान्नुहोस्")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("गत आर्थिक वर्षको खर्च हजारमा"),
+            ]),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
+              _vm._v("गत आर्थिक वर्षको भौतिक प्रगति(%) "),
+            ]),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-6" }, [
+            _c("label", [_vm._v("लाभाम्वित हुने जनसंख्या")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text" },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-lg-12" }, [
+            _c("label", [_vm._v("विवरण")]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.description,
+                  expression: "form.description",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { cols: "30", rows: "10" },
+              domProps: { value: _vm.form.description },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "description", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("description"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-primary z-depth-0" }, [
+            _vm._v("Submit"),
+          ]),
+        ]),
+      ]
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("div", { staticClass: "input-group-text" }, [_vm._v("रु.")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group col-lg-6" }, [
+      _c("label", [_vm._v("लागत अनुमान")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } }),
+      _vm._v(" "),
+      _c("small", { staticClass: "text-danger" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group mb-2" }, [
+      _c("div", { staticClass: "input-group-prepend" }, [
+        _c("div", { staticClass: "input-group-text" }, [_vm._v("रु.")]),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "number", id: "inlineFormInputGroup" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group mb-2" }, [
+      _c("div", { staticClass: "input-group-prepend" }, [
+        _c("div", { staticClass: "input-group-text" }, [_vm._v("%")]),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "number", id: "inlineFormInputGroup" },
+      }),
+    ])
+  },
+]
+render._withStripped = true
 
 
 
