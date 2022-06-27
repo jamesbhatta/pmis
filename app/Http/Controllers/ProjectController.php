@@ -47,6 +47,13 @@ class ProjectController extends Controller
         return redirect()->back()->with('success', 'Record has been added');
     }
 
+    public function show(Project $project)
+    {
+        return view('project.show', [
+            'project' => $project
+        ]);
+    }
+
     public function edit(Project $project)
     {
         return $this->showForm($project);

@@ -108,17 +108,18 @@
         </tr>
     </thead>
     <tbody>
-        @forelse ($projects as $item)
+        @forelse ($projects as $project)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td class="font-roboto">{{ $item->title }}</td>
-            <td class="font-roboto">{{ $item->organization->name }}</td>
-            <td class="font-roboto">{{ $item->project_type}}</td>
-            <td class="font-roboto">रु. {{ $item->budget}}</td>
-            <td class="font-roboto">{{ $item->budget_source}}</td>
+            <td class="font-roboto">{{ $project->title }}</td>
+            <td class="font-roboto">{{ $project->organization->name }}</td>
+            <td class="font-roboto">{{ $project->project_type}}</td>
+            <td class="font-roboto">रु. {{ $project->budget}}</td>
+            <td class="font-roboto">{{ $project->budget_source}}</td>
             <td>
-                <a class="action-btn text-primary" href="{{ route('project.edit', $item) }}"><i class="far fa-edit"></i></a>
-                <form action="{{ route('project.destroy', $item) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
+                <a href="{{ route('project.show', $project) }}" class="action-btn text-primary"><i class="fa fa-eye mr-2"></i>View</a>
+                <a href="{{ route('project.edit', $project) }}" class="action-btn text-primary"><i class="far fa-edit"></i></a>
+                <form action="{{ route('project.destroy', $project) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
                     @csrf
                     @method('delete')
                     <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>

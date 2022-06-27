@@ -15,4 +15,14 @@ class Project extends Model
     {
         return $this->belongsTo(Organization::class);
     }
+
+    public function physicalProgress()
+    {
+        return $this->hasOne(PhysicalProgress::class);
+    }
+
+    public function economicProgress()
+    {
+        return $this->hasOne(EconomicProgress::class);
+    }
 }

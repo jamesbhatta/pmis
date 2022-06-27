@@ -1,9 +1,10 @@
 require("./bootstrap");
-
 // import { vue } from "laravel-mix";
 import Vue from "vue";
 import VueRouter from "vue-router";
 import routes from "./routes";
+import VNepaliDatePicker from "v-nepalidatepicker";
+
 
 window.Vue = Vue; //this is important! Do not use require('vue') for livewire-vue
 
@@ -11,6 +12,7 @@ window.Vue = Vue; //this is important! Do not use require('vue') for livewire-vu
 Vue.component("navbar", require("./components/Navbar.vue").default);
 Vue.component("fields-form", require("./components/FieldsForm.vue").default);
 Vue.component("project-form", require("./components/ProjectForm.vue").default);
+Vue.component("project-physical-progress", require("./components/ProjectPhysicalProgress.vue").default);
 Vue.component("DrinkingWaterOffice-form", require("./components/DrinkingWaterOffice.vue").default);
 Vue.component(
     "resource-data-form",
@@ -22,6 +24,7 @@ Vue.component("bar-chart", require("./charts/BarChart.vue").default);
 // Vue.component("economical-situation", require("./pages/economical-situation/Index.vue").default);
 
 Vue.use(VueRouter);
+Vue.use(VNepaliDatePicker);
 
 // Initialize Vue
 const app = new Vue({

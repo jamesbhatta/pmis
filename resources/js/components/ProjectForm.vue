@@ -44,8 +44,11 @@
           </div>
           <div class="form-group col-lg-6">
             <label>खर्च किसिम छान्नुहोस्</label>
-            <input type="text" v-model="form.budget_source" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+            <select v-model="form.expenditure_type" class="custom-select">
+              <option value="पुँजीगत खर्च">पुँजीगत खर्च</option>
+              <option value="चालु खर्च">चालु खर्च</option>
+            </select>
+            <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
           </div>
 
           <div class="form-group col-lg-12">
@@ -70,16 +73,13 @@ export default {
   },
   props: {
     organizations: {
-      type: Object,
       default: () => ({}),
     },
     projectTypes: {
-      type: Object,
       default: () => ({}),
     },
 
     project: {
-      type: Object,
       default: () => ({}),
     },
   },
@@ -88,25 +88,26 @@ export default {
     return {
       updateMode: false,
       form: new Form({
-        title: null,
+        title: '',
         organization_id: "",
         project_type_id: "",
-        budget: null,
-        budget_source: null,
-        description: null,
+        budget: '',
+        budget_source: '',
+        expenditure_type: '',
+        description: '<div></div>',
       }),
     };
   },
 
   mounted() {
-    if (this.project) {
+    if (this.project.id) {
       this.updateMode = true;
       this.form.title = this.project.title;
       this.form.organization_id = this.project.organization_id;
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-      this.form.description = this.project.description;
+      this.form.description = this.project.description ?? '<div></div>';
     }
   },
 
