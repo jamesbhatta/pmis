@@ -5,7 +5,6 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DrinkingWaterOfficeController;
 use App\Http\Controllers\PhysicalInfrastructureController;
 use App\Http\Controllers\PhysicalProgressController;
-use App\PhysicalProgress;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 

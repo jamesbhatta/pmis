@@ -50,14 +50,67 @@
             </select>
             <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
           </div>
+          <input type="number" v-model="form.budget" class="form-control" id="inlineFormInputGroup" />
+          <div class="form-group col-lg-6">
+            <label>बजेट स्रोत</label>
+            <input type="text" class="form-control" placeholder="" />
+            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label>लागत अनुमान</label>
+            <input type="text" class="form-control" />
+            <small class="text-danger"></small>
+          </div>
+
+          <div class="form-group col-lg-6">
+            <label>हाल सम्म को वित्तिय प्रगति</label>
+            <input type="text" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
+
+          <div class="form-group col-lg-6">
+            <label>हाल सम्म को भौतिक प्रगति</label>
+            <input type="text" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label>खर्च किसिम छान्नुहोस्</label>
+            <input type="text" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
+          <div class="col-lg-6">
+            <label class="" for="inlineFormInputGroup">गत आर्थिक वर्षको खर्च हजारमा</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">रु.</div>
+              </div>
+              <input type="number" class="form-control" id="inlineFormInputGroup" />
+            </div>
+            <small class="text-danger">{{ form.errors.first("budget") }}</small>
+          </div>
+          <div class="col-lg-6">
+            <label class="" for="inlineFormInputGroup">गत आर्थिक वर्षको भौतिक प्रगति(%) </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">%</div>
+              </div>
+              <input type="number" class="form-control" id="inlineFormInputGroup" />
+            </div>
+            <small class="text-danger">{{ form.errors.first("budget") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label>लाभाम्वित हुने जनसंख्या</label>
+            <input type="text" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
 
           <div class="form-group col-lg-12">
             <label>विवरण</label>
-            <vue-editor v-model="form.description"></vue-editor>
+            <textarea v-model="form.description" cols="30" rows="10" class="form-control"></textarea>
             <small class="text-danger">{{ form.errors.first("description") }}</small>
           </div>
+          <button class="btn btn-primary z-depth-0">Submit</button>
         </div>
-        <button class="btn btn-primary z-depth-0">Submit</button>
       </form>
     </div>
   </div>
@@ -88,13 +141,13 @@ export default {
     return {
       updateMode: false,
       form: new Form({
-        title: '',
+        title: "",
         organization_id: "",
         project_type_id: "",
-        budget: '',
-        budget_source: '',
-        expenditure_type: '',
-        description: '<div></div>',
+        budget: "",
+        budget_source: "",
+        expenditure_type: "",
+        description: "<div></div>",
       }),
     };
   },
@@ -107,7 +160,7 @@ export default {
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-      this.form.description = this.project.description ?? '<div></div>';
+      this.form.description = this.project.description ?? "<div></div>";
     }
   },
 
