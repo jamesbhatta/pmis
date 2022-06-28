@@ -2664,6 +2664,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2686,31 +2696,32 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      mode: "edit-mode",
+      mode: "view-mode",
       updateMode: false,
       date: "",
       form: new form_backend_validation__WEBPACK_IMPORTED_MODULE_0__["default"]({
         estimate_completed: false,
-        agreement_date_ad: "",
-        project_start_date_ad: "",
-        project_completion_date_ad: "",
-        tender_date_ad: "",
+        agreement_date: "",
+        project_start_date: "",
+        project_completion_date: "",
+        tender_date: "",
         wip: false,
         followed_up: false
+      }, {
+        resetOnSuccess: false
       })
     };
   },
   mounted: function mounted() {
     if (this.project.id) {
-      var _this$project$descrip;
-
       this.updateMode = true;
-      this.form.title = this.project.title;
-      this.form.organization_id = this.project.organization_id;
-      this.form.project_type_id = this.project.project_type_id;
-      this.form.budget = this.project.budget;
-      this.form.budget_source = this.project.budget_source;
-      this.form.description = (_this$project$descrip = this.project.description) !== null && _this$project$descrip !== void 0 ? _this$project$descrip : "<div></div>";
+      this.form.estimate_completed = this.physicalProgress.estimate_completed;
+      this.form.agreement_date = this.physicalProgress.agreement_date;
+      this.form.project_start_date = this.physicalProgress.project_start_date;
+      this.form.project_completion_date = this.physicalProgress.project_completion_date;
+      this.form.tender_date = this.physicalProgress.tender_date;
+      this.form.wip = this.physicalProgress.wip;
+      this.form.followed_up = this.physicalProgress.followed_up;
     }
   },
   methods: {
@@ -2722,18 +2733,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     submit: function submit() {
-      this.updateMode ? this.update() : this.create();
-    },
-    create: function create() {
-      this.form.post("/project").then(function (response) {
-        alert("Data Saved");
-        window.location.href = "/project";
-      });
-    },
-    update: function update() {
-      this.form.put("/project/".concat(this.project.id)).then(function (response) {
-        alert("Data Updated");
-        window.location.href = "/project";
+      this.form.post("/project/".concat(this.project.id, "/physical-progress")).then(function (response) {
+        alert(response.message);
       });
     }
   }
@@ -39152,15 +39153,39 @@ var render = function () {
           _c("div", [
             _vm._v(
               "सम्झौता भएको छ ?: " +
-                _vm._s(
-                  _vm.physicalProgress.agreement_date_ad
-                    ? "Yes".physicalProgress.agreement_date_ad
-                    : "No"
-                )
+                _vm._s(_vm.physicalProgress.agreement_date ? "Yes" : "No")
             ),
           ]),
           _vm._v(" "),
-          _c("div", [_vm._v("शिर्षकगत किसिम : यातायात पूर्वाधार")]),
+          _c("div", [
+            _vm._v(
+              "सम्झौता भएको मिति : " +
+                _vm._s(_vm.physicalProgress.agreement_date) +
+                " "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "Project Start Date : " +
+                _vm._s(_vm.physicalProgress.project_start_date) +
+                " "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "Project Completion Date : " +
+                _vm._s(_vm.physicalProgress.project_completion_date) +
+                " "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "Tender Date : " + _vm._s(_vm.physicalProgress.tender_date) + " "
+            ),
+          ]),
         ]
       ),
       _vm._v(" "),
@@ -39225,6 +39250,10 @@ var render = function () {
               }),
               _vm._v(" Estimate भएको छ ? "),
             ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("estimate_completed"))),
+            ]),
           ]),
           _vm._v(" "),
           _c(
@@ -39239,14 +39268,44 @@ var render = function () {
                 attrs: {
                   calenderType: "Nepali",
                   classValue: "form-control",
-                  placeholder: "YYYY-MM-DD",
+                  placeholder: _vm.form.agreement_date,
                 },
                 model: {
-                  value: _vm.form.agreement_date_ad,
+                  value: _vm.form.agreement_date,
                   callback: function ($$v) {
-                    _vm.$set(_vm.form, "agreement_date_ad", $$v)
+                    _vm.$set(_vm.form, "agreement_date", $$v)
                   },
-                  expression: "form.agreement_date_ad",
+                  expression: "form.agreement_date",
+                },
+              }),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("agreement_date"))),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Project Start Date "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.project_start_date,
+                },
+                model: {
+                  value: _vm.form.project_start_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "project_start_date", $$v)
+                  },
+                  expression: "form.project_start_date",
                 },
               }),
             ],
@@ -39258,21 +39317,21 @@ var render = function () {
             { staticClass: "form-group" },
             [
               _c("label", { attrs: { for: "" } }, [
-                _vm._v("सम्झौता भएको मिति "),
+                _vm._v("Project Completion Date "),
               ]),
               _vm._v(" "),
               _c("v-nepalidatepicker", {
                 attrs: {
                   calenderType: "Nepali",
                   classValue: "form-control",
-                  placeholder: "YYYY-MM-DD",
+                  placeholder: _vm.form.project_completion_date,
                 },
                 model: {
-                  value: _vm.form.agreement_date_ad,
+                  value: _vm.form.project_completion_date,
                   callback: function ($$v) {
-                    _vm.$set(_vm.form, "agreement_date_ad", $$v)
+                    _vm.$set(_vm.form, "project_completion_date", $$v)
                   },
-                  expression: "form.agreement_date_ad",
+                  expression: "form.project_completion_date",
                 },
               }),
             ],
@@ -39283,22 +39342,20 @@ var render = function () {
             "div",
             { staticClass: "form-group" },
             [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("सम्झौता भएको मिति "),
-              ]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date ")]),
               _vm._v(" "),
               _c("v-nepalidatepicker", {
                 attrs: {
                   calenderType: "Nepali",
                   classValue: "form-control",
-                  placeholder: "YYYY-MM-DD",
+                  placeholder: _vm.form.tender_date,
                 },
                 model: {
-                  value: _vm.form.agreement_date_ad,
+                  value: _vm.form.tender_date,
                   callback: function ($$v) {
-                    _vm.$set(_vm.form, "agreement_date_ad", $$v)
+                    _vm.$set(_vm.form, "tender_date", $$v)
                   },
-                  expression: "form.agreement_date_ad",
+                  expression: "form.tender_date",
                 },
               }),
             ],
@@ -39308,7 +39365,16 @@ var render = function () {
           _c("div", { staticClass: "form-group" }, [
             _c(
               "button",
-              { attrs: { type: "submit" }, on: { click: _vm.submit } },
+              {
+                staticClass: "btn btn-primary z-depth-0 ml-0",
+                attrs: { type: "submit" },
+                on: {
+                  click: function ($event) {
+                    $event.preventDefault()
+                    return _vm.submit.apply(null, arguments)
+                  },
+                },
+              },
               [_vm._v("Update")]
             ),
           ]),

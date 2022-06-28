@@ -10,27 +10,37 @@
       </div>
       <div v-show="mode == 'view-mode'">
         <div>Estimated : {{ physicalProgress.estimate_completed ? "Yes" : "No" }}</div>
-        <div>सम्झौता भएको छ ?: {{ physicalProgress.agreement_date_ad ? "Yes".physicalProgress.agreement_date_ad : "No" }}</div>
-        <div>शिर्षकगत किसिम : यातायात पूर्वाधार</div>
+        <div>सम्झौता भएको छ ?: {{ physicalProgress.agreement_date ? "Yes" : "No" }}</div>
+        <div>सम्झौता भएको मिति : {{ physicalProgress.agreement_date }} </div>
+        <div>Project Start Date : {{ physicalProgress.project_start_date }} </div>
+        <div>Project Completion Date : {{ physicalProgress.project_completion_date }} </div>
+        <div>Tender Date : {{ physicalProgress.tender_date }} </div>
       </div>
+
       <form v-show="mode == 'edit-mode'">
         <div class="form-group">
           <label> <input type="checkbox" v-model="form.estimate_completed" value="1" /> Estimate भएको छ ? </label>
+          <small class="text-danger">{{ form.errors.first("estimate_completed") }}</small>
         </div>
         <div class="form-group">
           <label for="">सम्झौता भएको मिति </label>
-          <v-nepalidatepicker v-model="form.agreement_date_ad" calenderType="Nepali" classValue="form-control" placeholder="YYYY-MM-DD"></v-nepalidatepicker>
+          <v-nepalidatepicker v-model="form.agreement_date" calenderType="Nepali" classValue="form-control" :placeholder="form.agreement_date"></v-nepalidatepicker>
+          <small class="text-danger">{{ form.errors.first("agreement_date") }}</small>
         </div>
         <div class="form-group">
-          <label for="">सम्झौता भएको मिति </label>
-          <v-nepalidatepicker v-model="form.agreement_date_ad" calenderType="Nepali" classValue="form-control" placeholder="YYYY-MM-DD"></v-nepalidatepicker>
+          <label for="">Project Start Date </label>
+          <v-nepalidatepicker v-model="form.project_start_date" calenderType="Nepali" classValue="form-control" :placeholder="form.project_start_date"></v-nepalidatepicker>
         </div>
         <div class="form-group">
-          <label for="">सम्झौता भएको मिति </label>
-          <v-nepalidatepicker v-model="form.agreement_date_ad" calenderType="Nepali" classValue="form-control" placeholder="YYYY-MM-DD"></v-nepalidatepicker>
+          <label for="">Project Completion Date </label>
+          <v-nepalidatepicker v-model="form.project_completion_date" calenderType="Nepali" classValue="form-control" :placeholder="form.project_completion_date"></v-nepalidatepicker>
         </div>
         <div class="form-group">
-          <button type="submit" v-on:click="submit">Update</button>
+          <label for="">Tender Date </label>
+          <v-nepalidatepicker v-model="form.tender_date" calenderType="Nepali" classValue="form-control" :placeholder="form.tender_date"></v-nepalidatepicker>
+        </div>
+        <div class="form-group">
+          <button type="submit" v-on:click.prevent="submit" class="btn btn-primary z-depth-0 ml-0">Update</button>
         </div>
       </form>
     </div>
@@ -58,30 +68,36 @@ export default {
 
   data() {
     return {
-      mode: "edit-mode",
+      mode: "view-mode",
       updateMode: false,
       date: "",
-      form: new Form({
-        estimate_completed: false,
-        agreement_date_ad: "",
-        project_start_date_ad: "",
-        project_completion_date_ad: "",
-        tender_date_ad: "",
-        wip: false,
-        followed_up: false,
-      }),
+      form: new Form(
+        {
+          estimate_completed: false,
+          agreement_date: "",
+          project_start_date: "",
+          project_completion_date: "",
+          tender_date: "",
+          wip: false,
+          followed_up: false,
+        },
+        {
+          resetOnSuccess: false,
+        }
+      ),
     };
   },
 
   mounted() {
     if (this.project.id) {
       this.updateMode = true;
-      this.form.title = this.project.title;
-      this.form.organization_id = this.project.organization_id;
-      this.form.project_type_id = this.project.project_type_id;
-      this.form.budget = this.project.budget;
-      this.form.budget_source = this.project.budget_source;
-      this.form.description = this.project.description ?? "<div></div>";
+      this.form.estimate_completed = this.physicalProgress.estimate_completed;
+      this.form.agreement_date = this.physicalProgress.agreement_date;
+      this.form.project_start_date = this.physicalProgress.project_start_date;
+      this.form.project_completion_date = this.physicalProgress.project_completion_date;
+      this.form.tender_date = this.physicalProgress.tender_date;
+      this.form.wip = this.physicalProgress.wip;
+      this.form.followed_up = this.physicalProgress.followed_up;
     }
   },
 
@@ -94,20 +110,8 @@ export default {
       }
     },
     submit() {
-      this.updateMode ? this.update() : this.create();
-    },
-
-    create() {
-      this.form.post("/project").then((response) => {
-        alert("Data Saved");
-        window.location.href = "/project";
-      });
-    },
-
-    update() {
-      this.form.put(`/project/${this.project.id}`).then((response) => {
-        alert("Data Updated");
-        window.location.href = "/project";
+      this.form.post(`/project/${this.project.id}/physical-progress`).then((response) => {
+        alert(response.message);
       });
     },
   },
