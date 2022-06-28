@@ -58,14 +58,7 @@
             <small class="text-danger">{{ form.errors.first("project_finishing_date") }}</small>
           </div>
 
-          <!-- <div class="form-group col-lg-6 form-check">
-            <label>अनुमान:</label><br>
-            <input type="checkbox" id="accept" class="form-check-input ml-1">
-            <label class="form-check-label ml-4" for="accept">भएको</label>
-            <input type="checkbox" id="accept" class="form-check-input ml-1" />
-            <label class="form-check-label ml-4" for="accept">नभएको</label>
-            <small class="text-danger"></small>
-          </div> -->
+
 
           <div class="form-group col-lg-6">
             <label>अनुमान:</label>
@@ -83,17 +76,6 @@
             </select>
             <small class="text-danger">{{ form.errors.first("work_running") }}</small>
           </div>
-
-          <!-- <div class="form-group col-lg-6 form-check">
-            <label>अनुगमन:</label><br>
-            <input type="checkbox" id="accept" class="form-check-input ml-1 accept">
-            <label class="form-check-label ml-4" for="accept">भएको</label>
-            <input type="checkbox" id="accept" class="form-check-input ml-1 accept " />
-            <label class="form-check-label ml-4" for="accept">नभएको</label>
-            <small class="text-danger"></small>
-          </div> -->
-
-
           <div class="form-group col-lg-6">
             <label>अनुगमन:</label>
             <select v-model="form.monitoring" class="custom-select">
