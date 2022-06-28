@@ -5,6 +5,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DrinkingWaterOfficeController;
 use App\Http\Controllers\PhysicalInfrastructureController;
 use App\Http\Controllers\PhysicalProgressController;
+use App\Http\Controllers\ProjectPhotoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +41,9 @@ Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name(
 
 Route::get('project/{project}/physical-progress', [PhysicalProgressController::class, 'show'])->name('project.physical-progress.show');
 Route::post('project/{project}/physical-progress', [PhysicalProgressController::class, 'update'])->name('project.physical-progress.update');
+
+Route::get('project/{project}/photos', [ProjectPhotoController::class, 'show'])->name('project.photos.show');
+Route::post('project/{project}/photos', [ProjectPhotoController::class, 'update'])->name('project.photos.update');
 
 // drinking water office routes
 Route::get('DrinkingWaterOffice', [DrinkingWaterOfficeController::class, 'index'])->name('DrinkingWaterOffice.index');

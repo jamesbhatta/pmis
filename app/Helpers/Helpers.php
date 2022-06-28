@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\FiscalYearService;
+use Illuminate\Support\Facades\Storage;
 
 if (!function_exists('setActive')) {
     /**
@@ -109,6 +110,11 @@ if (!function_exists('ad_to_bs')) {
     {
         return \App\Helpers\BSDateHelper::AdToBsEn('-', $enDate);
     }
+}
+
+function get_file_url($path)
+{
+    return Storage::url($path);
 }
 
 function field_types()
