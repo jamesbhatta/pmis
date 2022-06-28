@@ -12,7 +12,7 @@
             <small class="text-danger">{{ form.errors.first("title") }}</small>
           </div>
           <div class="form-group col-lg-6">
-            <label> संगठन</label>
+            <label>संगठन</label>
             <select class="custom-select" v-model="form.organization_id">
               <option value="">कृपया संगठन चयन गर्नुहोस्</option>
               <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{
@@ -31,31 +31,76 @@
           </div>
 
           <div class="form-group col-lg-6">
-            <label>परियोजना सुरु हुने मिति</label>
-            <!-- <input type="date" v-model="form.title" class="form-control" name="title" /> -->
-            <input type="text" name="project-starting-date" id="" class="form-control" value=""
+            <label>उपभोक्ता समिति गठन मिति</label>
+            <input type="text" v-model="form.consumer_committee" name="consumer-committe-formation-date" id=""
+              class="form-control" value="" placeholder="Nepali YYYY-MM-DD">
+            <small class="text-danger">{{ form.errors.first("consumer_committee") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label>ठेक्का भएको मिति</label>
+            <input type="text" v-model="form.contract_date" name="contract-date" id="" class="form-control" value=""
               placeholder="Nepali YYYY-MM-DD">
-            <small class="text-danger">{{ form.errors.first("title") }}</small>
+            <small class="text-danger">{{ form.errors.first("contract_date") }}</small>
           </div>
 
-
+          <div class="form-group col-lg-6">
+            <label>परियोजना सुरु हुने मिति</label>
+            <input type="text" v-model="form.project_started_date" name="project-starting-date" id=""
+              class="form-control" value="" placeholder="Nepali YYYY-MM-DD">
+            <small class="text-danger">{{ form.errors.first("project_started_date") }}</small>
+          </div>
 
 
           <div class="form-group col-lg-6">
             <label>परियोजना सम्पन्न हुने मिति</label>
-            <!-- <input type="date" v-model="form.title" class="form-control" name="title" /> -->
-            <input type="text" name="project-starting-date" id="" class="form-control" value=""
-              placeholder="Nepali YYYY-MM-DD">
-            <small class="text-danger">{{ form.errors.first("title") }}</small>
+            <input type="text" v-model="form.project_finishing_date" name="project-finishing-date" id=""
+              class="form-control" value="" placeholder="Nepali YYYY-MM-DD">
+            <small class="text-danger">{{ form.errors.first("project_finishing_date") }}</small>
           </div>
 
-          <div class="form-group col-lg-6 form-check">
-            <label>अनुमान:</label>
+          <!-- <div class="form-group col-lg-6 form-check">
+            <label>अनुमान:</label><br>
             <input type="checkbox" id="accept" class="form-check-input ml-1">
             <label class="form-check-label ml-4" for="accept">भएको</label>
-            <input type="checkbox" id="accept" class="form-check-input ml-1"/>
+            <input type="checkbox" id="accept" class="form-check-input ml-1" />
             <label class="form-check-label ml-4" for="accept">नभएको</label>
             <small class="text-danger"></small>
+          </div> -->
+
+          <div class="form-group col-lg-6">
+            <label>अनुमान:</label>
+            <select v-model="form.work_running" class="custom-select">
+              <option value="भएको">भएको</option>
+              <option value="नभएको">नभएको</option>
+            </select>
+            <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label>काम हुदै:</label>
+            <select v-model="form.work_running" class="custom-select">
+              <option value="छ">छ</option>
+              <option value="छैन">छैन</option>
+            </select>
+            <small class="text-danger">{{ form.errors.first("work_running") }}</small>
+          </div>
+
+          <!-- <div class="form-group col-lg-6 form-check">
+            <label>अनुगमन:</label><br>
+            <input type="checkbox" id="accept" class="form-check-input ml-1 accept">
+            <label class="form-check-label ml-4" for="accept">भएको</label>
+            <input type="checkbox" id="accept" class="form-check-input ml-1 accept " />
+            <label class="form-check-label ml-4" for="accept">नभएको</label>
+            <small class="text-danger"></small>
+          </div> -->
+
+
+          <div class="form-group col-lg-6">
+            <label>अनुगमन:</label>
+            <select v-model="form.monitoring" class="custom-select">
+              <option value="भएको">भएको</option>
+              <option value="नभएको">नभएको</option>
+            </select>
+            <small class="text-danger">{{ form.errors.first("monitoring") }}</small>
           </div>
 
           <div class="col-lg-6">
@@ -82,42 +127,41 @@
             </select>
             <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
           </div>
-          <div class="form-group col-lg-6">
-            <label>बजेट स्रोत</label>
-            <input type="text" class="form-control" placeholder="" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+
+          <div class="col-lg-6">
+            <label class="" for="inlineFormInputGroup">लागत अनुमान</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">रु.</div>
+              </div>
+              <input type="number" class="form-control" v-model="cost_estimate" id="inlineFormInputGroup" />
+            </div>
+            <small class="text-danger">{{ form.errors.first("cost_estimate") }}</small>
           </div>
-          <div class="form-group col-lg-6">
-            <label>लागत अनुमान</label>
-            <input type="text" class="form-control" />
-            <small class="text-danger"></small>
-          </div>
+
 
           <div class="form-group col-lg-6">
             <label>हाल सम्म को वित्तिय प्रगति</label>
-            <input type="text" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+            <input type="file" v-on="form.financial_progress" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("financial_progress") }}</small>
           </div>
 
           <div class="form-group col-lg-6">
             <label>हाल सम्म को भौतिक प्रगति</label>
-            <input type="text" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+            <input type="file" v-on="physical_completion_progress" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("physical_completion_progress") }}</small>
           </div>
-          <div class="form-group col-lg-6">
-            <label>खर्च किसिम छान्नुहोस्</label>
-            <input type="text" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
-          </div>
+
           <div class="col-lg-6">
             <label class="" for="inlineFormInputGroup">गत आर्थिक वर्षको खर्च हजारमा</label>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">रु.</div>
               </div>
-              <input type="number" class="form-control" id="inlineFormInputGroup" />
+              <input type="number" v-model="form.last_year_expenditure" class="form-control"
+                id="inlineFormInputGroup" />
             </div>
-            <small class="text-danger">{{ form.errors.first("budget") }}</small>
+            <small class="text-danger">{{ form.errors.first("last_year_expenditure") }}</small>
           </div>
           <div class="col-lg-6">
             <label class="" for="inlineFormInputGroup">गत आर्थिक वर्षको भौतिक प्रगति(%) </label>
@@ -125,15 +169,18 @@
               <div class="input-group-prepend">
                 <div class="input-group-text">%</div>
               </div>
-              <input type="number" class="form-control" id="inlineFormInputGroup" />
+              <input type="number" v-model="form.last_year_physcal_progress" class="form-control"
+                id="inlineFormInputGroup" />
             </div>
-            <small class="text-danger">{{ form.errors.first("budget") }}</small>
+            <small class="text-danger">{{ form.errors.first("last_year_physcal_progress") }}</small>
           </div>
+
           <div class="form-group col-lg-6">
             <label>लाभाम्वित हुने जनसंख्या</label>
-            <input type="text" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+            <input type="text" v-model="form.benefited_population" class="form-control" />
+            <small class="text-danger">{{ form.errors.first("benefited_population") }}</small>
           </div>
+
 
           <div class="form-group col-lg-12">
             <label>विवरण</label>
@@ -176,9 +223,21 @@ export default {
         organization_id: "",
         project_type_id: "",
         budget: "",
+        consumer_committee: "",
+        contract_date: "",
+        project_started_date: "",
         budget_source: "",
+        project_finishing_date: "",
         expenditure_type: "",
-        description: "<div></div>",
+        follow_up: "",
+        monitoring: "",
+        physical_completion_progress: "",
+        cost_estimate: "",
+        last_year_expenditure: "",
+        last_year_expenditure: "",
+        physcal_progress: "",
+        benefited_population: "",
+        description: "",
       }),
     };
   },
@@ -191,7 +250,7 @@ export default {
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-      this.form.description = this.project.description ?? "<div></div>";
+      this.form.description = this.project.description ?? "<div></div>s";
     }
   },
 
@@ -217,4 +276,8 @@ export default {
     },
   },
 };
+
+$('.accept').on('change', function () {
+  $('.accept').not(this).prop('checked', false);
+});
 </script>
