@@ -19,7 +19,7 @@
   opacity: 0.85;
 }
 
-.box {
+name .box {
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #d8dae0;
@@ -38,4 +38,17 @@
 
 .box__body {
   padding: 15px 25px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.project-register-no {
+  padding: 0.5rem 1rem;
+  border: 1px solid #1c4267;
+  background: #f2f7fb;
+  color: #1c4267;
+  border-radius: 0.5rem;
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DrinkingWaterOfficeController;
+use App\Http\Controllers\EconomicProgressController;
 use App\Http\Controllers\PhysicalInfrastructureController;
 use App\Http\Controllers\PhysicalProgressController;
 use App\Http\Controllers\ProjectAcheivementController;
@@ -42,6 +43,9 @@ Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name(
 
 Route::get('project/{project}/physical-progress', [PhysicalProgressController::class, 'show'])->name('project.physical-progress.show');
 Route::post('project/{project}/physical-progress', [PhysicalProgressController::class, 'update'])->name('project.physical-progress.update');
+
+Route::get('project/{project}/economic-progress', [EconomicProgressController::class, 'show'])->name('project.economic-progress.show');
+Route::post('project/{project}/economic-progress', [EconomicProgressController::class, 'update'])->name('project.economic-progress.update');
 
 Route::get('project/{project}/acheivements', [ProjectAcheivementController::class, 'show'])->name('project.acheivements.show');
 Route::post('project/{project}/acheivements', [ProjectAcheivementController::class, 'update'])->name('project.acheivements.update');
