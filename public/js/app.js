@@ -2508,6 +2508,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -38677,13 +38708,53 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
+            _c("div", { staticClass: "form-group col-lg-6" }, [
+              _c("label", [_vm._v("परियोजना सुरु हुने मिति")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  name: "project-starting-date",
+                  id: "",
+                  value: "",
+                  placeholder: "Nepali YYYY-MM-DD",
+                },
+              }),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("title"))),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group col-lg-6" }, [
+              _c("label", [_vm._v("परियोजना सम्पन्न हुने मिति")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  name: "project-starting-date",
+                  id: "",
+                  value: "",
+                  placeholder: "Nepali YYYY-MM-DD",
+                },
+              }),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("title"))),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
             _c("div", { staticClass: "col-lg-6" }, [
               _c("label", { attrs: { for: "inlineFormInputGroup" } }, [
                 _vm._v("बजेट"),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "input-group mb-2" }, [
-                _vm._m(1),
+                _vm._m(2),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -38794,28 +38865,6 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.budget,
-                  expression: "form.budget",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: { type: "number", id: "inlineFormInputGroup" },
-              domProps: { value: _vm.form.budget },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "budget", $event.target.value)
-                },
-              },
-            }),
-            _vm._v(" "),
             _c("div", { staticClass: "form-group col-lg-6" }, [
               _c("label", [_vm._v("बजेट स्रोत")]),
               _vm._v(" "),
@@ -38829,7 +38878,7 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(3),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-lg-6" }, [
               _c("label", [_vm._v("हाल सम्म को वित्तिय प्रगति")]),
@@ -38875,7 +38924,7 @@ var render = function () {
                 _vm._v("गत आर्थिक वर्षको खर्च हजारमा"),
               ]),
               _vm._v(" "),
-              _vm._m(3),
+              _vm._m(4),
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
                 _vm._v(_vm._s(_vm.form.errors.first("budget"))),
@@ -38887,7 +38936,7 @@ var render = function () {
                 _vm._v("गत आर्थिक वर्षको भौतिक प्रगति(%) "),
               ]),
               _vm._v(" "),
-              _vm._m(4),
+              _vm._m(5),
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
                 _vm._v(_vm._s(_vm.form.errors.first("budget"))),
@@ -38953,6 +39002,38 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "box__header" }, [
       _c("div", { staticClass: "box__title" }, [_vm._v("नयाँ परियोजना")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group col-lg-6 form-check" }, [
+      _c("label", [_vm._v("अनुमान:")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-check-input ml-1",
+        attrs: { type: "checkbox", id: "accept" },
+      }),
+      _vm._v(" "),
+      _c(
+        "label",
+        { staticClass: "form-check-label ml-4", attrs: { for: "accept" } },
+        [_vm._v("भएको")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-check-input ml-1",
+        attrs: { type: "checkbox", id: "accept" },
+      }),
+      _vm._v(" "),
+      _c(
+        "label",
+        { staticClass: "form-check-label ml-4", attrs: { for: "accept" } },
+        [_vm._v("नभएको")]
+      ),
+      _vm._v(" "),
+      _c("small", { staticClass: "text-danger" }),
     ])
   },
   function () {

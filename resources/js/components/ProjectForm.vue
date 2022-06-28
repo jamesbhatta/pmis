@@ -15,7 +15,9 @@
             <label> संगठन</label>
             <select class="custom-select" v-model="form.organization_id">
               <option value="">कृपया संगठन चयन गर्नुहोस्</option>
-              <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{ organization.name }}</option>
+              <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{
+                  organization.name
+              }}</option>
             </select>
             <small class="text-danger">{{ form.errors.first("organization_id") }}</small>
           </div>
@@ -27,6 +29,35 @@
             </select>
             <small class="text-danger">{{ form.errors.first("project_type_id") }}</small>
           </div>
+
+          <div class="form-group col-lg-6">
+            <label>परियोजना सुरु हुने मिति</label>
+            <!-- <input type="date" v-model="form.title" class="form-control" name="title" /> -->
+            <input type="text" name="project-starting-date" id="" class="form-control" value=""
+              placeholder="Nepali YYYY-MM-DD">
+            <small class="text-danger">{{ form.errors.first("title") }}</small>
+          </div>
+
+
+
+
+          <div class="form-group col-lg-6">
+            <label>परियोजना सम्पन्न हुने मिति</label>
+            <!-- <input type="date" v-model="form.title" class="form-control" name="title" /> -->
+            <input type="text" name="project-starting-date" id="" class="form-control" value=""
+              placeholder="Nepali YYYY-MM-DD">
+            <small class="text-danger">{{ form.errors.first("title") }}</small>
+          </div>
+
+          <div class="form-group col-lg-6 form-check">
+            <label>अनुमान:</label>
+            <input type="checkbox" id="accept" class="form-check-input ml-1">
+            <label class="form-check-label ml-4" for="accept">भएको</label>
+            <input type="checkbox" id="accept" class="form-check-input ml-1"/>
+            <label class="form-check-label ml-4" for="accept">नभएको</label>
+            <small class="text-danger"></small>
+          </div>
+
           <div class="col-lg-6">
             <label class="" for="inlineFormInputGroup">बजेट</label>
             <div class="input-group mb-2">
@@ -37,6 +68,7 @@
             </div>
             <small class="text-danger">{{ form.errors.first("budget") }}</small>
           </div>
+
           <div class="form-group col-lg-6">
             <label>बजेट स्रोत</label>
             <input type="text" v-model="form.budget_source" class="form-control" />
@@ -50,7 +82,6 @@
             </select>
             <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
           </div>
-          <input type="number" v-model="form.budget" class="form-control" id="inlineFormInputGroup" />
           <div class="form-group col-lg-6">
             <label>बजेट स्रोत</label>
             <input type="text" class="form-control" placeholder="" />
@@ -165,6 +196,8 @@ export default {
   },
 
   methods: {
+
+
     submit() {
       this.updateMode ? this.update() : this.create();
     },
