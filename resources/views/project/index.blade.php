@@ -92,7 +92,7 @@
 <div class="d-flex align-items-center mb-3">
     <h1 class="h3-responsive d-inline-block">परियोजनाहरू</h1>
     <div class="ml-auto">
-        <a href="{{ route('project.create') }}" class="btn btn-success btn-sm z-depth-0">Add New</a>
+        <a href="{{ route('project.create') }}" class="btn btn-success z-depth-0">Add New</a>
     </div>
 </div>
 <table class="bg-white table projects-table">

@@ -15,13 +15,12 @@
 .breadcrumb .breadcrumb-item.active {
     opacity: 0.85;
 }
-name
 // Chart Card
 .box {
     background-color: #fff;
     border-radius: 5px;
-    border: 1px solid #d8dae0;
-    // box-shadow: 0 3px 6px 0 rgb(0 0 0 / 12%);
+    // border: 1px solid #d8dae0;
+    box-shadow: 0 0px 1px 0 rgb(0 0 0 / 12%);
 }
 .box__header {
     padding: 10px 25px;
