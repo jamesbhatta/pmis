@@ -92,13 +92,14 @@
 <div class="d-flex align-items-center mb-3">
     <h1 class="h3-responsive d-inline-block">परियोजनाहरू</h1>
     <div class="ml-auto">
-        <a href="{{ route('project.create') }}" class="btn btn-primary z-depth-0">Add New</a>
+        <a href="{{ route('project.create') }}" class="btn btn-success z-depth-0">Add New</a>
     </div>
 </div>
-<table class="bg-white table">
+<table class="bg-white table projects-table">
     <thead>
         <tr>
             <th>क्र.स.</th>
+            <th>दर्ता नं.</th>
             <th>शीर्षक</th>
             <th>संगठन</th>
             <th>परियोजना प्रकार</th>
@@ -111,19 +112,22 @@
         @forelse ($projects as $project)
         <tr>
             <td>{{ $loop->iteration }}</td>
+            <td>
+                <span class="project-register-no">{{ $project->id }}</span>
+            </td>
             <td class="font-roboto">{{ $project->title }}</td>
             <td class="font-roboto">{{ $project->organization->name }}</td>
             <td class="font-roboto">{{ $project->project_type}}</td>
             <td class="font-roboto">रु. {{ $project->budget}}</td>
             <td class="font-roboto">{{ $project->budget_source}}</td>
-            <td>
-                <a href="{{ route('project.show', $project) }}" class="action-btn text-primary"><i class="fa fa-eye mr-2"></i>View</a>
-                <a href="{{ route('project.edit', $project) }}" class="action-btn text-primary"><i class="far fa-edit"></i></a>
-                <form action="{{ route('project.destroy', $project) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
+            <td class="text-right">
+                <a href="{{ route('project.show', $project) }}" class="btn btn-primary btn-md font-noto my-0 py-2 px-3 z-depth-0"><i class="fa fa-eye mr-2"></i>View</a>
+                {{-- <a href="{{ route('project.edit', $project) }}" class="action-btn text-primary"><i class="far fa-edit"></i></a> --}}
+                {{-- <form action="{{ route('project.destroy', $project) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
                     @csrf
                     @method('delete')
                     <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>
-                </form>
+                </form> --}}
             </td>
         </tr>
         @empty

@@ -17,10 +17,14 @@ class CreatePhysicalProgressTable extends Migration
             $table->id();
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->boolean('estimate_completed')->default(false);
+            $table->string('agreement_date')->nullable();
             $table->date('agreement_date_ad')->nullable();
+            $table->string('project_start_date')->nullable();
             $table->date('project_start_date_ad')->nullable();
+            $table->string('project_completion_date')->nullable();
             $table->date('project_completion_date_ad')->nullable();
-            $table->date('tender_date_ad')->nullable();
+            $table->string('tender_date_ad')->nullable();
+            $table->date('tender_date')->nullable();
             $table->boolean('wip')->nullable();
             $table->boolean('followed_up')->nullable();
             $table->timestamps();
