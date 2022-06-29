@@ -39,9 +39,14 @@ class ProjectController extends Controller
             'title' => 'required',
             'organization_id' => ['required', 'exists:organizations,id'],
             'project_type_id' => ['required', 'exists:project_types,id'],
-            'budget' => 'required',
-            'budget_source' => 'required',
-            'description' => 'nullable',
+            'budget' => ['required', 'integer'],
+            'budget_source' => ['required'],
+            'expenditure_type' => ['required'],
+            'last_year_expenditure' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'population_to_be_benefited' => ['nullable'],
+            'description' => ['nullable'],
         ]));
 
         return redirect()->back()->with('success', 'Record has been added');
@@ -65,9 +70,14 @@ class ProjectController extends Controller
             'title' => 'required',
             'organization_id' => ['required', 'exists:organizations,id'],
             'project_type_id' => ['required', 'exists:project_types,id'],
-            'budget' => 'required',
-            'budget_source' => 'required',
-            'description' => 'nullable',
+            'budget' => ['required', 'integer'],
+            'budget_source' => ['required'],
+            'expenditure_type' => ['required'],
+            'last_year_expenditure' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'population_to_be_benefited' => ['nullable'],
+            'description' => ['nullable'],
         ]));
 
         return redirect()->route('project.index')->with('Success', "Update Success");

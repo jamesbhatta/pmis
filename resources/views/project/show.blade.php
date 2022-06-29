@@ -15,16 +15,31 @@
                 </div>
             </div>
             <div class="d-flex">
-                <div>दर्ता नं : १</div>
-                <div class="ml-auto">आर्थिक बर्ष : २०७८/०७९</div>
+                <div><span class="text-muted">दर्ता नं :</span> १</div>
+                <div class="ml-auto"><span class="text-muted">आर्थिक बर्ष :</span> २०७८/०७९</div>
             </div>
-            <div>योजनाको नाम : {{ $project->title }}</div>
-            <div>बिषयगत क्षेत्रको किसिम : पूर्वाधार क्षेत्र</div>
-            <div>शिर्षकगत किसिम : यातायात पूर्वाधार</div>
-            <h5 class="5-responsive my-2">Budget</h5>
-            <div>बजेट: {{ $project->budget }}</div>
-            <div>बजेट स्रोत: {{ $project->budget_source }}</div>
-            <div>खर्च किसिम: {{ $project->expenditure_type }}</div>
+            <div><span class="text-muted">योजनाको नाम :</span> {{ $project->title }}</div>
+            <div><span class="text-muted">बिषयगत क्षेत्रको किसिम :</span> {{ $project->projectType->name }}</div>
+            <div><span class="text-muted">शिर्षकगत किसिम :</span> {{ $project->projectType->group }}</div>
+            
+            @if ($project->last_year_expenditure)
+            <div><span class="text-muted">गत आर्थिक वर्षको खर्च :</span> रु. {{ $project->last_year_expenditure }} /-</div>
+            @endif
+            @if ($project->last_year_physical_progress)
+            <div><span class="text-muted">गत आर्थिक वर्षको भौतिक प्रगति :</span> {{ $project->last_year_physical_progress }}(%)</div>
+            @endif
+            <div><span class="text-muted">लाभाम्वित हुने जनसंख्या :</span> {{ $project->population_to_be_benefited }}</div>
+
+
+            <h5 class="box__title my-2">बजेट</h5>
+            <div><span class="text-muted">बजेट :</span> रु.{{ $project->budget }} /-</div>
+            <div><span class="text-muted">बजेटको स्रोत:</span> {{ $project->budget_source }}</div>
+            <div><span class="text-muted">खर्चको किसिम:</span> {{ $project->expenditure_type }}</div>
+
+            <h5 class="box__title my-2">विवरण</h5>
+            <div>
+                {!! $project->description !!}
+            </div>
         </div>
     </section>
 </div>

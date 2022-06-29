@@ -23,6 +23,7 @@ class ProjectTypeController extends Controller
         ProjectType::create($request->validate([
             'name' => 'required',
             'name_en' => 'nullable',
+            'group' => 'required'
         ]));
 
         return back()->with('success', 'Project Type added');
@@ -37,7 +38,8 @@ class ProjectTypeController extends Controller
     {
         $projectType->update($request->validate([
             'name' => 'required',
-            'name_en' => 'nullable'
+            'name_en' => 'nullable',
+            'group' => 'required'
         ]));
 
         return back()->with('success', 'Project type updated.');

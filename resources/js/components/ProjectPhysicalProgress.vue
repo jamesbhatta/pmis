@@ -9,7 +9,7 @@
         </div>
       </div>
       <div v-show="mode == 'view-mode'">
-        <table class="table table-bordered">
+        <table class="table table-hover">
           <tr>
             <td>अनुमान भएको छ ?</td>
             <td>{{ physicalProgress.estimate_completed ? "छ" : "छैन" }}</td>

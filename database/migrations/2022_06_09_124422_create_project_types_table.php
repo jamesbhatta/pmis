@@ -17,6 +17,7 @@ class CreateProjectTypesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('name_en')->nullable();
+            $table->string('group')->nullable();
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateEconomicProgressTable extends Migration
             $table->integer('amount')->nullable();
             $table->string('remarks', 500)->nullable();
             $table->boolean('is_last_payment')->default(false);
+            $table->float('progress_percent')->nullable();
             $table->timestamps();
         });
     }
