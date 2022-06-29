@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@lang('navigation.settings')</li>
+    </ol>
+</nav>
+@endsection
+
+
 @push('styles')
 <style>
     select {

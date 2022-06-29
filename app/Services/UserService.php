@@ -16,7 +16,7 @@ class UserService
 
     public function all()
     {
-        return User::latest()->paginate(request('per_page') ?? config('constants.user.per_page'));
+        return User::latest()->get();
     }
 
     public function find($id)

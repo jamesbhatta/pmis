@@ -13,10 +13,6 @@ return [
         'per_page' => 50,
     ],
 
-    'user' => [
-        'per_page' => 20,
-    ],
-
     'document' => [
         'dir_name' =>  'documents',
         'types' => [
