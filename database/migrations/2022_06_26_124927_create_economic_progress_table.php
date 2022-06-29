@@ -16,10 +16,11 @@ class CreateEconomicProgressTable extends Migration
         Schema::create('economic_progress', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
-            $table->date('date')->nullable();
+            $table->string('date')->nullable();
             $table->date('date_ad')->nullable();
             $table->integer('amount')->nullable();
             $table->string('remarks', 500)->nullable();
+            $table->boolean('is_last_payment')->default(false);
             $table->timestamps();
         });
     }

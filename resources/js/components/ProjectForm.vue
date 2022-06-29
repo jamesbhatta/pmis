@@ -237,8 +237,6 @@ export default {
   },
 
   methods: {
-
-
     submit() {
       this.updateMode ? this.update() : this.create();
     },

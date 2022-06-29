@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     @include('project.navigation')
-    @include('alerts.all')
-    <section class="box mt-4">
+    <div class="my-3">
+        @include('alerts.all')
+    </div>
+    <section class="box">
         <div class="box__body">
             <div class="d-flex">
                 <h5 class="box__title">परियोजना विवरण</h5>

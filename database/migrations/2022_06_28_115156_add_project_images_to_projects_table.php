@@ -28,7 +28,9 @@ class AddProjectImagesToProjectsTable extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            //
+            $table->dropColumn('photo_before_work');
+            $table->dropColumn('photo_during_evaluation');
+            $table->dropColumn('photo_after_work');
         });
     }
 }

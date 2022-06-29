@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('project/{project}/physical-progress', [PhysicalProgressController::class, 'update'])->name('project.physical-progress.update');
 
     Route::get('project/{project}/economic-progress', [EconomicProgressController::class, 'show'])->name('project.economic-progress.show');
-    Route::post('project/{project}/economic-progress', [EconomicProgressController::class, 'update'])->name('project.economic-progress.update');
+    Route::post('project/{project}/economic-progress', [EconomicProgressController::class, 'store'])->name('project.economic-progress.store');
 
     Route::get('project/{project}/acheivements', [ProjectAcheivementController::class, 'show'])->name('project.acheivements.show');
     Route::post('project/{project}/acheivements', [ProjectAcheivementController::class, 'update'])->name('project.acheivements.update');

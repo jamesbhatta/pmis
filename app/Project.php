@@ -21,8 +21,8 @@ class Project extends Model
         return $this->hasOne(PhysicalProgress::class);
     }
 
-    public function economicProgress()
+    public function economicProgresses()
     {
-        return $this->hasOne(EconomicProgress::class);
+        return $this->hasMany(EconomicProgress::class);
     }
 }

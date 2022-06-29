@@ -13,6 +13,7 @@ Vue.component("navbar", require("./components/Navbar.vue").default);
 Vue.component("fields-form", require("./components/FieldsForm.vue").default);
 Vue.component("project-form", require("./components/ProjectForm.vue").default);
 Vue.component("project-physical-progress", require("./components/ProjectPhysicalProgress.vue").default);
+Vue.component("payment-form", require("./components/PaymentForm.vue").default);
 Vue.component("DrinkingWaterOffice-form", require("./components/DrinkingWaterOffice.vue").default);
 Vue.component(
     "resource-data-form",
