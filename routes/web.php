@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('project/{project}/acheivements', [ProjectAcheivementController::class, 'show'])->name('project.acheivements.show');
     Route::post('project/{project}/acheivements', [ProjectAcheivementController::class, 'update'])->name('project.acheivements.update');
 
+    Route::get('report', ReportController::class)->name('report');
 
     Route::get('project/{project}/photos', [ProjectPhotoController::class, 'show'])->name('project.photos.show');
     Route::post('project/{project}/photos', [ProjectPhotoController::class, 'update'])->name('project.photos.update');

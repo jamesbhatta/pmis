@@ -26,6 +26,11 @@
             <a href="{{route('project.index')}}" aria-expanded="false" class="nav-link"><span class="text-success"><i class="fal fa-file-chart-line"></i></span>@lang('navigation.Projects')</a>
         </li>
         @endhasrole
+        <li class="nav-item {{ setActive('report') }}">
+            <a class="nav-link" href="{{ route('report') }}">
+                <span class="text-success"><i class="fa fa-chart"></i></span>Report
+            </a>
+        </li>  
         @hasrole('super-admin')
         <li class="nav-item {{ setActive('organization.index') }}">
             <a class="nav-link" href="{{ route('organization.index') }}">

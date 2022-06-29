@@ -18,9 +18,21 @@
             <a href="{{ route('project.create') }}" class="btn btn-success z-depth-0">Add New</a>
         </div>
     </div>
-    <div>
-        
+
+    <div class="d-flex mb-4">
+        <div>
+            <select name="" class="custom-select">
+                <option value="">संगठन</option>
+                @foreach (App\Organization::get() as $organization)
+                    <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <form class="ml-auto" action="">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
     </div>
+
     <table class="bg-white table projects-table">
         <thead>
             <tr>
