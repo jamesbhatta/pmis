@@ -49,7 +49,10 @@ class ProjectController extends Controller
             'description' => ['nullable'],
         ]));
 
-        return redirect()->back()->with('success', 'Record has been added');
+        return response()->json([
+            'status' => 200,
+            'message' => 'Project has been created.'
+        ], 200);
     }
 
     public function show(Project $project)
@@ -80,7 +83,10 @@ class ProjectController extends Controller
             'description' => ['nullable'],
         ]));
 
-        return redirect()->route('project.index')->with('Success', "Update Success");
+        return response()->json([
+            'status' => 200,
+            'message' => 'Changes have been saved.'
+        ], 200);
     }
 
     public function destroy(Project $project)

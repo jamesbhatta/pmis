@@ -4,7 +4,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import routes from "./routes";
 import VNepaliDatePicker from "v-nepalidatepicker";
-
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 window.Vue = Vue; //this is important! Do not use require('vue') for livewire-vue
 
@@ -26,6 +27,7 @@ Vue.component("bar-chart", require("./charts/BarChart.vue").default);
 
 Vue.use(VueRouter);
 Vue.use(VNepaliDatePicker);
+Vue.use(VueSweetalert2);
 
 // Initialize Vue
 const app = new Vue({

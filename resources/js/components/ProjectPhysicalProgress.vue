@@ -147,7 +147,7 @@ export default {
     },
     submit() {
       this.form.post(`/project/${this.project.id}/physical-progress`).then((response) => {
-        alert(response.message);
+        this.$swal(response.message).then(() => window.location.reload());
       });
     },
   },

@@ -44,7 +44,7 @@ class EconomicProgressController extends Controller
             DB::commit();
             return response()->json([
                 'status' => 200,
-                'message' => 'Payment saved.'
+                'message' => 'Payment has been saved.'
             ], 200);
         } catch (\Throwable $th) {
             report($th);

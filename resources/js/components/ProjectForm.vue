@@ -164,15 +164,13 @@ export default {
 
     create() {
       this.form.post("/project").then((response) => {
-        alert("Data Saved");
-        window.location.href = "/project";
+        this.$swal(response.message).then(() => (window.location.href = "/project"));
       });
     },
 
     update() {
       this.form.put(`/project/${this.project.id}`).then((response) => {
-        alert("Data Updated");
-        window.location.href = `/project/${this.project.id}`;
+        this.$swal(response.message).then(() => (window.location.href = `/project/${this.project.id}`));
       });
     },
   },

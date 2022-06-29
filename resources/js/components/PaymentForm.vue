@@ -15,11 +15,11 @@
     <div class="form-group">
       <label for="">Remarks</label>
       <textarea v-model="form.remarks" class="form-control"></textarea>
-        <small class="text-danger">{{ form.errors.first("remarks") }}</small>
+      <small class="text-danger">{{ form.errors.first("remarks") }}</small>
     </div>
     <div class="form-group">
       <label> <input type="checkbox" v-model="form.is_last_payment" value="1" /> Is last payment? </label>
-        <small class="text-danger">{{ form.errors.first("is_last_payment") }}</small>
+      <small class="text-danger">{{ form.errors.first("is_last_payment") }}</small>
     </div>
     <div class="form-group text-right">
       <button v-on:click.prevent="submit" class="btn btn-primary z-depth-0">Save</button>
@@ -79,8 +79,7 @@ export default {
 
     create() {
       this.form.post(`/project/${this.project.id}/economic-progress`).then((response) => {
-        alert("Data Saved");
-        window.location.reload();
+        this.$swal(response.message).then(() => window.location.reload());
       });
     },
 

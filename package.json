@@ -26,9 +26,11 @@
     "dependencies": {
         "chart.js": "^3.8.0",
         "form-backend-validation": "^2.4.0",
+        "sweetalert2": "^11.4.19",
         "v-nepalidatepicker": "^1.2.4",
         "vue-chartjs": "^4.1.1",
         "vue-router": "^3.0.0",
+        "vue-sweetalert2": "^5.0.5",
         "vue2-quill-editor": "^2.0.26",
         "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.8/xlsx-0.18.8.tgz"
     }
