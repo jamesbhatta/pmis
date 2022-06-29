@@ -46,5 +46,4 @@ class OrganizationController extends Controller
         $organization->delete();
         return redirect()->back()->with('success', 'Organization has been removed.');
     }
-
 }

@@ -13,11 +13,11 @@ class PhysicalProgress extends Model
 
     protected static function booted()
     {
-        static::creating(function () {
-            $this->fillAdDates();
+        static::creating(function ($item) {
+            $item->fillAdDates();
         });
-        static::updating(function () {
-            $this->fillAdDates();
+        static::updating(function ($item) {
+            $item->fillAdDates();
         });
     }
 

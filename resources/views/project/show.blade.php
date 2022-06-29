@@ -19,6 +19,14 @@
                 <div class="ml-auto"><span class="text-muted">आर्थिक बर्ष :</span> २०७८/०७९</div>
             </div>
             <div><span class="text-muted">योजनाको नाम :</span> {{ $project->title }}</div>
+
+            <div class="my-4">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ $project->economic_progress_percent }}%" aria-valuenow="{{ $project->economic_progress_percent }}" aria-valuemin="0" aria-valuemax="100">{{ $project->economic_progress_percent }} %</div>
+                </div>
+                <div class="text-center mt-2">आर्थिक प्रगति ({{ $project->economic_progress_percent }}%)</div>
+            </div>
+
             <div><span class="text-muted">बिषयगत क्षेत्रको किसिम :</span> {{ $project->projectType->name }}</div>
             <div><span class="text-muted">शिर्षकगत किसिम :</span> {{ $project->projectType->group }}</div>
             

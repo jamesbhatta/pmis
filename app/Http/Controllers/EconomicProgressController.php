@@ -41,11 +41,11 @@ class EconomicProgressController extends Controller
                 'economic_progress_percent' => $data['progress_percent']
             ]);
             $project->economicProgresses()->create($data);
+            DB::commit();
             return response()->json([
                 'status' => 200,
                 'message' => 'Payment saved.'
             ], 200);
-            DB::commit();
         } catch (\Throwable $th) {
             report($th);
             DB::rollBack();

@@ -19,12 +19,23 @@
         </div>
     </div>
 
-    <div class="d-flex mb-4">
+    <div class="d-flex font-noto mb-4" style="gap: 1rem;">
         <div>
             <select name="" class="custom-select">
                 <option value="">संगठन</option>
-                @foreach (App\Organization::get() as $organization)
-                    <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                @foreach ($organizations as $organization)
+                <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <select name="" class="custom-select">
+                <option value="">परियोजनाको प्रकारहरु</option>
+                @foreach ($projectTypes as $topic => $types)
+                <option disabled style="font-style: italic; background-color: #f2f7fb;">{{ $topic }}</option>
+                @foreach ($types as $projectType)
+                <option value="{{ $projectType->id }}">{{ $projectType->name }}</option>
+                @endforeach
                 @endforeach
             </select>
         </div>

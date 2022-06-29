@@ -11,11 +11,11 @@ class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-        $organizations = Organization::all();
         $projects = Project::with('organization')->get();
-        $projectType=ProjectType::all();
+        $organizations = Organization::get();
+        $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
 
-        return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
+        return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
     }
 
     public function create()

@@ -2414,6 +2414,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2461,7 +2465,7 @@ __webpack_require__.r(__webpack_exports__);
     create: function create() {
       this.form.post("/project/".concat(this.project.id, "/economic-progress")).then(function (response) {
         alert("Data Saved");
-        window.location.reload;
+        window.location.reload();
       });
     },
     update: function update() {//   this.form.put(`/project/${this.project.id}`).then((response) => {
@@ -38741,6 +38745,10 @@ var render = function () {
             },
           },
         }),
+        _vm._v(" "),
+        _c("small", { staticClass: "text-danger" }, [
+          _vm._v(_vm._s(_vm.form.errors.first("amount"))),
+        ]),
       ]),
       _vm._v(" "),
       _c(
@@ -38763,6 +38771,10 @@ var render = function () {
               expression: "form.date",
             },
           }),
+          _vm._v(" "),
+          _c("small", { staticClass: "text-danger" }, [
+            _vm._v(_vm._s(_vm.form.errors.first("date"))),
+          ]),
         ],
         1
       ),
@@ -38791,6 +38803,10 @@ var render = function () {
           },
         },
       }),
+      _vm._v(" "),
+      _c("small", { staticClass: "text-danger" }, [
+        _vm._v(_vm._s(_vm.form.errors.first("remarks"))),
+      ]),
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-group" }, [
@@ -38836,6 +38852,10 @@ var render = function () {
           },
         }),
         _vm._v(" Is last payment? "),
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "text-danger" }, [
+        _vm._v(_vm._s(_vm.form.errors.first("is_last_payment"))),
       ]),
     ]),
     _vm._v(" "),
