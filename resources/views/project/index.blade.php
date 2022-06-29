@@ -13,7 +13,7 @@
 <div class="container-fluid">
     @include('alerts.all')
     <div class="d-flex align-items-center mb-3">
-        <h1 class="h3-responsive d-inline-block">परियोजनाहरू</h1>
+        <h1 class="box__title">परियोजनाहरू</h1>
         <div class="ml-auto">
             <a href="{{ route('project.create') }}" class="btn btn-success z-depth-0">Add New</a>
         </div>
