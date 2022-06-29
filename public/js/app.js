@@ -2718,6 +2718,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -39462,7 +39498,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "box mt-4" }, [
     _c("div", { staticClass: "box__body" }, [
-      _c("div", { staticClass: "d-flex" }, [
+      _c("div", { staticClass: "d-flex mb-3" }, [
         _c("h5", { staticClass: "box__title" }, [_vm._v("भौतिक प्रगति")]),
         _vm._v(" "),
         _c("div", { staticClass: "ml-auto" }, [
@@ -39493,48 +39529,70 @@ var render = function () {
           ],
         },
         [
-          _c("div", [
-            _vm._v(
-              "Estimated : " +
-                _vm._s(_vm.physicalProgress.estimate_completed ? "Yes" : "No")
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _vm._v(
-              "सम्झौता भएको छ ?: " +
-                _vm._s(_vm.physicalProgress.agreement_date ? "Yes" : "No")
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _vm._v(
-              "सम्झौता भएको मिति : " +
-                _vm._s(_vm.physicalProgress.agreement_date) +
-                " "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _vm._v(
-              "Project Start Date : " +
-                _vm._s(_vm.physicalProgress.project_start_date) +
-                " "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _vm._v(
-              "Project Completion Date : " +
-                _vm._s(_vm.physicalProgress.project_completion_date) +
-                " "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _vm._v(
-              "Tender Date : " + _vm._s(_vm.physicalProgress.tender_date) + " "
-            ),
+          _c("table", { staticClass: "table table-bordered" }, [
+            _c("tr", [
+              _c("td", [_vm._v("अनुमान भएको छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm.physicalProgress.estimate_completed ? "छ" : "छैन")
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("सम्झौता भएको छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm.physicalProgress.agreement_date ? "छ" : "छैन")
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("सम्झौता भएको मिति")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.physicalProgress.agreement_date))]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Project Start Date")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.project_start_date)),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Project Completion Date")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.project_completion_date)),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Tender Date")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.physicalProgress.tender_date))]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("काम हुदै छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.wip ? "छ" : "छैन")),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("अनुगमन हुदै छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.followed_up ? "छ" : "छैन")),
+              ]),
+            ]),
           ]),
         ]
       ),
@@ -39598,7 +39656,7 @@ var render = function () {
                   },
                 },
               }),
-              _vm._v(" Estimate भएको छ ? "),
+              _vm._v(" अनुमान भएको छ ? "),
             ]),
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [
@@ -39711,6 +39769,105 @@ var render = function () {
             ],
             1
           ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.wip,
+                    expression: "form.wip",
+                  },
+                ],
+                attrs: { type: "checkbox", value: "1" },
+                domProps: {
+                  checked: Array.isArray(_vm.form.wip)
+                    ? _vm._i(_vm.form.wip, "1") > -1
+                    : _vm.form.wip,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.form.wip,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = "1",
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && _vm.$set(_vm.form, "wip", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.form,
+                            "wip",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.form, "wip", $$c)
+                    }
+                  },
+                },
+              }),
+              _vm._v(" काम हुदै छ ? "),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("wip"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.followed_up,
+                    expression: "form.followed_up",
+                  },
+                ],
+                attrs: { type: "checkbox", value: "1" },
+                domProps: {
+                  checked: Array.isArray(_vm.form.followed_up)
+                    ? _vm._i(_vm.form.followed_up, "1") > -1
+                    : _vm.form.followed_up,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.form.followed_up,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = "1",
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(_vm.form, "followed_up", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.form,
+                            "followed_up",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.form, "followed_up", $$c)
+                    }
+                  },
+                },
+              }),
+              _vm._v(" अनुगमन हुदै छ ? "),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("followed_up"))),
+            ]),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _c(
