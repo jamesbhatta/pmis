@@ -1,7 +1,7 @@
 <div class="py-4 pl-5">
     <img class="img-reponsive" src="{{ asset(config('constants.nep_gov.logo_sm')) }}" alt="Nepal Government Logo" height="80px">
 </div>
-<div id="sidenav-wrapper">
+<div id="sidenav-wrapper" class="font-noto">
     <ul id="sidenav" class="nav flex-column font-noto">
         <li class="nav-item {{ setActive('dashboard') }}">
             <a class="nav-link" href="{{ route('dashboard') }}">
@@ -17,24 +17,26 @@
         @if (auth()->user()->user_type == 'division')
         <li class="nav-item">
             <a class="nav-link" href="{{ route('project.index') }}">
-                <span><i class="far fa-circle"></i></span>Projects
+                <span><i class="fa fa-users"></i></span>Projects
             </a>
         </li>
         @endif
         @hasanyrole('super-admin|admin')
         <li class="nav-item {{ setActive('project.index') }}">
-            <a href="{{route('project.index')}}" aria-expanded="false" class="nav-link"><span class="text-success"><i class="fal fa-file-chart-line"></i></span>@lang('navigation.Projects')</a>
+            <a href="{{route('project.index')}}" aria-expanded="false" class="nav-link">
+                <span class="text-secondary"><i class="fa fa-cube"></i></span>@lang('navigation.Projects')
+            </a>
         </li>
         @endhasrole
         <li class="nav-item {{ setActive('report') }}">
             <a class="nav-link" href="{{ route('report') }}">
-                <span class="text-success"><i class="fa fa-chart"></i></span>Report
+                <span class="text-success"><i class="fa fa-list"></i></span>Report
             </a>
         </li>  
         @hasrole('super-admin')
         <li class="nav-item {{ setActive('organization.index') }}">
             <a class="nav-link" href="{{ route('organization.index') }}">
-                <span class="text-success"><i class="fa fa-plus"></i></span>@lang('navigation.Organizations')
+                <span class="text-light"><i class="fa fa-briefcase"></i></span>@lang('navigation.Organizations')
             </a>
         </li>
         @endhasrole
