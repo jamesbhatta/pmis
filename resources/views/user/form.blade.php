@@ -47,7 +47,7 @@
                                 <label for="" class="required">User Type</label>
                                 <select name="user_type" class="custom-select">
                                     @foreach (config('constants.organization_types') as $key => $value)
-                                    <option value="{{ $key }}">{{ $value }}</option>
+                                    <option value="{{ $key }}" @if (old('user_type', $user->user_type) == $key) selected @endif>{{ $value }}</option>
                                     @endforeach
                                 </select>
                                 <x-invalid-feedback field="type"></x-invalid-feedback>
