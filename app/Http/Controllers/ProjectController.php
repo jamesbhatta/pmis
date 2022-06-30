@@ -13,7 +13,7 @@ class ProjectController extends Controller
     {
         $projects = Project::with('organization')
             ->when(auth()->user()->user_type == 'sub-division', function ($query) {
-                $query->where('organization', auth()->user()->organization_id);
+                $query->where('organization_id', auth()->user()->organization_id);
             })->latest()->get();
         $organizations = Organization::get();
         $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
