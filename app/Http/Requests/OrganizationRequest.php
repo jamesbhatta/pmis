@@ -26,7 +26,8 @@ class OrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:App\Organization,name,' . $this->id,
+            // 'name' => 'required|unique:App\Organization,name,' . $this->id,
+            'name' => 'required',
             'type' => 'required',
             'province_id' => 'required|exists:provinces,id',
             'district_id' => 'required',

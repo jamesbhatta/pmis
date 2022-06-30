@@ -42,7 +42,7 @@
                     @forelse($organizations as $organization)
                     <tr class="bg-white">
                         <td>{{ $organization->name }}</td>
-                        <td>{{ $organization->district }}</td>
+                        <td>{{ $organization->district->name ?? '' }}</td>
                         <td>{{ $organization->address }}</td>
                         <td>{{ $organization->phone }}</td>
                         <td>{{ $organization->email }}</td>
