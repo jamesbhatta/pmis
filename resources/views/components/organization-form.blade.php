@@ -51,7 +51,7 @@
                         <label for="" class="required">Type</label>
                         <select name="type" class="custom-select">
                             @foreach (config('constants.organization_types') as $key => $value)
-                            <option value="{{ $key }}">{{ $value }}</option>
+                            <option value="{{ $key }}" @if (old('type', $organization->type) == $key) selected @endif>{{ $value }}</option>
                             @endforeach
                         </select>
                         <x-invalid-feedback field="type"></x-invalid-feedback>
@@ -75,7 +75,7 @@
                             <option value="">जिल्ला छान्नुहोस्</option>
                             @include('org-form-components.default-location',['settingsKey' => 'default_district_id', 'data' => $districts])
                             @foreach ($districts as $district)
-                            <option value="{{ $district->id }}" data-province-id="{{ $district->province->id}}" @if(old('district_id', $organization->org_district_id) == $district->id) selected @endif>{{ $district->name }}</option>
+                            <option value="{{ $district->id }}" data-province-id="{{ $district->province->id}}" @if(old('district_id', $organization->district_id) == $district->id) selected @endif>{{ $district->name }}</option>
                             @endforeach
                         </select>
                         <x-invalid-feedback field="district_id"></x-invalid-feedback>

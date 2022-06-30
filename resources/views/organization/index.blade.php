@@ -32,6 +32,7 @@
                     <tr>
                         <th>Organization name</th>
                         <th>District</th>
+                        <th>Type</th>
                         <th>Address</th>
                         <th>Phone</th>
                         <th>Email</th>
@@ -43,6 +44,7 @@
                     <tr class="bg-white">
                         <td>{{ $organization->name }}</td>
                         <td>{{ $organization->district->name ?? '' }}</td>
+                        <td class="text-capitalize">{{ $organization->type }}</td>
                         <td>{{ $organization->address }}</td>
                         <td>{{ $organization->phone }}</td>
                         <td>{{ $organization->email }}</td>
