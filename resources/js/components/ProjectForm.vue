@@ -148,13 +148,10 @@ export default {
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-<<<<<<< HEAD
-=======
       this.form.expenditure_type = this.project.expenditure_type;
       this.form.last_year_expenditure = this.project.last_year_expenditure;
       this.form.last_year_physical_progress = this.project.last_year_physical_progress;
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
->>>>>>> 06c045e1e0b706ccb3b0782b0eefc2f4177fadca
       this.form.description = this.project.description ?? "<div></div>";
     }
   },
