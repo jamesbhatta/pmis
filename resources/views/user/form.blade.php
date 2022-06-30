@@ -56,6 +56,7 @@
                             <div class="form-group">
                                 <label>Organization</label>
                                 <select name="organization_id" class="custom-select">
+                                    <option value="">Select Organization</option>
                                     @foreach (\App\Organization::get() as $organization)
                                     <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->id) selected @endif>{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</option>
                                     @endforeach
