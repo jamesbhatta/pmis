@@ -57,7 +57,7 @@
                                 <label>Organization</label>
                                 <select name="organization_id" class="custom-select">
                                     @foreach (\App\Organization::get() as $organization)
-                                    <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->name) selected @endif>{{ $organization->name }}</option>
+                                    <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->name) selected @endif>{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</option>
                                     @endforeach
                                 </select>
                             </div>
