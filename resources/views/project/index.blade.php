@@ -21,12 +21,14 @@
 
     <div class="d-flex font-noto mb-4" style="gap: 1rem;">
         <div>
+            @if (auth()->user()->user_type != 'sub-division')
             <select name="" class="custom-select">
                 <option value="">संगठन</option>
                 @foreach ($organizations as $organization)
-                <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                <option value="{{ $organization->id }}">{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</option>
                 @endforeach
             </select>
+            @endif
         </div>
         <div>
             <select name="" class="custom-select">
