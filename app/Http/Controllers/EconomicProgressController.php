@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use App\Rules\NepaliDate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EconomicProgressController extends Controller
 {
@@ -22,15 +23,36 @@ class EconomicProgressController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        $request->validate([
+        $data = $request->validate([
             'date' => ['required', new NepaliDate],
             'amount' => ['required', 'integer'],
             'remarks' => ['nullable'],
             'is_last_payment' => ['nullable', 'boolean'],
         ]);
 
-        return $request;
+        try {
+            DB::beginTransaction();
+            $totalAmount = $project->budget;
+            $paidAmount = $project->economicProgresses()->sum('amount') + $data['amount'];
+            $data['progress_percent'] = ($paidAmount / $totalAmount) * 100;
+            $project->update([
+                'economic_progress_percent' => $data['progress_percent']
+            ]);
+            $project->economicProgresses()->create($data);
+            DB::commit();
+            return response()->json([
+                'status' => 200,
+                'message' => 'Payment has been saved.'
+            ], 200);
+        } catch (\Throwable $th) {
+            report($th);
+            DB::rollBack();
+            return response()->json([
+                'status' => 500,
+                'message' => 'OOPS!! something went wrong.'
+            ], 500);
+        }
     }
 }

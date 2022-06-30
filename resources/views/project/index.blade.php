@@ -13,18 +13,29 @@
 <div class="container-fluid">
     @include('alerts.all')
     <div class="d-flex align-items-center mb-3">
-        <h1 class="h3-responsive d-inline-block">परियोजनाहरू</h1>
+        <h1 class="box__title">परियोजनाहरू</h1>
         <div class="ml-auto">
             <a href="{{ route('project.create') }}" class="btn btn-success z-depth-0">Add New</a>
         </div>
     </div>
 
-    <div class="d-flex mb-4">
+    <div class="d-flex font-noto mb-4" style="gap: 1rem;">
         <div>
             <select name="" class="custom-select">
                 <option value="">संगठन</option>
-                @foreach (App\Organization::get() as $organization)
-                    <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                @foreach ($organizations as $organization)
+                <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <select name="" class="custom-select">
+                <option value="">परियोजनाको प्रकारहरु</option>
+                @foreach ($projectTypes as $topic => $types)
+                <option disabled style="font-style: italic; background-color: #f2f7fb;">{{ $topic }}</option>
+                @foreach ($types as $projectType)
+                <option value="{{ $projectType->id }}">{{ $projectType->name }}</option>
+                @endforeach
                 @endforeach
             </select>
         </div>

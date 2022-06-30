@@ -11,11 +11,11 @@ class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-        $organizations = Organization::all();
         $projects = Project::with('organization')->get();
-        $projectType=ProjectType::all();
+        $organizations = Organization::get();
+        $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
 
-        return view("project.index", compact(['organizations', 'projects', 'project','projectType']));
+        return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
     }
 
     public function create()
@@ -39,12 +39,20 @@ class ProjectController extends Controller
             'title' => 'required',
             'organization_id' => ['required', 'exists:organizations,id'],
             'project_type_id' => ['required', 'exists:project_types,id'],
-            'budget' => 'required',
-            'budget_source' => 'required',
-            'description' => 'nullable',
+            'budget' => ['required', 'integer'],
+            'budget_source' => ['required'],
+            'expenditure_type' => ['required'],
+            'last_year_expenditure' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'population_to_be_benefited' => ['nullable'],
+            'description' => ['nullable'],
         ]));
 
-        return redirect()->back()->with('success', 'Record has been added');
+        return response()->json([
+            'status' => 200,
+            'message' => 'Project has been created.'
+        ], 200);
     }
 
     public function show(Project $project)
@@ -65,12 +73,20 @@ class ProjectController extends Controller
             'title' => 'required',
             'organization_id' => ['required', 'exists:organizations,id'],
             'project_type_id' => ['required', 'exists:project_types,id'],
-            'budget' => 'required',
-            'budget_source' => 'required',
-            'description' => 'nullable',
+            'budget' => ['required', 'integer'],
+            'budget_source' => ['required'],
+            'expenditure_type' => ['required'],
+            'last_year_expenditure' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'last_year_physical_progress' => ['nullable', 'integer'],
+            'population_to_be_benefited' => ['nullable'],
+            'description' => ['nullable'],
         ]));
 
-        return redirect()->route('project.index')->with('Success', "Update Success");
+        return response()->json([
+            'status' => 200,
+            'message' => 'Changes have been saved.'
+        ], 200);
     }
 
     public function destroy(Project $project)

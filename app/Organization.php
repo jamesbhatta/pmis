@@ -11,7 +11,7 @@ class Organization extends Model
 
     protected $guarded = ['id'];
 
-    public function districts()
+    public function district()
     {
         return $this->hasOne(District::class);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProjectTopic;
 use App\ProjectType;
 use Illuminate\Http\Request;
 
@@ -9,13 +10,15 @@ class ProjectTypeController extends Controller
 {
     public function index($projectType = null)
     {
-        $projectTypes = ProjectType::get();
+        $projectTypes = ProjectType::with('topic')->get();
+        $projectTypesGrouped = $projectTypes->groupBy('topic.title');
+        $topics = ProjectTopic::get();
 
-        if(!$projectType) {
+        if (!$projectType) {
             $projectType = new ProjectType();
         }
 
-        return view('project-type.index', compact(['projectTypes', 'projectType']));
+        return view('project-type.index', compact(['projectTypesGrouped', 'projectType', 'topics']));
     }
 
     public function store(Request $request)
@@ -23,6 +26,7 @@ class ProjectTypeController extends Controller
         ProjectType::create($request->validate([
             'name' => 'required',
             'name_en' => 'nullable',
+            'topic_id' => 'required'
         ]));
 
         return back()->with('success', 'Project Type added');
@@ -37,7 +41,8 @@ class ProjectTypeController extends Controller
     {
         $projectType->update($request->validate([
             'name' => 'required',
-            'name_en' => 'nullable'
+            'name_en' => 'nullable',
+            'topic_id' => 'required'
         ]));
 
         return back()->with('success', 'Project type updated.');
@@ -45,6 +50,10 @@ class ProjectTypeController extends Controller
 
     public function destroy(ProjectType  $projectType)
     {
+        if ($projectType->projects()->count()) {
+            return redirect()->route('project-type.index')->with('error', 'Sorry you cannot delete this project type.');
+        }
+        
         $projectType->delete();
 
         return redirect()->route('project-type.index')->with('success', 'Project type deleted successfully.');

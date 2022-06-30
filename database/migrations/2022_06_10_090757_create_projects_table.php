@@ -17,14 +17,15 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('organization_id')->constrained('organizations')->nullable();
-            $table->string('project_type_id')->nullable();
-            $table->string('budget')->nullable();
+            $table->foreignId('project_type_id')->constrained('project_types')->nullable();
+            $table->integer('budget')->nullable();
             $table->string('budget_source')->nullable();
             $table->string('expenditure_type')->nullable();
-            $table->text('description')->nullable();
+            $table->integer('last_year_expenditure')->nullable();
             $table->string('population_to_be_benefited')->nullable();
-            $table->string('chairman_name')->nullable();
-            $table->string('chairman_contact')->nullable();
+            $table->integer('last_year_physical_progress')->nullable();
+            $table->float('economic_progress_percent')->default(0);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

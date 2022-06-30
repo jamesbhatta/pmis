@@ -28,7 +28,6 @@
                 </tr>
                 @endforeach
             </table>
-            <input type="text" name="date" class="form-control nepali-date-picker">
         </div>
     </div>
 </div>
@@ -40,7 +39,7 @@
                 Record New Payment
             </div>
             <div class="modal-body">
-                <payment-form></payment-form>
+                <payment-form :project="{{ $project }}"></payment-form>
             {{-- <form action="{{ route('project.economic-progress.store', $project) }}" method="POST">
                 @csrf
                 <div class="row">
@@ -71,13 +70,3 @@
     </div>
 </div>
 @endsection
-
-{{-- @push('scripts')
-    <script>
-        function showEditForm()
-        {
-            document.getElementById('progress-detail').classList.toggle('d-none');
-            document.getElementById('edit-form').classList.toggle('d-none');
-        }
-    </script>
-@endpush --}}

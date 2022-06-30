@@ -11,7 +11,7 @@
             <form action="{{ route('project.acheivements.update', $project) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label>Ulakhaniye karya haru</label>
+                    <label>उल्लेखनिए कार्यहरू</label>
                     <textarea name="acheivements" class="form-control" cols="30" rows="10">{!! $project->acheivements !!}</textarea>
                 </div>
                 <div class="form-group">

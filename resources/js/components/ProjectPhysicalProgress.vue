@@ -9,7 +9,7 @@
         </div>
       </div>
       <div v-show="mode == 'view-mode'">
-        <table class="table table-bordered">
+        <table class="table table-hover">
           <tr>
             <td>अनुमान भएको छ ?</td>
             <td>{{ physicalProgress.estimate_completed ? "छ" : "छैन" }}</td>
@@ -147,7 +147,7 @@ export default {
     },
     submit() {
       this.form.post(`/project/${this.project.id}/physical-progress`).then((response) => {
-        alert(response.message);
+        this.$swal(response.message).then(() => window.location.reload());
       });
     },
   },

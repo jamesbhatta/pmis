@@ -13,10 +13,6 @@ return [
         'per_page' => 50,
     ],
 
-    'user' => [
-        'per_page' => 20,
-    ],
-
     'document' => [
         'dir_name' =>  'documents',
         'types' => [
@@ -35,14 +31,6 @@ return [
         'municipality' => [
             // path relative to public directory
             'logo_url' => 'assets/img/nep-gov-logo-sm.png',
-
-            // 'name' => 'घोडाघोडी नगरपालिका',
-            // 'tagline' => 'नगर कार्यपालिकाको कार्यालय',
-            // 'address_line_one' => 'सुखड, कैलाली',
-            // 'address_line_two' => 'सुदुरपश्चिम प्रदेश, नेपाल',
-            // 'phone' => '०९१-४०३०६४',
-            // 'email' => 'ghodaghodimun@gmail.com',
-            // 'website' => 'www.ghodaghodimun.gov.np',
         ]
     ],
 

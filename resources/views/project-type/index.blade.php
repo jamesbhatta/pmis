@@ -1,16 +1,24 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
+        <li class="breadcrumb-item active" aria-current="page">परियोजनाको प्रकारहरु</li>
+    </ol>
+</nav>
+@endsection
+
 @section('content')
-
-<div class="container">
+<div class="container font-noto">
     @include('alerts.all')
-</div>
-
-<div class="container">
-    <div class="card z-depth-0">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box__header">
+                    <h4 class="box__title">{{ $projectType->id ? 'Update Project Type' : 'Add new ' }}</h4>
+                </div>
+                <div class="box__body">
                     <form action="{{ $projectType->id ? route('project-type.update', $projectType) : route('project-type.store') }}" method="POST" class="form font-roboto">
                         @csrf
                         @isset($projectType->id)
@@ -26,9 +34,9 @@
                         </div>
                         <div class="form-group">
                             <label for="input-fiscal-year">Group</label>
-                            <select name="group" class="custom-select">
-                                @foreach (config('constants.project_type_groups') as $group)
-                                <option value="{{ $group }}" @if (old('group',$projectType->group) == $group) selected @endif>{{ $group }}</option>
+                            <select name="topic_id" class="custom-select">
+                                @foreach ($topics as $topic)
+                                <option value="{{ $topic->id }}" @if (old('topic_id', $projectType->topic_id) == $topic->id) selected @endif>{{ $topic->title }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -38,48 +46,47 @@
                     </form>
                 </div>
             </div>
-
         </div>
-    </div>
-
-    <div class="my-4"></div>
-
-    <div class="card z-depth-0">
-        <div class="card-header">
-            <h1 class="h3-responsive d-inline-block">परियोजनाको प्रकारहरु</h1>
-        </div>
-        <div class="card-body">
-            <table class="table table-striped table-hover">
-                <thead class="h3-responsive">
-                    <tr>
-                        <th>क्र.स.</th>
-                        <th>@lang('navigation.project_type')</th>
-                        <th>Name in English</th>
-                        <th>Group</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach ($projectTypes as $projectType)
-                    <tr>
-                        <td>{{$projectType->id}}</td>
-                        <td>{{$projectType->name}}</td>
-                        <td>{{$projectType->name_en}}</td>
-                        <td>{{$projectType->group}}</td>
-                        <td class="text-nowrap">
-                            <a href="{{route('project-type.edit',$projectType)}}" class="action-btn text-primary"><i class="fa fa-edit"></i></a>
-                            <span class="mx-2">|</span>
-                            <form action="{{ route('project-type.destroy', $projectType) }}" method="post" onsubmit="return confirm('Are you sure to delete ?')" class="form-inline d-inline">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="col-md-8">
+            <div class="box">
+                <div class="box__header">
+                    <h1 class="box__title">परियोजनाको प्रकारहरु</h1>
+                </div>
+                <div class="box__body">
+                    <table class="table">
+                        <thead class="h3-responsive">
+                            <tr>
+                                <th>क्र.स.</th>
+                                <th>@lang('navigation.project_type')</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($projectTypesGrouped as $group => $projectTypes)
+                            <tr class="bg-">
+                                <td colspan="42" class="font-weight-bold font-noto">{{ $group }}</td>
+                            </tr>
+                            @foreach ($projectTypes as $projectType)
+                            <tr>
+                                <td>{{$projectType->id}}</td>
+                                <td>{{$projectType->name}}</td>
+                                {{-- <td>{{$projectType->name_en}}</td> --}}
+                                <td class="text-nowrap text-right">
+                                    <a href="{{route('project-type.edit',$projectType)}}" class="action-btn text-primary"><i class="fa fa-edit"></i></a>
+                                    <span class="mx-2">|</span>
+                                    <form action="{{ route('project-type.destroy', $projectType) }}" method="post" onsubmit="return confirm('Are you sure to delete ?')" class="form-inline d-inline">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

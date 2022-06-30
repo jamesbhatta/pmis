@@ -14,8 +14,8 @@ class SettingsSeeder extends Seeder
     public function run()
     {
         settings()->set([
-            'app_name' => 'व्यवसाय सिफारिस',
-            'app_name_en' => 'Supa Profile'
+            'app_name' => 'PMIS',
+            'app_name_en' => 'PMIS'
         ]);
     }
 }

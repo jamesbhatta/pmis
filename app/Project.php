@@ -16,6 +16,11 @@ class Project extends Model
         return $this->belongsTo(Organization::class);
     }
 
+    public function projectType()
+    {
+        return $this->belongsTo(ProjectType::class);
+    }
+
     public function physicalProgress()
     {
         return $this->hasOne(PhysicalProgress::class);
