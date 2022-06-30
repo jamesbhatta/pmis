@@ -32,7 +32,7 @@ class UserService
             'email' => $request['email'],
             'username' => $request['username'],
             'user_type' => $request['user_type'],
-            'orgaization_id' => $request['organization_id'],
+            'organization_id' => $request['organization_id'],
         ]);
         $user->password =  Hash::make($request['password']);
         $user->save();
