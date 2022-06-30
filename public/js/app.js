@@ -38988,7 +38988,7 @@ var render = function () {
         [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "form-group col-lg-6" }, [
-              _c("label", [_vm._v("शीर्षक")]),
+              _c("label", [_vm._v("आयोजना / कार्यक्रम ")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -39486,7 +39486,7 @@ var render = function () {
         [
           _c("table", { staticClass: "table table-hover" }, [
             _c("tr", [
-              _c("td", [_vm._v("अनुमान भएको छ ?")]),
+              _c("td", [_vm._v("लागत अनुमान बनेको छ ?")]),
               _vm._v(" "),
               _c("td", [
                 _vm._v(
@@ -39611,7 +39611,7 @@ var render = function () {
                   },
                 },
               }),
-              _vm._v(" अनुमान भएको छ ? "),
+              _vm._v(" लागत अनुमान बनेको छ ? "),
             ]),
             _vm._v(" "),
             _c("small", { staticClass: "text-danger" }, [

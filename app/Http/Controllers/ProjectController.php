@@ -11,7 +11,7 @@ class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-        $projects = Project::with('organization')->get();
+        $projects = Project::with('organization')->latest()->get();
         $organizations = Organization::get();
         $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
 

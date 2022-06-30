@@ -11,7 +11,7 @@
       <div v-show="mode == 'view-mode'">
         <table class="table table-hover">
           <tr>
-            <td>अनुमान भएको छ ?</td>
+            <td>लागत अनुमान बनेको छ ?</td>
             <td>{{ physicalProgress.estimate_completed ? "छ" : "छैन" }}</td>
           </tr>
           <tr>
@@ -47,7 +47,7 @@
 
       <form v-show="mode == 'edit-mode'">
         <div class="form-group">
-          <label> <input type="checkbox" v-model="form.estimate_completed" value="1" /> अनुमान भएको छ ? </label>
+          <label> <input type="checkbox" v-model="form.estimate_completed" value="1" /> लागत अनुमान बनेको छ ? </label>
           <small class="text-danger">{{ form.errors.first("estimate_completed") }}</small>
         </div>
         <div class="form-group">

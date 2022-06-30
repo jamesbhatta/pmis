@@ -49,7 +49,7 @@
             <tr>
                 <th>क्र.स.</th>
                 <th>दर्ता नं.</th>
-                <th>शीर्षक</th>
+                <th>आयोजना / कार्यक्रम</th>
                 <th>संगठन</th>
                 <th>परियोजना प्रकार</th>
                 <th>बजेट</th>
@@ -66,7 +66,7 @@
                 </td>
                 <td class="font-roboto">{{ $project->title }}</td>
                 <td class="font-roboto">{{ $project->organization->name }}</td>
-                <td class="font-roboto">{{ $project->project_type}}</td>
+                <td class="font-roboto">{{ $project->projectType->name}}</td>
                 <td class="font-roboto">रु. {{ $project->budget}}</td>
                 <td class="font-roboto">{{ $project->budget_source}}</td>
                 <td class="text-right">
