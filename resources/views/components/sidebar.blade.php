@@ -30,7 +30,7 @@
             <a class="nav-link" href="{{ route('report') }}">
                 <span class="text-success"><i class="fa fa-chart"></i></span>Report
             </a>
-        </li>  
+        </li>
         @hasrole('super-admin')
         <li class="nav-item {{ setActive('organization.index') }}">
             <a class="nav-link" href="{{ route('organization.index') }}">

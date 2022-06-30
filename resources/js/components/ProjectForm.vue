@@ -223,7 +223,6 @@ export default {
       }),
     };
   },
-
   mounted() {
     if (this.project.id) {
       this.updateMode = true;
@@ -232,7 +231,7 @@ export default {
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-      this.form.description = this.project.description ?? "<div></div>s";
+      this.form.description = this.project.description ?? "<div></div>";
     }
   },
 
@@ -256,8 +255,4 @@ export default {
     },
   },
 };
-
-$('.accept').on('change', function () {
-  $('.accept').not(this).prop('checked', false);
-});
 </script>

@@ -2725,7 +2725,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.project_type_id = this.project.project_type_id;
       this.form.budget = this.project.budget;
       this.form.budget_source = this.project.budget_source;
-      this.form.description = (_this$project$descrip = this.project.description) !== null && _this$project$descrip !== void 0 ? _this$project$descrip : "<div></div>s";
+      this.form.description = (_this$project$descrip = this.project.description) !== null && _this$project$descrip !== void 0 ? _this$project$descrip : "<div></div>";
     }
   },
   methods: {
@@ -2745,9 +2745,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }
-});
-$('.accept').on('change', function () {
-  $('.accept').not(this).prop('checked', false);
 });
 
 /***/ }),
