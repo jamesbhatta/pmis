@@ -38008,7 +38008,7 @@ var render = function () {
         [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "form-group col-lg-6" }, [
-              _c("label", [_vm._v("शीर्षक")]),
+              _c("label", [_vm._v("आयोजना / कार्यक्रम ")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -38455,6 +38455,522 @@ render._withStripped = true
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProjectPhysicalProgress.vue?vue&type=template&id=32e17642&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProjectPhysicalProgress.vue?vue&type=template&id=32e17642& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "box mt-4" }, [
+    _c("div", { staticClass: "box__body" }, [
+      _c("div", { staticClass: "d-flex mb-3" }, [
+        _c("h5", { staticClass: "box__title" }, [_vm._v("भौतिक प्रगति")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ml-auto" }, [
+          _c(
+            "button",
+            {
+              on: {
+                click: function ($event) {
+                  return _vm.toggleMode()
+                },
+              },
+            },
+            [_vm._v("Edit")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.mode == "view-mode",
+              expression: "mode == 'view-mode'",
+            },
+          ],
+        },
+        [
+          _c("table", { staticClass: "table table-hover" }, [
+            _c("tr", [
+              _c("td", [_vm._v("लागत अनुमान बनेको छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm.physicalProgress.estimate_completed ? "छ" : "छैन")
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("सम्झौता भएको छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm.physicalProgress.agreement_date ? "छ" : "छैन")
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("सम्झौता भएको मिति")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.physicalProgress.agreement_date))]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Project Start Date")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.project_start_date)),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Project Completion Date")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.project_completion_date)),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Tender Date")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.physicalProgress.tender_date))]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("काम हुदै छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.wip ? "छ" : "छैन")),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("अनुगमन हुदै छ ?")]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(_vm._s(_vm.physicalProgress.followed_up ? "छ" : "छैन")),
+              ]),
+            ]),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.mode == "edit-mode",
+              expression: "mode == 'edit-mode'",
+            },
+          ],
+        },
+        [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.estimate_completed,
+                    expression: "form.estimate_completed",
+                  },
+                ],
+                attrs: { type: "checkbox", value: "1" },
+                domProps: {
+                  checked: Array.isArray(_vm.form.estimate_completed)
+                    ? _vm._i(_vm.form.estimate_completed, "1") > -1
+                    : _vm.form.estimate_completed,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.form.estimate_completed,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = "1",
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(
+                            _vm.form,
+                            "estimate_completed",
+                            $$a.concat([$$v])
+                          )
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.form,
+                            "estimate_completed",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.form, "estimate_completed", $$c)
+                    }
+                  },
+                },
+              }),
+              _vm._v(" लागत अनुमान बनेको छ ? "),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("estimate_completed"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("सम्झौता भएको मिति "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.agreement_date,
+                },
+                model: {
+                  value: _vm.form.agreement_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "agreement_date", $$v)
+                  },
+                  expression: "form.agreement_date",
+                },
+              }),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("agreement_date"))),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Project Start Date "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.project_start_date,
+                },
+                model: {
+                  value: _vm.form.project_start_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "project_start_date", $$v)
+                  },
+                  expression: "form.project_start_date",
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Project Completion Date "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.project_completion_date,
+                },
+                model: {
+                  value: _vm.form.project_completion_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "project_completion_date", $$v)
+                  },
+                  expression: "form.project_completion_date",
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date ")]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.tender_date,
+                },
+                model: {
+                  value: _vm.form.tender_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "tender_date", $$v)
+                  },
+                  expression: "form.tender_date",
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.wip,
+                    expression: "form.wip",
+                  },
+                ],
+                attrs: { type: "checkbox", value: "1" },
+                domProps: {
+                  checked: Array.isArray(_vm.form.wip)
+                    ? _vm._i(_vm.form.wip, "1") > -1
+                    : _vm.form.wip,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.form.wip,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = "1",
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && _vm.$set(_vm.form, "wip", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.form,
+                            "wip",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.form, "wip", $$c)
+                    }
+                  },
+                },
+              }),
+              _vm._v(" काम हुदै छ ? "),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("wip"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.followed_up,
+                    expression: "form.followed_up",
+                  },
+                ],
+                attrs: { type: "checkbox", value: "1" },
+                domProps: {
+                  checked: Array.isArray(_vm.form.followed_up)
+                    ? _vm._i(_vm.form.followed_up, "1") > -1
+                    : _vm.form.followed_up,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.form.followed_up,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = "1",
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(_vm.form, "followed_up", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.form,
+                            "followed_up",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.form, "followed_up", $$c)
+                    }
+                  },
+                },
+              }),
+              _vm._v(" अनुगमन हुदै छ ? "),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.form.errors.first("followed_up"))),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary z-depth-0 ml-0",
+                attrs: { type: "submit" },
+                on: {
+                  click: function ($event) {
+                    $event.preventDefault()
+                    return _vm.submit.apply(null, arguments)
+                  },
+                },
+              },
+              [_vm._v("Update")]
+            ),
+          ]),
+        ]
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResourceDataForm.vue?vue&type=template&id=54efcbb2&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResourceDataForm.vue?vue&type=template&id=54efcbb2& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "h5-responsive" }, [
+          _vm._v(_vm._s(_vm.resource.display_name)),
+        ]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table" }, [
+          _c("thead", [
+            _c(
+              "tr",
+              [
+                _vm._l(_vm.resource.fields, function (field, index) {
+                  return _c("td", { key: index }, [_vm._v(_vm._s(field.label))])
+                }),
+                _vm._v(" "),
+                _c("td", [_vm._v("Action")]),
+              ],
+              2
+            ),
+          ]),
+          _vm._v(" "),
+          _c("tbody", [
+            _c(
+              "tr",
+              [
+                _vm._l(_vm.resource.fields, function (field, index) {
+                  return _c("td", { key: index }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: field.name },
+                    }),
+                  ])
+                }),
+                _vm._v(" "),
+                _vm._m(0),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-right" }, [
+      _c("div", { staticClass: "d-flex" }, [
+        _c("button", { staticClass: "btn btn-primary btn-sm z-depth-0" }, [
+          _vm._v("Edit"),
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-danger btn-sm z-depth-0" }, [
+          _vm._v("Delete"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { attrs: { colspan: "42" } }, [_c("button", [_vm._v("Add")])]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+>>>>>>> be4787e2c122a6f5459697d2ba44a488b4da6372
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!

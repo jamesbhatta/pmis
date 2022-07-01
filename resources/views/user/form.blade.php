@@ -47,7 +47,7 @@
                                 <label for="" class="required">User Type</label>
                                 <select name="user_type" class="custom-select">
                                     @foreach (config('constants.organization_types') as $key => $value)
-                                    <option value="{{ $key }}">{{ $value }}</option>
+                                    <option value="{{ $key }}" @if (old('user_type', $user->user_type) == $key) selected @endif>{{ $value }}</option>
                                     @endforeach
                                 </select>
                                 <x-invalid-feedback field="type"></x-invalid-feedback>
@@ -56,8 +56,9 @@
                             <div class="form-group">
                                 <label>Organization</label>
                                 <select name="organization_id" class="custom-select">
+                                    <option value="">Select Organization</option>
                                     @foreach (\App\Organization::get() as $organization)
-                                    <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->name) selected @endif>{{ $organization->name }}</option>
+                                    <option value="{{ $organization->id }}" @if(old('organization_id', $user->organization_id) == $organization->id) selected @endif>{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</option>
                                     @endforeach
                                 </select>
                             </div>

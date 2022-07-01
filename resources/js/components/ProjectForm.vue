@@ -7,7 +7,7 @@
       <form @submit.prevent="submit" method="POST">
         <div class="row">
           <div class="form-group col-lg-6">
-            <label>शीर्षक</label>
+            <label>आयोजना / कार्यक्रम </label>
             <input type="text" v-model="form.title" class="form-control" name="title" />
             <small class="text-danger">{{ form.errors.first("title") }}</small>
           </div>

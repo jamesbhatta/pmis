@@ -14,13 +14,13 @@
                 <span class="text-"><i class="fa fa-plus"></i></span>Projects
             </a>
         </li> -->
-        @if (auth()->user()->user_type == 'division')
+        {{-- @if (auth()->user()->user_type == 'division') --}}
         <li class="nav-item">
             <a class="nav-link" href="{{ route('project.index') }}">
                 <span><i class="fa fa-users"></i></span>Projects
             </a>
         </li>
-        @endif
+        {{-- @endif --}}
         @hasanyrole('super-admin|admin')
         <li class="nav-item {{ setActive('project.index') }}">
             <a href="{{route('project.index')}}" aria-expanded="false" class="nav-link">

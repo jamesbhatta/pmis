@@ -107,6 +107,6 @@ Route::group(
     }
 );
 
-Route::any('/{all}', function () {
-    return view('app');
-})->where(['all' => '.*']);
+// Route::any('/{all}', function () {
+//     return view('app');
+// })->where(['all' => '.*']);
