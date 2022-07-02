@@ -31,7 +31,7 @@
             <div><span class="text-muted">शिर्षकगत किसिम :</span> {{ $project->projectType->topic->title }}</div>
             
             @if ($project->last_year_expenditure)
-            <div><span class="text-muted">गत आर्थिक वर्षको खर्च :</span> रु. {{ $project->last_year_expenditure }} /-</div>
+            <div><span class="text-muted">गत आर्थिक वर्षको खर्च :</span> रु. {{ $project->last_year_expenditure }}/-</div>
             @endif
             @if ($project->last_year_physical_progress)
             <div><span class="text-muted">गत आर्थिक वर्षको भौतिक प्रगति :</span> {{ $project->last_year_physical_progress }}(%)</div>

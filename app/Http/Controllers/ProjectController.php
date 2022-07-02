@@ -30,10 +30,11 @@ class ProjectController extends Controller
     public function showForm(Project $project)
     {
         $projectTypes = ProjectType::get();
-        return view('project.create', [
+        return view('project.form', [
             'project' => $project,
             'organizations' => Organization::get(),
-            'projectTypes' => $projectTypes
+            'projectTypes' => $projectTypes,
+            'budgetSources' => \App\BudgetSource::get()
         ]);
     }
 

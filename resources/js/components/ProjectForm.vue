@@ -43,7 +43,13 @@
 
           <div class="form-group col-lg-6">
             <label>बजेट स्रोत</label>
-            <input type="text" v-model="form.budget_source" class="form-control" />
+            <!-- <input type="text" v-model="form.budget_source" class="form-control" /> -->
+            <select v-model="form.budget_source" class="custom-select">
+              <option value="">Please Select One</option>
+              <template v-for="source in budgetSources">
+                <option :value="source.title" :key="source.id">{{ source.title }}</option>
+              </template>
+            </select>
             <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
           </div>
 
@@ -114,6 +120,9 @@ export default {
     },
 
     project: {
+      default: () => ({}),
+    },
+    budgetSources: {
       default: () => ({}),
     },
   },

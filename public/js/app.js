@@ -2487,6 +2487,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2505,6 +2511,11 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     project: {
+      "default": function _default() {
+        return {};
+      }
+    },
+    budgetSources: {
       "default": function _default() {
         return {};
       }
@@ -38431,27 +38442,55 @@ var render = function () {
             _c("div", { staticClass: "form-group col-lg-6" }, [
               _c("label", [_vm._v("बजेट स्रोत")]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.budget_source,
-                    expression: "form.budget_source",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.form.budget_source },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "budget_source", $event.target.value)
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.budget_source,
+                      expression: "form.budget_source",
+                    },
+                  ],
+                  staticClass: "custom-select",
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.form,
+                        "budget_source",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    },
                   },
                 },
-              }),
+                [
+                  _c("option", { attrs: { value: "" } }, [
+                    _vm._v("Please Select One"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.budgetSources, function (source) {
+                    return [
+                      _c(
+                        "option",
+                        { key: source.id, domProps: { value: source.title } },
+                        [_vm._v(_vm._s(source.title))]
+                      ),
+                    ]
+                  }),
+                ],
+                2
+              ),
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
                 _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
