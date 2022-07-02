@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\BudgetSource;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AddressSeeder::class);
         $this->call(FiscalYearSeeder::class);
         $this->call(ProjectTypeSeeder::class);
+        $this->call(BudgetSource::class);
 
 
         if (app()->environment() == 'production') {

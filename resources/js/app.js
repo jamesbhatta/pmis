@@ -15,11 +15,7 @@ Vue.component("fields-form", require("./components/FieldsForm.vue").default);
 Vue.component("project-form", require("./components/ProjectForm.vue").default);
 Vue.component("project-physical-progress", require("./components/ProjectPhysicalProgress.vue").default);
 Vue.component("payment-form", require("./components/PaymentForm.vue").default);
-Vue.component("DrinkingWaterOffice-form", require("./components/DrinkingWaterOffice.vue").default);
-Vue.component(
-    "resource-data-form",
-    require("./components/ResourceDataForm.vue").default
-);
+
 Vue.component("data-viewer", require("./components/DataViewer.vue").default);
 Vue.component("pie-chart", require("./charts/PieChart.vue").default);
 Vue.component("bar-chart", require("./charts/BarChart.vue").default);
