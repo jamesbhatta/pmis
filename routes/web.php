@@ -7,6 +7,7 @@ use App\Http\Controllers\PhysicalProgressController;
 use App\Http\Controllers\ProjectAcheivementController;
 use App\Http\Controllers\BudgetSourceController;
 use App\Http\Controllers\ProjectPhotoController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,17 +44,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
     Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 
-
-    //budget source routes
+    // Budget source routes
     Route::get('budget-source', [BudgetSourceController::class, 'index'])->name('budget-source.index');
     Route::post('budget-source', [BudgetSourceController::class, 'store'])->name('budget-source.store');
     Route::delete('budget-source/{budgetSource}', [BudgetSourceController::class, 'destroy'])->name('budget-source.destroy');
     Route::get('budget-source/{budgetSource}/edit', [BudgetSourceController::class, 'edit'])->name('budget-source.edit');
     Route::put('budget-source/{budgetSource}/update', [BudgetSourceController::class, 'update'])->name('budget-source.update');
-
-
-
-
 
     Route::get('project/{project}/physical-progress', [PhysicalProgressController::class, 'show'])->name('project.physical-progress.show');
     Route::post('project/{project}/physical-progress', [PhysicalProgressController::class, 'update'])->name('project.physical-progress.update');
@@ -64,11 +60,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('project/{project}/acheivements', [ProjectAcheivementController::class, 'show'])->name('project.acheivements.show');
     Route::post('project/{project}/acheivements', [ProjectAcheivementController::class, 'update'])->name('project.acheivements.update');
 
-    Route::get('report', ReportController::class)->name('report');
-
     Route::get('project/{project}/photos', [ProjectPhotoController::class, 'show'])->name('project.photos.show');
     Route::post('project/{project}/photos', [ProjectPhotoController::class, 'update'])->name('project.photos.update');
-
+    
+    // Report
+    Route::get('report', [ReportController::class, 'index'])->name('report');
+    Route::get('report/progress', [ReportController::class, 'progressReport'])->name('report.progress-report');
+    Route::get('report/indicator', [ReportController::class, 'indicatorReport'])->name('report.indicator-report');
 
 
     // Route::get('/data/{key}', 'TableController@index');
@@ -105,15 +103,6 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('/project-type/{projectType}/edit', [ProjectTypeController::class, 'edit'])->name('project-type.edit');
 });
 
-Route::group(
-    [
-        'middleware' => ['auth', 'role:super-admin']
-    ],
-    function () {
-        Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
-    }
-);
-
-// Route::any('/{all}', function () {
-//     return view('app');
-// })->where(['all' => '.*']);
+Route::group(['middleware' => ['auth', 'role:super-admin']], function () {
+    Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
+});
