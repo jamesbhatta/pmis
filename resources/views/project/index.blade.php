@@ -26,6 +26,9 @@
                 {{ request('filter[organization_id]', 'कार्यालय')}}
               </button>
               <div class="dropdown-menu" aria-labelledby="projectTypeDropdown">
+                @if (request()->has('filter.organization_id'))
+                <a class="dropdown-item" href="{{ route('project.index') }}">Clear Filter</a>
+                @endif
                 @foreach ($organizations as $organization)
                 <a class="dropdown-item" href="?filter[organization_id]={{ $organization->id }}">{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</a>
                 @endforeach
@@ -37,6 +40,9 @@
                 {{ request('filter[project_type_id]', 'परियोजनाका प्रकार')}}
               </button>
               <div class="dropdown-menu" aria-labelledby="projectTypeDropdown">
+                @if (request()->has('filter.project_type_id'))
+                <a class="dropdown-item" href="{{ route('project.index') }}">Clear Filter</a>
+                @endif
                 @foreach ($projectTypes as $topic => $types)
                 <a class="dropdown-item" href="#" disabled style="font-style: italic; background-color: #f2f7fb;">{{ $topic }}</a>
                 @foreach ($types as $projectType)
@@ -46,11 +52,12 @@
               </div>
         </div>
         <form class="ml-auto" action="">
-            <input type="text" name="filter[search]" class="form-control" placeholder="Search">
+            <input type="text" name="filter[search]" class="form-control" value="{{ request('filter.search') }}" placeholder="Search">
         </form>
     </div>
 
-    <table class="bg-white table projects-table">
+    <div class="bg-white">
+    <table class="table projects-table">
         <thead>
             <tr>
                 <th>क्र.स.</th>
@@ -92,5 +99,18 @@
             @endforelse
         </tbody>
     </table>
+
+    <nav class="p-2 px-3 font-noto">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                Showing {{ $projects->firstItem() }} to {{ $projects->lastItem() }} of {{ $projects->total() }} records
+            </div>
+            <div>
+                {{ $projects->links() }}
+            </div>
+        </div>
+    </nav>
+</div>
+
 </div>
 @endsection

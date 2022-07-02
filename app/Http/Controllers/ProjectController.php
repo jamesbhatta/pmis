@@ -6,17 +6,22 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Organization;
 use App\ProjectType;
+use App\Queries\ProjectsQuery;
 
 class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-        $projects = Project::with(['organization', 'projectType'])
-            ->when(auth()->user()->user_type == 'sub-division', function ($query) {
-                $query->where('organization_id', auth()->user()->organization_id);
-            })->latest()->get();
+        // $projects = Project::with(['organization', 'projectType'])
+        //     ->when(auth()->user()->user_type == 'sub-division', function ($query) {
+        //         $query->where('organization_id', auth()->user()->organization_id);
+        //     })->latest()->get();
 
-        $organizations = Organization::get();
+        $projects = (new ProjectsQuery())->when(auth()->user()->user_type == 'sub-division', function ($query) {
+            $query->where('organization_id', auth()->user()->organization_id);
+        })->paginate(20);
+
+        $organizations = Organization::with('district')->get();
         $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
 
         return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));

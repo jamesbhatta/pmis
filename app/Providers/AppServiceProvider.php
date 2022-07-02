@@ -8,6 +8,7 @@ use App\Observers\OrganizationObserver;
 use App\Observers\ProjectObserver;
 use App\Organization;
 use App\Project;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
         FiscalYear::observe(FiscalYearObserver::class);
         Project::observe(ProjectObserver::class);
 
