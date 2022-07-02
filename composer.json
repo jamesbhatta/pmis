@@ -23,7 +23,8 @@
         "qcod/laravel-settings": "^1.0",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
         "spatie/laravel-backup": "^6.11",
-        "spatie/laravel-permission": "^3.13"
+        "spatie/laravel-permission": "^3.13",
+        "spatie/laravel-query-builder": "^4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
