@@ -69,7 +69,12 @@
         </li>
         @hasanyrole('super-admin|admin')
         <li class="nav-item pl-5 {{ setActive('fiscal-year.*') }}">
-            <a class="nav-link" href="{{ route('fiscal-year.index') }}">@lang('navigation.fiscal_year')</a>
+            <a class="nav-link" href="{{route('fiscal-year.index')}}">@lang('navigation.fiscal_year')</a>
+        </li>
+        @endhasanyrole
+        @hasanyrole('super-admin|admin')
+        <li class="nav-item pl-5 ">
+            <a class="nav-link" href="{{route('budget-source.index')}}">@lang('navigation.budget_source')</a>
         </li>
         @endhasanyrole
         @can('province.*')

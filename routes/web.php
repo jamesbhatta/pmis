@@ -2,14 +2,14 @@
 
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\DrinkingWaterOfficeController;
 use App\Http\Controllers\EconomicProgressController;
-use App\Http\Controllers\PhysicalInfrastructureController;
 use App\Http\Controllers\PhysicalProgressController;
 use App\Http\Controllers\ProjectAcheivementController;
+use App\Http\Controllers\BudgetSourceController;
 use App\Http\Controllers\ProjectPhotoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 
 Auth::routes(['register' => false]);
 Route::redirect('/', '/login');
@@ -42,6 +42,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('project/{project}', [ProjectController::class, 'update'])->name('project.update');
     Route::delete('project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 
+
+    //budget source routes
+    Route::get('budget-source', [BudgetSourceController::class, 'index'])->name('budget-source.index');
+    Route::post('budget-source', [BudgetSourceController::class, 'store'])->name('budget-source.store');
+    Route::delete('budget-source/{budgetSource}', [BudgetSourceController::class, 'destroy'])->name('budget-source.destroy');
+    Route::get('budget-source/{budgetSource}/edit', [BudgetSourceController::class, 'edit'])->name('budget-source.edit');
+    Route::put('budget-source/{budgetSource}/update', [BudgetSourceController::class, 'update'])->name('budget-source.update');
+
+
+
+
+
     Route::get('project/{project}/physical-progress', [PhysicalProgressController::class, 'show'])->name('project.physical-progress.show');
     Route::post('project/{project}/physical-progress', [PhysicalProgressController::class, 'update'])->name('project.physical-progress.update');
 
@@ -56,13 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('project/{project}/photos', [ProjectPhotoController::class, 'show'])->name('project.photos.show');
     Route::post('project/{project}/photos', [ProjectPhotoController::class, 'update'])->name('project.photos.update');
 
-    // drinking water office routes
-    Route::get('DrinkingWaterOffice', [DrinkingWaterOfficeController::class, 'index'])->name('DrinkingWaterOffice.index');
-    Route::get('DrinkingWaterOffice/create', [DrinkingWaterOfficeController::class, 'create'])->name('DrinkingWaterOffice.create');
 
-
-    // Physical Infrastructure
-    Route::get('PhysicalInfrastructure', [PhysicalInfrastructureController::class, 'index'])->name('PhysicalInfrastructure.index');
 
     // Route::get('/data/{key}', 'TableController@index');
     // Route::post('/data/{key}', 'TableController@store');

@@ -45,6 +45,8 @@ return [
     'Sub_Metro_municipality_Gau'=>"उ.म.पा./न.पा./गा.पा.",
     'district_name'=>"जिल्लाको नाम",
     'role'=>"भूमिका",
+    'budget_source'=>"बजेट स्रोत",
+    'add_new'=>"नयाँ थप्नुहोस्"
 
 
 
