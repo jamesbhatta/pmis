@@ -5,7 +5,9 @@ namespace App\Providers;
 use App\FiscalYear;
 use App\Observers\FiscalYearObserver;
 use App\Observers\OrganizationObserver;
+use App\Observers\ProjectObserver;
 use App\Organization;
+use App\Project;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,5 +30,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         FiscalYear::observe(FiscalYearObserver::class);
+        Project::observe(ProjectObserver::class);
+
+        if (!session()->has('active_fiscal_year')) {
+            session()->put('active_fiscal_year', runningFiscalYear());
+        }
     }
 }

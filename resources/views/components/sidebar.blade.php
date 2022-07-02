@@ -14,20 +14,11 @@
                 <span class="text-"><i class="fa fa-plus"></i></span>Projects
             </a>
         </li> -->
-        {{-- @if (auth()->user()->user_type == 'division') --}}
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('project.index') }}">
-                <span><i class="fa fa-users"></i></span>Projects
-            </a>
-        </li>
-        {{-- @endif --}}
-        @hasanyrole('super-admin|admin')
         <li class="nav-item {{ setActive('project.index') }}">
             <a href="{{route('project.index')}}" aria-expanded="false" class="nav-link">
                 <span class="text-secondary"><i class="fa fa-cube"></i></span>@lang('navigation.Projects')
             </a>
         </li>
-        @endhasrole
         <li class="nav-item {{ setActive('report') }}">
             <a class="nav-link" href="{{ route('report') }}">
                 <span class="text-success"><i class="fa fa-list"></i></span>Report

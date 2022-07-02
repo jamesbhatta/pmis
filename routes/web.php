@@ -16,6 +16,7 @@ Route::redirect('/', '/login');
 Route::get('/registration', 'FrontendController@index')->name('organization.new');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('language/{locale}', 'LanguageController@setLocale')->name('locale');
+Route::get('set-active-fiscal-year/{fiscalYear}', 'MiscController@setActiveFiscalYear')->name('set-active-fiscal-year');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resources([

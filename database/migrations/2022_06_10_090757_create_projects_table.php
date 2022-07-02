@@ -16,6 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->foreignId('fiscal_year_id')->constrained('fiscal_years');
             $table->foreignId('organization_id')->constrained('organizations')->nullable();
             $table->foreignId('project_type_id')->constrained('project_types')->nullable();
             $table->integer('budget')->nullable();

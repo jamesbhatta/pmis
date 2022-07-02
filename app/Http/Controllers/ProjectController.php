@@ -11,10 +11,11 @@ class ProjectController extends Controller
 {
     public function index(Project $project)
     {
-        $projects = Project::with('organization')
+        $projects = Project::with(['organization', 'projectType'])
             ->when(auth()->user()->user_type == 'sub-division', function ($query) {
                 $query->where('organization_id', auth()->user()->organization_id);
             })->latest()->get();
+
         $organizations = Organization::get();
         $projectTypes = ProjectType::with('topic')->get()->groupBy('topic.title');
 
