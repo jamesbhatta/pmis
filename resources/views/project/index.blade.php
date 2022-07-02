@@ -22,27 +22,31 @@
     <div class="d-flex font-noto mb-4" style="gap: 1rem;">
         <div>
             @if (auth()->user()->user_type != 'sub-division')
-            <select name="" class="custom-select">
-                <option value="">संगठन</option>
+            <button class="custom-select" type="button" id="projectTypeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ request('filter[organization_id]', 'कार्यालय')}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="projectTypeDropdown">
                 @foreach ($organizations as $organization)
-                <option value="{{ $organization->id }}">{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</option>
+                <a class="dropdown-item" href="?filter[organization_id]={{ $organization->id }}">{{ $organization->name }} ({{ optional($organization->district)->name ?? $organization->address }})</a>
                 @endforeach
-            </select>
+              </div>
             @endif
         </div>
         <div>
-            <select name="" class="custom-select">
-                <option value="">परियोजनाको प्रकारहरु</option>
+            <button class="custom-select" type="button" id="projectTypeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ request('filter[project_type_id]', 'परियोजनाका प्रकार')}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="projectTypeDropdown">
                 @foreach ($projectTypes as $topic => $types)
-                <option disabled style="font-style: italic; background-color: #f2f7fb;">{{ $topic }}</option>
+                <a class="dropdown-item" href="#" disabled style="font-style: italic; background-color: #f2f7fb;">{{ $topic }}</a>
                 @foreach ($types as $projectType)
-                <option value="{{ $projectType->id }}">{{ $projectType->name }}</option>
+                <a class="dropdown-item" href="?filter[project_type_id]={{ $projectType->id }}">{{ $projectType->name }}</a>
                 @endforeach
                 @endforeach
-            </select>
+              </div>
         </div>
         <form class="ml-auto" action="">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="filter[search]" class="form-control" placeholder="Search">
         </form>
     </div>
 
