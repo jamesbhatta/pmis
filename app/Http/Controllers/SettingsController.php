@@ -11,6 +11,11 @@ class SettingsController extends Controller
         $this->middleware('auth');
     }
 
+    public function items()
+    {
+        return view('settings.items');
+    }
+
     public function index()
     {
         if (!auth()->user()->hasAnyRole(['super-admin', 'admin'])) {

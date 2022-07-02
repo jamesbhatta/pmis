@@ -95,6 +95,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('mysettings', 'UserSettingsController@index')->name('user.settings.index');
     // Route::post('mysettings', 'UserSettingsController@sync')->name('user.settings.sync');
 
+    Route::get('settings-items', 'SettingsController@items')->name('settings.items');
     Route::get('settings', 'SettingsController@index')->name('settings.index');
     Route::post('settings', 'SettingsController@sync')->name('settings.sync');
 

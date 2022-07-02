@@ -51,7 +51,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link" href="#!">
+            <a class="nav-link" href="{{ route('settings.items') }}">
                 <span class="text-default"><i class="fas fa-tools"></i></span>@lang('navigation.configurations')</a>
         </li>
 
