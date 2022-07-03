@@ -42,6 +42,12 @@
                     <x-slot name="title">@lang('navigation.Organizations')</x-slot>
                 </x-dashboard-count-tile>
             </div>
+            <div class="col-md-4">
+                <x-dashboard-count-tile :link="route('project-type.index')">
+                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
             @endcan
         </div>
     </div>

@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('project/{project}/photos', [ProjectPhotoController::class, 'show'])->name('project.photos.show');
     Route::post('project/{project}/photos', [ProjectPhotoController::class, 'update'])->name('project.photos.update');
-    
+
     // Report
     Route::get('report', [ReportController::class, 'index'])->name('report');
     Route::get('report/progress', [ReportController::class, 'progressReport'])->name('report.progress-report');

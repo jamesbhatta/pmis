@@ -23,15 +23,15 @@
             <td>{{ physicalProgress.agreement_date }}</td>
           </tr>
           <tr>
-            <td>Project Start Date</td>
+            <td>@lang('navigation.project_start_date')</td>
             <td>{{ physicalProgress.project_start_date }}</td>
           </tr>
           <tr>
-            <td>Project Completion Date</td>
+            <td>@lang('navigation.project_completion_date')</td>
             <td>{{ physicalProgress.project_completion_date }}</td>
           </tr>
           <tr>
-            <td>Tender Date</td>
+            <td>@lang('navigation.tender_date')</td>
             <td>{{ physicalProgress.tender_date }}</td>
           </tr>
           <tr>
@@ -64,7 +64,7 @@
           <v-nepalidatepicker v-model="form.project_completion_date" calenderType="Nepali" classValue="form-control" :placeholder="form.project_completion_date"></v-nepalidatepicker>
         </div>
         <div class="form-group">
-          <label for="">Tender Date </label>
+          <label for="">Tender Date</label>
           <v-nepalidatepicker v-model="form.tender_date" calenderType="Nepali" classValue="form-control" :placeholder="form.tender_date"></v-nepalidatepicker>
         </div>
         <div class="form-group">

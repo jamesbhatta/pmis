@@ -21,7 +21,7 @@
         </li>
         <li class="nav-item {{ setActive('report') }}">
             <a class="nav-link" href="{{ route('report') }}">
-                <span class="text-success"><i class="fa fa-list"></i></span>Report
+                <span class="text-success"><i class="fa fa-list"></i></span>@lang('navigation.report')
             </a>
         </li>
         @hasrole('super-admin')

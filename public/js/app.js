@@ -38813,7 +38813,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("tr", [
-              _c("td", [_vm._v("Project Start Date")]),
+              _c("td", [_vm._v("@lang('navigation.project_start_date')")]),
               _vm._v(" "),
               _c("td", [
                 _vm._v(_vm._s(_vm.physicalProgress.project_start_date)),
@@ -38821,7 +38821,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("tr", [
-              _c("td", [_vm._v("Project Completion Date")]),
+              _c("td", [_vm._v("@lang('navigation.project_completion_date')")]),
               _vm._v(" "),
               _c("td", [
                 _vm._v(_vm._s(_vm.physicalProgress.project_completion_date)),
@@ -38829,7 +38829,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("tr", [
-              _c("td", [_vm._v("Tender Date")]),
+              _c("td", [_vm._v("@lang('navigation.tender_date')")]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(_vm.physicalProgress.tender_date))]),
             ]),
@@ -39006,7 +39006,7 @@ var render = function () {
             "div",
             { staticClass: "form-group" },
             [
-              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date ")]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date")]),
               _vm._v(" "),
               _c("v-nepalidatepicker", {
                 attrs: {
