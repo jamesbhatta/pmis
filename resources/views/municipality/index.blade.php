@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
+@section('breadcrumb')
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">ड्यासबोर्ड</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@lang('navigation.municipality')</li>
+    </ol>
+</nav>
+@endsection
 <div class="container">
     @include('alerts.all')
 </div>

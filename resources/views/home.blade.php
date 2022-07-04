@@ -11,26 +11,30 @@
         color: #1f2d3d !important;
     }
 
+    .cards div a:hover{
+        background-color: #1c4267;
+        color: white;
+    }
 </style>
 @endpush
 
 @section('content')
 <div id="dashboard" class="m-n3">
     <div class="container font-noto">
-        <div class="row">
+        <div class="row cards">
             {{-- Alerts --}}
             <div class="col-md-12 mt-2">
                 @include('alerts.all')
             </div>
 
             @can('user.*')
-            <div class="col-md-4">
-                <x-dashboard-count-tile >
+            <div class="col-md-4 totalProjectsCount">
+                <x-dashboard-count-tile :link="route('project.index')">
                     <x-slot name="count">{{ $totalProjectsCount }}</x-slot>
                     <x-slot name="title">परियोजनाहरू</x-slot>
                 </x-dashboard-count-tile>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 totalUsersCount">
                 <x-dashboard-count-tile :link="route('user.index')">
                     <x-slot name="count">{{ $totalUsersCount }}</x-slot>
                     <x-slot name="title">प्रयोगकर्ताहरू</x-slot>
@@ -67,19 +71,18 @@
             if (table && table.length) {
                 var preserveColors = (table.hasClass('table2excel_with_colors') ? true : false);
                 $(table).table2excel({
-                    exclude: ".noExl"
-                    , name: "Business By Type"
-                    , filename: "business-by-type-" + new Date().toISOString().replace(/[\-\:\.]/g, "") + ".xls"
-                    , fileext: ".xls"
-                    , exclude_img: true
-                    , exclude_links: true
-                    , exclude_inputs: true
-                    , preserveColors: preserveColors
+                    exclude: ".noExl",
+                    name: "Business By Type",
+                    filename: "business-by-type-" + new Date().toISOString().replace(/[\-\:\.]/g, "") + ".xls",
+                    fileext: ".xls",
+                    exclude_img: true,
+                    exclude_links: true,
+                    exclude_inputs: true,
+                    preserveColors: preserveColors
                 });
             }
         });
 
     });
-
 </script>
 @endpush

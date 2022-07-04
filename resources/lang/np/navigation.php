@@ -49,7 +49,8 @@ return [
     'district_name'=>"जिल्लाको नाम",
     'role'=>"भूमिका",
     'budget_source'=>"बजेट स्रोत",
-    'add_new'=>"नयाँ थप्नुहोस्"
+    'add_new'=>"नयाँ थप्नुहोस्",
+    'configuration'=>"कन्फिगरेसनहरू"
 
 
 
