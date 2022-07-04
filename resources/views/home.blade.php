@@ -28,25 +28,25 @@
             </div>
 
             @can('user.*')
-            <div class="col-md-4 totalProjectsCount">
+            <div class="col-md-3">
                 <x-dashboard-count-tile :link="route('project.index')">
                     <x-slot name="count">{{ $totalProjectsCount }}</x-slot>
                     <x-slot name="title">परियोजनाहरू</x-slot>
                 </x-dashboard-count-tile>
             </div>
-            <div class="col-md-4 totalUsersCount">
+            <div class="col-md-3">
                 <x-dashboard-count-tile :link="route('user.index')">
                     <x-slot name="count">{{ $totalUsersCount }}</x-slot>
                     <x-slot name="title">प्रयोगकर्ताहरू</x-slot>
                 </x-dashboard-count-tile>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <x-dashboard-count-tile :link="route('organization.index')">
                     <x-slot name="count">{{ $totalOrganizationsCount }}</x-slot>
                     <x-slot name="title">@lang('navigation.Organizations')</x-slot>
                 </x-dashboard-count-tile>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <x-dashboard-count-tile :link="route('project-type.index')">
                     <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
                     <x-slot name="title">@lang('navigation.project_type')</x-slot>
