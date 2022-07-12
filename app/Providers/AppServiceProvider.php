@@ -9,6 +9,7 @@ use App\Observers\ProjectObserver;
 use App\Organization;
 use App\Project;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,8 +35,10 @@ class AppServiceProvider extends ServiceProvider
         FiscalYear::observe(FiscalYearObserver::class);
         Project::observe(ProjectObserver::class);
 
-        if (!session()->has('active_fiscal_year')) {
-            session()->put('active_fiscal_year', runningFiscalYear());
+        if(Schema::hasTable('fiscal_years')) {
+            if (!session()->has('active_fiscal_year')) {
+                session()->put('active_fiscal_year', runningFiscalYear());
+            }
         }
     }
 }
