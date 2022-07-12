@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AddressSeeder::class);
         $this->call(FiscalYearSeeder::class);
         $this->call(ProjectTypeSeeder::class);
-        $this->call(BudgetSource::class);
+        $this->call(BudgetSourceSeeder::class);
 
 
         if (app()->environment() == 'production') {
