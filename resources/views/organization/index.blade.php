@@ -30,12 +30,12 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Organization name</th>
-                        <th>District</th>
-                        <th>Type</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Email</th>
+                        <th>@lang('navigation.Organization')</th>
+                        <th>@lang('navigation.district')</th>
+                        <th>@lang('navigation.type')</th>
+                        <th>@lang('navigation.address')</th>
+                        <th>@lang('navigation.phone')</th>
+                        <th>@lang('navigation.email')</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -61,7 +61,7 @@
                     </tr>
                     @empty
                     <tr class="bg-white">
-                        <td colspan="42" class="text-center">No Records Found</td>
+                        <td colspan="42" class="text-center">डाटाबेसमा कुनै डाटा छैन |</td>
                     </tr>
                     @endforelse
                 </tbody>

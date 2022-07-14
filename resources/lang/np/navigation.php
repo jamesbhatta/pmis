@@ -28,9 +28,9 @@ return [
     'project_type'=>"परियोजनाका प्रकार",
     'ProjectTypes'=>"परियोजनाको प्रकार थप्नुहोस्",
     'name_of_the_office'=>"कार्यालयको नाम",
-    'office_address'=>"कार्यालयको ठेगाना",
-    'office_phone'=>"कार्यालयको फोन",
-    'office_email'=>"कार्यालयको इमेल",
+    'address'=>"ठेगाना",
+    'phone'=>"फोन",
+    'email'=>"इमेल",
     'office_website'=>"कार्यालयको वेबसाइट",
     'office_type'=>"कार्यालयको प्रकार",
     'office_type_list'=>"कार्यालयको प्रकार सूची",
@@ -50,8 +50,13 @@ return [
     'role'=>"भूमिका",
     'budget_source'=>"बजेट स्रोत",
     'add_new'=>"नयाँ थप्नुहोस्",
-    'configuration'=>"कन्फिगरेसनहरू"
-
+    'configuration'=>"कन्फिगरेसनहरू",
+    'type'=>"प्रकार",
+    'users'=>"प्रयोगकर्ताहरू",
+    'organization_name'=>"संस्थाको नाम",
+    'add_organization'=>"संस्था थप्नुहोस्",
+    'add_user'=>"प्रयोगकर्ता थप्नुहोस्",
+    'indicator'=>"सूचकहरू",
 
 
 

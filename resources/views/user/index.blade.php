@@ -14,7 +14,7 @@
     <div class="box">
         <div class="box__header">
             <div class="d-flex">
-                <div class="align-self-center box__title">Users</div>
+                <div class="align-self-center box__title">@lang('navigation.users')</div>
                 <div class="ml-auto">
                     <a class="btn btn-primary z-depth-0" href="{{ route('user.create') }}"><span class="mr-2"><i class="fa fa-plus"></i></span> New User</a>
                 </div>

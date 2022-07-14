@@ -4,7 +4,8 @@
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Report</li>
+        <li class="breadcrumb-item"><a href="{{route('report')}}">@lang('navigation.report')</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@lang('navigation.indicator')</li>
     </ol>
 </nav>
 @endsection

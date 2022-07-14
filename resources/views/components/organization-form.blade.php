@@ -10,14 +10,20 @@
         select {
             height: calc(1.5em + .75rem + 4px) !important;
         }
-
     </style>
     @endpush
 
     <div class="card z-depth-0">
+        <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">ड्यासबोर्ड</a></li>
+                <li class="breadcrumb-item"><a href="{{route('organization.index')}}">@lang('navigation.Organizations')</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@lang('navigation.add_organization')</li>
+            </ol>
+        </nav>
         <div class="card-body">
             <div class="text-center light-blue lighten-5 indigo-text p-4">
-                <h2 class="h2-responsive d-inline-block font-weight-bolder font-noto border-bottom border-primary pb-2">
+                <h2 class="h3-responsive d-inline-block font-weight-bolder font-noto border-bottom border-primary pb-2">
                     {{ $updateMode ? 'Edit Organization' : 'Add Organization' }}
                 </h2>
             </div>
@@ -42,13 +48,13 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="" class="required">Organization Name</label>
+                        <label for="" class="required">@lang('navigation.organization_name')</label>
                         <input type="text" name="name" class="form-control romanized rounded-0 {{ invalid_class('name') }}" value="{{ old('name', $organization->name) }}" autocomplete="off" required>
                         <x-invalid-feedback field="name"></x-invalid-feedback>
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="" class="required">Type</label>
+                        <label for="" class="required">@lang('navigation.type')</label>
                         <select name="type" class="custom-select">
                             @foreach (config('constants.organization_types') as $key => $value)
                             <option value="{{ $key }}" @if (old('type', $organization->type) == $key) selected @endif>{{ $value }}</option>
@@ -58,7 +64,7 @@
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="" class="required">Province</label>
+                        <label for="" class="required">@lang('navigation.province')</label>
                         <select name="province_id" id="select-org-province-id" class="custom-select rounded-0 {{ invalid_class('province_id') }}" required>
                             <option value="">प्रदेश छान्नुहोस्</option>
                             @include('org-form-components.default-location',['settingsKey' => 'default_province_id', 'data' => $provinces])
@@ -70,7 +76,7 @@
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="" class="required">District</label>
+                        <label for="" class="required">@lang('navigation.district')</label>
                         <select name="district_id" id="select-org-district-id" class="custom-select rounded-0 {{ invalid_class('district_id') }}" required>
                             <option value="">जिल्ला छान्नुहोस्</option>
                             @include('org-form-components.default-location',['settingsKey' => 'default_district_id', 'data' => $districts])
@@ -82,19 +88,19 @@
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="">Address</label>
+                        <label for="">@lang('navigation.address')</label>
                         <input type="text" name="address" class="form-control rounded-0 {{ invalid_class('address') }}" value="{{ old('address', $organization->address ?? '' ) }}">
                         <x-invalid-feedback field="address"></x-invalid-feedback>
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="">Email</label>
+                        <label for="">@lang('navigation.email')</label>
                         <input type="email" name="email" class="form-control rounded-0 {{ invalid_class('email') }}" value="{{ old('email', $organization->email ?? '' ) }}">
                         <x-invalid-feedback field="email"></x-invalid-feedback>
                     </div>
 
                     <div class="col-md-6 form-group">
-                        <label for="">Phone</label>
+                        <label for="">@lang('navigation.phone')</label>
                         <input type="text" name="phone" class="form-control rounded-0 {{ invalid_class('phone') }}" value="{{ old('phone', $organization->phone ?? '' ) }}">
                         <x-invalid-feedback field="phone"></x-invalid-feedback>
                     </div>
@@ -181,7 +187,6 @@
         });
 
     });
-
 </script>
 @include('layouts.partials.romanized-keyboard-scripts')
 @endpush

@@ -3,6 +3,15 @@
 @section('content')
 <div class="container">
     <div class="font-roboto">
+        @section('breadcrumb')
+        <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">ड्यासबोर्ड</a></li>
+                <li class="breadcrumb-item"><a href="{{route('user.index')}}">@lang('navigation.users')</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@lang('navigation.add_user')</li>
+            </ol>
+        </nav>
+        @endsection
         <div class="text-center">
             <h2 class="h2-responsive font-weight-bold">{{ $user->exists ? 'Edit' : 'Add New' }} User</h2>
         </div>
@@ -90,7 +99,6 @@
         {{-- End of user form --}}
     </div>
 </div>
-</div>
 @endsection
 
 @push('scripts')
@@ -100,6 +108,5 @@
             $('#ward-selector').toggleClass('d-none');;
         })
     })
-
 </script>
 @endpush

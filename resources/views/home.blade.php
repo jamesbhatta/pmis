@@ -52,6 +52,30 @@
                     <x-slot name="title">@lang('navigation.project_type')</x-slot>
                 </x-dashboard-count-tile>
             </div>
+            <div class="col-md-3">
+                <x-dashboard-count-tile :link="route('project-type.index')">
+                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
+            <div class="col-md-3">
+                <x-dashboard-count-tile :link="route('project-type.index')">
+                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
+            <div class="col-md-3">
+                <x-dashboard-count-tile :link="route('project-type.index')">
+                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
+            <div class="col-md-3">
+                <x-dashboard-count-tile :link="route('project-type.index')">
+                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
             @endcan
         </div>
     </div>
