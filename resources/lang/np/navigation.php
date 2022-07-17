@@ -45,6 +45,7 @@ return [
     'traffic_management'=>"यातायात व्यवस्था कार्यालय",
     'Drinking_Water_Office'=>"खानेपानी तथा  सरसफाई डिविजन कार्यालय",
     'Ministry_of_Physical_Transport'=>"भौतिक पूर्वाधार तथा यातायात मन्त्रालय",
+    'patharaiya_mohna_sichaiya'=>"पथरैया मोहना सिचाई व्यवस्थापन कार्यालय",
     'Sub_Metro_municipality_Gau'=>"उ.म.पा./न.पा./गा.पा.",
     'district_name'=>"जिल्लाको नाम",
     'role'=>"भूमिका",
