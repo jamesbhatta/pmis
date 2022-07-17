@@ -6,6 +6,7 @@ use App\Http\Controllers\EconomicProgressController;
 use App\Http\Controllers\PhysicalProgressController;
 use App\Http\Controllers\ProjectAcheivementController;
 use App\Http\Controllers\BudgetSourceController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectPhotoController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,11 @@ use Illuminate\Support\Facades\Auth;
 
 
 Auth::routes(['register' => false]);
-Route::redirect('/', '/login');
+// Route::redirect('/', '');
+Route::get('/', [IndexController::class,'index'])->name('index');
+
+
+
 Route::get('/registration', 'FrontendController@index')->name('organization.new');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('language/{locale}', 'LanguageController@setLocale')->name('locale');
