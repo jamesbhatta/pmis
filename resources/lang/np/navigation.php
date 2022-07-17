@@ -57,6 +57,7 @@ return [
     'add_organization'=>"संस्था थप्नुहोस्",
     'add_user'=>"प्रयोगकर्ता थप्नुहोस्",
     'indicator'=>"सूचकहरू",
+    'progress_report'=>"प्रगति रिपोर्ट",
 
 
 

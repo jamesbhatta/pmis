@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\BudgetSource;
+use App\FiscalYear;
 use App\Organization;
 use App\User;
 use App\Project;
 use App\ProjectType;
 use Illuminate\Http\Request;
+use App\District;
+use App\Municipality;
+use App\Ward;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -33,6 +38,12 @@ class HomeController extends Controller
         $totalProjectsCount = Project::count();
         $totalOrganizationsCount = Organization::count();
         $totalProjectTypesCount=ProjectType::count();
+        $totalBudgetSource=BudgetSource::count();
+        $totalFiscalYear=FiscalYear::count();
+        $totalDistricts=District::where('province_id','7')->count();
+        $totalMuncipality=Municipality::count();
+        $totalWards=Ward::count();
+
         return view('home', [
             'title' => $title,
             'totalProjectsCount' => $totalProjectsCount,
@@ -42,6 +53,11 @@ class HomeController extends Controller
             'onlineFormsCount' => $onlineFormsCount,
             'registeredOrganizationsCount' => $registeredOrganizationsCount,
             'closedOrganizationsCount' => $closedOrganizationsCount,
+            'totalBudgetSource' => $totalBudgetSource,
+            'totalFiscalYear' => $totalFiscalYear,
+            'totalDistrictsCount' => $totalDistricts,
+            'totalMuncipalityCount' => $totalMuncipality,
+            'totalWardsCount' => $totalWards,
         ]);
     }
 }

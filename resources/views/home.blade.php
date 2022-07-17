@@ -53,27 +53,33 @@
                 </x-dashboard-count-tile>
             </div>
             <div class="col-md-3">
-                <x-dashboard-count-tile :link="route('project-type.index')">
-                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
-                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                <x-dashboard-count-tile :link="route('budget-source.index')">
+                    <x-slot name="count">{{ $totalBudgetSource }}</x-slot>
+                    <x-slot name="title">@lang('navigation.budget_source')</x-slot>
                 </x-dashboard-count-tile>
             </div>
             <div class="col-md-3">
-                <x-dashboard-count-tile :link="route('project-type.index')">
-                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
-                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                <x-dashboard-count-tile :link="route('fiscal-year.index')">
+                    <x-slot name="count">{{ $totalFiscalYear }}</x-slot>
+                    <x-slot name="title">@lang('navigation.fiscal_year')</x-slot>
                 </x-dashboard-count-tile>
             </div>
             <div class="col-md-3">
-                <x-dashboard-count-tile :link="route('project-type.index')">
-                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
-                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                <x-dashboard-count-tile :link="route('district.index')">
+                    <x-slot name="count">{{ $totalDistrictsCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.district')</x-slot>
                 </x-dashboard-count-tile>
             </div>
             <div class="col-md-3">
-                <x-dashboard-count-tile :link="route('project-type.index')">
-                    <x-slot name="count">{{ $totalProjectTypesCount }}</x-slot>
-                    <x-slot name="title">@lang('navigation.project_type')</x-slot>
+                <x-dashboard-count-tile :link="route('municipality.index')">
+                    <x-slot name="count">{{ $totalMuncipalityCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.municipality')</x-slot>
+                </x-dashboard-count-tile>
+            </div>
+            <div class="col-md-3">
+                <x-dashboard-count-tile :link="route('ward.index')">
+                    <x-slot name="count">{{ $totalWardsCount }}</x-slot>
+                    <x-slot name="title">@lang('navigation.ward')</x-slot>
                 </x-dashboard-count-tile>
             </div>
             @endcan
