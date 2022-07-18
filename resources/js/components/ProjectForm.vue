@@ -16,7 +16,9 @@
             <label>संगठन</label>
             <select class="custom-select" v-model="form.organization_id">
               <option value="">कृपया संगठन चयन गर्नुहोस्</option>
-              <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{ organization.name }}</option>
+              <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{
+                  organization.name
+              }}</option>
             </select>
             <small class="text-danger">{{ form.errors.first("organization_id") }}</small>
           </div>
@@ -42,6 +44,14 @@
           </div>
 
           <div class="form-group col-lg-6">
+            <label for="">बजेट उपशीर्षक न.(ब.उ.शी.न.)</label>
+            <div class="input-group mb-2">
+              <input type="number" v-model="form.budget_upashirsakha" class="form-control" />
+            </div>
+            <small class="text-danger">{{ form.errors.first("budget_upashirsakha") }}</small>
+          </div>
+
+          <div class="form-group col-lg-6">
             <label>बजेट स्रोत</label>
             <!-- <input type="text" v-model="form.budget_source" class="form-control" /> -->
             <select v-model="form.budget_source" class="custom-select">
@@ -51,6 +61,13 @@
               </template>
             </select>
             <small class="text-danger">{{ form.errors.first("budget_source") }}</small>
+          </div>
+          <div class="form-group col-lg-6">
+            <label for="">खर्च उपशीर्षक न.(ख.उ.शी.न.)</label>
+            <div class="input-group mb-2">
+              <input type="number" v-model="form.kharcha_upashirsakha" class="form-control" />
+            </div>
+            <small class="text-danger">{{ form.errors.first("kharcha_upashirsakha") }}</small>
           </div>
 
           <div class="form-group col-lg-6">
@@ -142,6 +159,8 @@ export default {
           last_year_physical_progress: "",
           population_to_be_benefited: "",
           description: "",
+          budget_upashirsakha: "",
+          kharcha_upashirsakha: "",
         },
         {
           resetOnSuccess: false,
@@ -161,7 +180,10 @@ export default {
       this.form.last_year_expenditure = this.project.last_year_expenditure;
       this.form.last_year_physical_progress = this.project.last_year_physical_progress;
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
-      this.form.description = this.project.description ?? "<div></div>";
+      this.form.description = this.project.description;
+      this.form.budget_upashirsakha = this.project.budget_upashirsakha;
+      this.form.kharcha_upashirsakha = this.project.kharcha_upashirsakha;
+
     }
   },
 

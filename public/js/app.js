@@ -2493,6 +2493,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2534,7 +2551,9 @@ __webpack_require__.r(__webpack_exports__);
         last_year_expenditure: "",
         last_year_physical_progress: "",
         population_to_be_benefited: "",
-        description: ""
+        description: "",
+        budget_upashirsakha: "",
+        kharcha_upashirsakha: ""
       }, {
         resetOnSuccess: false
       })
@@ -2542,8 +2561,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     if (this.project.id) {
-      var _this$project$descrip;
-
       this.updateMode = true;
       this.form.title = this.project.title;
       this.form.organization_id = this.project.organization_id;
@@ -2554,7 +2571,9 @@ __webpack_require__.r(__webpack_exports__);
       this.form.last_year_expenditure = this.project.last_year_expenditure;
       this.form.last_year_physical_progress = this.project.last_year_physical_progress;
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
-      this.form.description = (_this$project$descrip = this.project.description) !== null && _this$project$descrip !== void 0 ? _this$project$descrip : "<div></div>";
+      this.form.description = this.project.description;
+      this.form.budget_upashirsakha = this.project.budget_upashirsakha;
+      this.form.kharcha_upashirsakha = this.project.kharcha_upashirsakha;
     }
   },
   methods: {
@@ -38440,6 +38459,44 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-lg-6" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("बजेट उपशीर्षक न.(ब.उ.शी.न.)"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-2" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.budget_upashirsakha,
+                      expression: "form.budget_upashirsakha",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "number" },
+                  domProps: { value: _vm.form.budget_upashirsakha },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.form,
+                        "budget_upashirsakha",
+                        $event.target.value
+                      )
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("budget_upashirsakha"))),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group col-lg-6" }, [
               _c("label", [_vm._v("बजेट स्रोत")]),
               _vm._v(" "),
               _c(
@@ -38494,6 +38551,44 @@ var render = function () {
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
                 _vm._v(_vm._s(_vm.form.errors.first("budget_source"))),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group col-lg-6" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("खर्च उपशीर्षक न.(ख.उ.शी.न.)"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-2" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.kharcha_upashirsakha,
+                      expression: "form.kharcha_upashirsakha",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "number" },
+                  domProps: { value: _vm.form.kharcha_upashirsakha },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.form,
+                        "kharcha_upashirsakha",
+                        $event.target.value
+                      )
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("kharcha_upashirsakha"))),
               ]),
             ]),
             _vm._v(" "),

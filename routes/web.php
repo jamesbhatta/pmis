@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes(['register' => false]);
 // Route::redirect('/', '');
 Route::get('/', [IndexController::class,'index'])->name('index');
-
+Route::get('/Physical-Infrastruture', [IndexController::class,'physicalInfrastructure'])->name('physical-infrastruture');
+Route::get('/Water-Resources', [IndexController::class,'waterResources'])->name('water-resources');
+Route::get('/Water-And-Sanitation', [IndexController::class,'waterAndSanitation'])->name('water-and-sanitation');
 
 
 Route::get('/registration', 'FrontendController@index')->name('organization.new');

@@ -20,8 +20,10 @@ class CreateProjectsTable extends Migration
             $table->foreignId('organization_id')->constrained('organizations')->nullable();
             $table->foreignId('project_type_id')->constrained('project_types')->nullable();
             $table->integer('budget')->nullable();
+            $table->integer('budget_upashirshakh')->nullable();
             $table->string('budget_source')->nullable();
             $table->string('expenditure_type')->nullable();
+            $table->string('expenditure_upashirshakh')->nullable();
             $table->integer('last_year_expenditure')->nullable();
             $table->string('population_to_be_benefited')->nullable();
             $table->integer('last_year_physical_progress')->nullable();
