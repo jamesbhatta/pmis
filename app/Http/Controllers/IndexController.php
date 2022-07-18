@@ -16,6 +16,18 @@ class IndexController extends Controller
         return view('index');
     }
 
+    public function physicalInfrastructure()
+    {
+        return view('organization-list.physical-infrastructure.index');
+    }
+    public function waterResources()
+    {
+        return view('organization-list.water-resources.index');
+    }
+    public function waterAndSanitation()
+    {
+        return view('organization-list.water-and-sanitation.index');
+    }
     /**
      * Show the form for creating a new resource.
      *
