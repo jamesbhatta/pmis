@@ -39,7 +39,7 @@
             <a href="{{route('physical-infrastruture')}}" class="card p-3" style="background-color: #4d4d33; height:100%;">
               <span class="text-white row">
                 <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                <label for="" class="mt-3 ml-2 col-lg-8 h6">@lang('navigation.total_project')&nbsp;$count = Model::where('status','=','1')->count();</label>
+                <label for="" class="mt-3 ml-2 col-lg-8 h6">@lang('navigation.total_project')&nbsp;10</label>
                 </span>
                 <h4 class="text-white mt-4 text-center">@lang('navigation.Ministry_of_Physical_Transport')</h4>
             </a>

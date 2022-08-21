@@ -11,7 +11,7 @@ class ProjectType extends Model
 
     protected $guarded = ['id'];
 
-    public function topic()
+    public function project_topic()
     {
         return $this->belongsTo(ProjectTopic::class, 'topic_id');
     }
