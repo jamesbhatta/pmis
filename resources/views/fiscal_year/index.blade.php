@@ -47,12 +47,9 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
-
     <div class="my-4"></div>
-
     <div class="card z-depth-0">
         <div class="card-header">
             <h1 class="h3-responsive d-inline-block">आर्थिक वर्षहरु</h1>
@@ -116,8 +113,6 @@
         if ($('.fiscal-year-date')[0]) {
             $('.fiscal-year-date').nepaliDatePicker({});
         }
-
     })
-
 </script>
 @endpush
