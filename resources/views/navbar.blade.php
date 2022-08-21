@@ -19,7 +19,7 @@
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item pr-1">
-                    <a href="{{route('index')}}" class="nav-link" to="/">गृह पृष्ठ</a>
+                    <a href="{{route('index')}}" class="nav-link h4" to="/">गृह पृष्ठ</a>
                 </li>
 
                 <img src="/assets/img/nepalflag.gif" alt="flag" height="60px">

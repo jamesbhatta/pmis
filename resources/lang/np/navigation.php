@@ -59,4 +59,5 @@ return [
     'add_user'=>"प्रयोगकर्ता थप्नुहोस्",
     'indicator'=>"सूचकहरू",
     'progress_report'=>"प्रगति रिपोर्ट",
+    'total_project'=>"कुल परियोजना",
 ];

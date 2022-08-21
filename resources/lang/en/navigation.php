@@ -87,8 +87,5 @@ return [
     'add_organization'=>"Add Organization",
     'add_user'=>"Add User",
     'indicator'=>"Indicator",
-
-
-
-
+    'total_project'=>"Total Project",
 ];
