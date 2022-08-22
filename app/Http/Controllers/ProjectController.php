@@ -22,9 +22,11 @@ class ProjectController extends Controller
         })->paginate(20);
 
         $organizations = Organization::with('district')->get();
-        $projectTypes = ProjectType::get()->groupBy('topic.title');
+        // dd($organizations);
+        $projectTypes = ProjectType::with(['project_topic'])->get()->groupBy('topic.title');
+        // dd($projectTypes);
         return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
-        // dd("asdfd");
+
 
     }
 
