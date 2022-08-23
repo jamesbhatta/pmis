@@ -60,4 +60,5 @@ return [
     'indicator'=>"सूचकहरू",
     'progress_report'=>"प्रगति रिपोर्ट",
     'total_project'=>"कुल परियोजना",
+    'title'=>"शीर्षक",
 ];

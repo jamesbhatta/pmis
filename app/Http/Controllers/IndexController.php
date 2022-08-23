@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project ;
 
 class IndexController extends Controller
 {
@@ -18,7 +19,10 @@ class IndexController extends Controller
 
     public function physicalInfrastructure()
     {
-        return view('organization-list.physical-infrastructure.index');
+        $physical_infrastures = Project::get();
+        // dd($physical_infrastures);
+        return $physical_infrastures;
+        // return view('organization-list.physical-infrastructure.index',['physical_infrastures'=>$physical_infrastures]);
     }
     public function waterResources()
     {

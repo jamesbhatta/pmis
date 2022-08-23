@@ -5,79 +5,34 @@
 
 
 <div style="background-color: #edf2f8;width:100%;height:100vh;">
-    <div style="height: 120px;"></div>
+    <div style="height: 150px;"></div>
     <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-12">
-                <div class="row p-3" style="border-radius: 10px;">
-                    <div class="col-lg-4">
-                        <a href="{{route('physical-infrastruture')}}" class="card p-3" style="background-color: #4d4d33; height:100%;">
-                            <span class="text-white row">
-                                <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                <label for="" class="ml-2 col-lg-8">10/25 COMPLETED</label>
-                            </span>
-                            <h4 class="text-white mt-4 text-center">@lang('navigation.Ministry_of_Physical_Transport')</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card" style="background-color:#000099; height:100%;">
-                            <a href="{{route('water-resources')}}" class="p-3">
-                                <span class="text-white row">
-                                    <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                    <label class="ml-2 col-lg-8">10/25 COMPLETED</label>
-                                </span>
-                                <h4 class="text-white mt-4 text-center">@lang('navigation.water_irrigation')</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card" style="background-color: #004d00; height:100%;">
-                            <a href="#" class="p-3">
-                                <span class="text-white row">
-                                    <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                    <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
-                                    <h4 class="mt-4 text-center">@lang('navigation.Drinking_Water_Office')</h4>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                        <div class="card" style="background-color: #660000; height:100%;">
-                            <a href="#" class="p-3">
-                                <span class="text-white row">
-                                    <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                    <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
-                                    <h4 class="text-white mt-4 text-center">@lang('navigation.patharaiya_mohna_sichaiya')</h4>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                        <div class="card" style="background-color: #333300; height:100%; border-radius: 4px;">
-                            <a href="#" class="p-3">
-                                <span class="text-white row">
-                                    <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                    <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
-                                    <h4 class="mt-4 text-center">@lang('navigation.urban_development')</h4>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                        <div class="card" style="height:100%; background-color:  #000033; height:100%;">
-                            <a href="#" class="p-3">
-                                <span class="text-white row">
-                                    <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                                    <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
-                                    <h4 class="mt-4 text-center">@lang('navigation.traffic_management')</h4>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark fontsize">
+                <th scope="col">S.No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Fiscal Year</th>
+                <th scope="col">Budget</th>
+                <th scope="col">Budget Upashirshakh</th>
+                <th scope="col">Budget Source</th>
+                <th scope="col">Expenditure</th>
+                <th scope="col">Status</th>
+            </thead>
+            <tbody>
+            @foreach ($physical_infrastures as $physical_infrasture)
+                <tr class="fontsize1">
+                    <td>1</td>
+                    <td>{{$physical_infrasture->title}}</td>
+                    <td>{{$physical_infrasture->fiscal_year}}</td>
+                    <td>{{$physical_infrasture->budget}}</td>
+                    <td>{{$physical_infrasture->budget_upashirshakh}}</td>
+                    <td>{{$physical_infrasture->budget_source}}</td>
+                    <td>{{$physical_infrasture->expenditure}}</td>
+                    <td>1</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection
@@ -107,5 +62,16 @@
 
     .card1 div:hover span a {
         color: #fff;
+    }
+
+    .fontsize th {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .fontsize1 td {
+        text-align: center;
+        font-size: 18px;
+       background-color:#acadb0;
     }
 </style>
