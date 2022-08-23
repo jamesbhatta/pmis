@@ -32,6 +32,10 @@ class IndexController extends Controller
     {
         return view('organization-list.water-and-sanitation.index');
     }
+    public function pathraiyaMohanIrrigation()
+    {
+        return view('organization-list.pathraiya-mohana-irrigation.index');
+    }
     /**
      * Show the form for creating a new resource.
      *

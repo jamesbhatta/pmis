@@ -22,7 +22,7 @@
               <span><a href="{{route('water-and-sanitation')}}">@lang('navigation.Drinking_Water_Office')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="#">@lang('navigation.patharaiya_mohna_sichaiya')</a></span>
+              <span><a href="{{route('pathraiya-mohana-irrigation')}}">@lang('navigation.patharaiya_mohna_sichaiya')</a></span>
             </div>
             <div class="p-3 mt-1">
               <span><a href="#">@lang('navigation.urban_development')</a></span>
@@ -52,7 +52,6 @@
                   <label class="ml-2 col-lg-8">10/25 COMPLETED</label>
                   </span>
                   <h4 class="text-white mt-4 text-center">@lang('navigation.water_irrigation')</h4>
-
               </a>
             </div>
           </div>
@@ -69,7 +68,7 @@
           </div>
           <div class="col-lg-4 mt-4">
             <div class="card" style="background-color: #660000; height:100%;">
-              <a href="#" class="p-3">
+              <a href="{{route('pathraiya-mohana-irrigation')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>

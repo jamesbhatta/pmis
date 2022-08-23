@@ -19,6 +19,7 @@ Route::get('/', [IndexController::class,'index'])->name('index');
 Route::get('/Physical-Infrastruture', [IndexController::class,'physicalInfrastructure'])->name('physical-infrastruture');
 Route::get('/Water-Resources', [IndexController::class,'waterResources'])->name('water-resources');
 Route::get('/Water-And-Sanitation', [IndexController::class,'waterAndSanitation'])->name('water-and-sanitation');
+Route::get('/Pathraiya-Mohana-Irrigation', [IndexController::class,'pathraiyaMohanIrrigation'])->name('pathraiya-mohana-irrigation');
 
 
 Route::get('/registration', 'FrontendController@index')->name('organization.new');
