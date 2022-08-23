@@ -9,7 +9,7 @@
     <div class="container">
         <table class="table table-striped table-bordered">
             <thead class="thead-dark fontsize">
-                <th scope="col">S.No</th>
+                <th scope="col">S.No.</th>
                 <th scope="col">Title</th>
                 <th scope="col">Fiscal Year</th>
                 <th scope="col">Budget</th>
