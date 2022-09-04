@@ -21,8 +21,8 @@ class IndexController extends Controller
     {
         $physical_infrastures = Project::get();
         // dd($physical_infrastures);
-        return $physical_infrastures;
-        // return view('organization-list.physical-infrastructure.index',['physical_infrastures'=>$physical_infrastures]);
+        // return $physical_infrastures;
+        return view('organization-list.physical-infrastructure.index',['physical_infrastures'=>$physical_infrastures]);
     }
     public function waterResources()
     {
