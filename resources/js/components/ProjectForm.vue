@@ -48,7 +48,7 @@
             <div class="input-group mb-2">
               <input type="number" v-model="form.budget_upashirshakh" class="form-control" />
             </div>
-            <small class="text-danger">{{ form.errors.first("budget_upashirsakha") }}</small>
+            <small class="text-danger">{{ form.errors.first("budget_upashirshakh") }}</small>
           </div>
 
           <div class="form-group col-lg-6">
@@ -65,9 +65,9 @@
           <div class="form-group col-lg-6">
             <label for="">खर्च उपशीर्षक न.(ख.उ.शी.न.)</label>
             <div class="input-group mb-2">
-              <input type="number" v-model="form.kharcha_upashirsakha" class="form-control" />
+              <input type="number" v-model="form.expenditure_upashirshakh" class="form-control" />
             </div>
-            <small class="text-danger">{{ form.errors.first("kharcha_upashirsakha") }}</small>
+            <small class="text-danger">{{ form.errors.first("expenditure_upashirshakh") }}</small>
           </div>
 
           <div class="form-group col-lg-6">
@@ -146,6 +146,7 @@ export default {
 
   data() {
     return {
+      
       updateMode: false,
       form: new Form(
         {
@@ -160,7 +161,7 @@ export default {
           population_to_be_benefited: "",
           description: "",
           budget_upashirshakh: "",
-          kharcha_upashirsakha: "",
+          expenditure_upashirshakh: "",
         },
         {
           resetOnSuccess: false,
@@ -181,8 +182,8 @@ export default {
       this.form.last_year_physical_progress = this.project.last_year_physical_progress;
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
       this.form.description = this.project.description;
-      this.form.budget_upashirshakh= this.project.budget_upashirshakh;
-      this.form.kharcha_upashirsakha = this.project.kharcha_upashirsakha;
+      this.form.budget_upashirshakh = this.project.budget_upashirshakh;
+      this.form.expenditure_upashirshakh = this.project.expenditure_upashirshakh;
 
     }
   },
