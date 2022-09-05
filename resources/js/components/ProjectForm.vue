@@ -46,7 +46,7 @@
           <div class="form-group col-lg-6">
             <label for="">बजेट उपशीर्षक न.(ब.उ.शी.न.)</label>
             <div class="input-group mb-2">
-              <input type="number" v-model="form.budget_upashirsakha" class="form-control" />
+              <input type="number" v-model="form.budget_upashirshakh" class="form-control" />
             </div>
             <small class="text-danger">{{ form.errors.first("budget_upashirsakha") }}</small>
           </div>
@@ -159,7 +159,7 @@ export default {
           last_year_physical_progress: "",
           population_to_be_benefited: "",
           description: "",
-          budget_upashirsakha: "",
+          budget_upashirshakh: "",
           kharcha_upashirsakha: "",
         },
         {
@@ -181,7 +181,7 @@ export default {
       this.form.last_year_physical_progress = this.project.last_year_physical_progress;
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
       this.form.description = this.project.description;
-      this.form.budget_upashirsakha = this.project.budget_upashirsakha;
+      this.form.budget_upashirshakh= this.project.budget_upashirshakh;
       this.form.kharcha_upashirsakha = this.project.kharcha_upashirsakha;
 
     }
