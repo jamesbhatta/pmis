@@ -2553,7 +2553,7 @@ __webpack_require__.r(__webpack_exports__);
         population_to_be_benefited: "",
         description: "",
         budget_upashirshakh: "",
-        kharcha_upashirsakha: ""
+        expenditure_upashirshakh: ""
       }, {
         resetOnSuccess: false
       })
@@ -2573,7 +2573,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.population_to_be_benefited = this.project.population_to_be_benefited;
       this.form.description = this.project.description;
       this.form.budget_upashirshakh = this.project.budget_upashirshakh;
-      this.form.kharcha_upashirsakha = this.project.kharcha_upashirsakha;
+      this.form.expenditure_upashirshakh = this.project.expenditure_upashirshakh;
     }
   },
   methods: {
@@ -25054,7 +25054,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
-                _vm._v(_vm._s(_vm.form.errors.first("budget_upashirsakha"))),
+                _vm._v(_vm._s(_vm.form.errors.first("budget_upashirshakh"))),
               ]),
             ]),
             _vm._v(" "),
@@ -25127,13 +25127,13 @@ var render = function () {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.form.kharcha_upashirsakha,
-                      expression: "form.kharcha_upashirsakha",
+                      value: _vm.form.expenditure_upashirshakh,
+                      expression: "form.expenditure_upashirshakh",
                     },
                   ],
                   staticClass: "form-control",
                   attrs: { type: "number" },
-                  domProps: { value: _vm.form.kharcha_upashirsakha },
+                  domProps: { value: _vm.form.expenditure_upashirshakh },
                   on: {
                     input: function ($event) {
                       if ($event.target.composing) {
@@ -25141,7 +25141,7 @@ var render = function () {
                       }
                       _vm.$set(
                         _vm.form,
-                        "kharcha_upashirsakha",
+                        "expenditure_upashirshakh",
                         $event.target.value
                       )
                     },
@@ -25150,7 +25150,9 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("small", { staticClass: "text-danger" }, [
-                _vm._v(_vm._s(_vm.form.errors.first("kharcha_upashirsakha"))),
+                _vm._v(
+                  _vm._s(_vm.form.errors.first("expenditure_upashirshakh"))
+                ),
               ]),
             ]),
             _vm._v(" "),
