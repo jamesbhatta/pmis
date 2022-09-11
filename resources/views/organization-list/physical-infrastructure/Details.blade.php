@@ -91,6 +91,6 @@
 
     .ChartStyle {
         float: right;
-        margin-top: 2%;
+        margin-top: 10px;
     }
 </style>
