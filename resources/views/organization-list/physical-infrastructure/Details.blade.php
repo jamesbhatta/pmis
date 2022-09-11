@@ -21,46 +21,30 @@
                         type: "column",
                         showInLegend: true,
                         legendMarkerColor: "grey",
-                        legendText: "MMbbl = one million barrels",
+                        legendText: "Projects Name",
                         dataPoints: [{
                                 y: 3008,
-                                label: "Venezuela"
+                                label: "Khane Paani"
                             },
                             {
                                 y: 2664,
-                                label: "Saudi"
+                                label: "Yatayat"
                             },
                             {
                                 y: 1697,
-                                label: "Canada"
+                                label: "Bhumi"
                             },
                             {
                                 y: 1584,
-                                label: "Iran"
+                                label: "physical"
                             },
-                            {
-                                y: 1425,
-                                label: "Iraq"
-                            },
-                            {
-                                y: 1015,
-                                label: "Kuwait"
-                            },
-                            {
-                                y: 9780,
-                                label: "UAE"
-                            },
-                            {
-                                y: 8000,
-                                label: "Russia"
-                            }
                         ]
                     }]
                 });
                 chart.render();
             }
         </script>
-        <div id="chartContainer" style="height: 300px; width: 60%;"></div>
+        <div id="chartContainer" class="ChartStyle" style="height: 300px; width: 50%;"></div>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     </div>
 </div>
@@ -103,5 +87,10 @@
         text-align: center;
         font-size: 18px;
         /* background-color: #acadb0; */
+    }
+
+    .ChartStyle {
+        float: right;
+        margin-top: 2%;
     }
 </style>
