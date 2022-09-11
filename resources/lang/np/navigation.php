@@ -42,7 +42,7 @@ return [
     'office_confirm_password'=>"कार्यालयको पासवर्ड पुष्टि गर्नुहोस्",
     'water_irrigation'=>"जलस्रोत तथा सिचाई विकास डिविजन कार्यालय",
     'urban_development'=>"सहरी विकास तथा भवन निर्माण कार्यालय",
-    'traffic_management'=>"यातायात व्यवस्था कार्यालय",
+    'transport_management'=>"यातायात व्यवस्था कार्यालय",
     'Drinking_Water_Office'=>"खानेपानी तथा  सरसफाई डिविजन कार्यालय",
     'Ministry_of_Physical_Transport'=>"भौतिक पूर्वाधार तथा यातायात मन्त्रालय",
     'patharaiya_mohna_sichaiya'=>"पथरैया मोहना सिचाई व्यवस्थापन कार्यालय",

@@ -20,7 +20,9 @@ Route::get('/Physical-Infrastruture', [IndexController::class,'physicalInfrastru
 Route::get('/Water-Resources', [IndexController::class,'waterResources'])->name('water-resources');
 Route::get('/Water-And-Sanitation', [IndexController::class,'waterAndSanitation'])->name('water-and-sanitation');
 Route::get('/Pathraiya-Mohana-Irrigation', [IndexController::class,'pathraiyaMohanIrrigation'])->name('pathraiya-mohana-irrigation');
-
+Route::get('/Urban-Development-and-Building-Construction', [IndexController::class,'urbanDevelopmentandBuildingConstruction'])->name('urban-development-and-building-construction');
+Route::get('/Transport-Management-Office', [IndexController::class,'transportManagementOffice'])->name('transport-management-office');
+Route::get('/View-Details', [IndexController::class,'viewDetails'])->name('view-details');
 
 Route::get('/registration', 'FrontendController@index')->name('organization.new');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');

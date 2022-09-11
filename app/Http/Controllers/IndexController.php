@@ -36,6 +36,17 @@ class IndexController extends Controller
     {
         return view('organization-list.pathraiya-mohana-irrigation.index');
     }
+
+    public function urbanDevelopmentandBuildingConstruction(){
+        return view('organization-list.urban-development-and-building-construction.index');
+    }
+
+    public function transportManagementOffice(){
+        return view('organization-list.transport-management-office.index');
+    }
+    public function viewDetails(){
+        return view('organization-list.physical-infrastructure.Details');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -25,10 +25,10 @@
               <span><a href="{{route('pathraiya-mohana-irrigation')}}">@lang('navigation.patharaiya_mohna_sichaiya')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="#">@lang('navigation.urban_development')</a></span>
+              <span><a href="{{route('urban-development-and-building-construction')}}">@lang('navigation.urban_development')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="#">@lang('navigation.traffic_management')</a></span>
+              <span><a href="{{route('transport-management-office')}}">@lang('navigation.transport_management')</a></span>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
           </div>
           <div class="col-lg-4 mt-4" >
             <div class="card" style="background-color: #333300; height:100%; border-radius: 4px;">
-              <a href="#" class="p-3">
+              <a href="{{route('urban-development-and-building-construction')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/50 COMPLETED </label>
@@ -90,11 +90,11 @@
           </div>
           <div class="col-lg-4 mt-4">
             <div class="card" style="height:100%; background-color:  #000033; height:100%;" >
-              <a href="#" class="p-3" >
+              <a href="{{route('transport-management-office')}}" class="p-3" >
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
-                  <h4 class="mt-4 text-center">@lang('navigation.traffic_management')</h4>
+                  <h4 class="mt-4 text-center">@lang('navigation.transport_management')</h4>
                 </span>
               </a>
             </div>

@@ -72,7 +72,7 @@ return [
     'office_confirm_password'=>"Confirm Password",
     'water_irrigation'=>"Water Resources and Irrigation Development Division Office",
     'urban_development'=>"Urban Development and Building Construction Office",
-    'traffic_management'=>"Traffic Management Office",
+    'transport_management'=>"Transport Management Office",
     'Drinking_Water_Office'=>"Drinking Water and Sanitation Division Office",
     'Ministry_of_Physical_Transport'=>"Ministry of Physical Infrastructure and Transport",
     'Sub_Metro_municipality_Gau'=>"Sub Metro/Municipality/Rural Municipality",

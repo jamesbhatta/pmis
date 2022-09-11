@@ -7,27 +7,28 @@
 <div style="background-color: #edf2f8;width:100%;height:100vh;">
     <div style="height: 150px;"></div>
     <div class="container">
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark fontsize">
-                <th scope="col">S.No.</th>
-                <th scope="col">Title</th>
-                <th scope="col">Fiscal Year</th>
-                <th scope="col">Budget</th>
-                <th scope="col">Budget Upashirshakh</th>
-                <th scope="col">Budget Source</th>
-                <th scope="col">Expenditure</th>
-                <th scope="col">Status</th>
+
+        <table class="table table-striped">
+            <thead class="fontsize">
+                <th scope="col">#</th>
+                <th scope="col">जिल्लागत परियोजना</th>
+                <th scope="col">कुल परियोजना</th>
             </thead>
             <tbody>
                 <tr class="fontsize1">
-                    <td>1</td>
-                    <td>dfadfs</td>
-                    <td>dfadfs</td>
-                    <td>dfadfs</td>
-                    <td>dfadfs</td>
-                    <td>dfadfs</td>
-                    <td>dfadfs</td>
-                    <td>1</td>
+                    <td><a href="https://sagarkathariya.com.np">1</a></td>
+                    <td><a href="https://sagarkathariya.com.np">Kailali</a></td>
+                    <td><a href="https://sagarkathariya.com.np">10</a></td>
+                </tr>
+                <tr class="fontsize1">
+                    <td><a href="https://sagarkathariya.com.np">2</a></td>
+                    <td><a href="https://sagarkathariya.com.np">Kanchanpur</a></td>
+                    <td><a href="https://sagarkathariya.com.np">12</a></td>
+                </tr>
+                <tr class="fontsize1">
+                    <td><a href="https://sagarkathariya.com.np">3</a></td>
+                    <td><a href="https://sagarkathariya.com.np">Doti</a></td>
+                    <td><a href="https://sagarkathariya.com.np">20</a></td>
                 </tr>
 
             </tbody>
@@ -64,6 +65,7 @@
     }
 
     .fontsize th {
+        font-weight: bold;
         font-size: 20px;
         text-align: center;
     }
@@ -71,6 +73,6 @@
     .fontsize1 td {
         text-align: center;
         font-size: 18px;
-       background-color:#acadb0;
+        /* background-color: #acadb0; */
     }
 </style>

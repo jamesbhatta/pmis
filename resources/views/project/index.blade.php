@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    @include('project.__filter_bar')
+    <!-- @includes('project.__filter_bar') -->
 
     <div class="bg-white">
         <table class="table projects-table">
