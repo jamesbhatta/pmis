@@ -5,34 +5,64 @@
 <div style="background-color: #edf2f8;width:100%;height:100vh;">
     <div style="height: 150px;"></div>
     <div class="container">
-       <div class="barGraph">
-       <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <script>
+            window.onload = function() {
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
-    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-    var yValues = [55, 49, 44, 24, 15];
-    var barColors = ["red", "green", "blue", "orange", "brown"];
-    new Chart("myChart", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        },
-        options: {
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: "World Wine Production 2018"
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title: {
+                        text: "Physical Infrastructure"
+                    },
+                    axisY: {
+                        title: "No of Projects"
+                    },
+                    data: [{
+                        type: "column",
+                        showInLegend: true,
+                        legendMarkerColor: "grey",
+                        legendText: "MMbbl = one million barrels",
+                        dataPoints: [{
+                                y: 3008,
+                                label: "Venezuela"
+                            },
+                            {
+                                y: 2664,
+                                label: "Saudi"
+                            },
+                            {
+                                y: 1697,
+                                label: "Canada"
+                            },
+                            {
+                                y: 1584,
+                                label: "Iran"
+                            },
+                            {
+                                y: 1425,
+                                label: "Iraq"
+                            },
+                            {
+                                y: 1015,
+                                label: "Kuwait"
+                            },
+                            {
+                                y: 9780,
+                                label: "UAE"
+                            },
+                            {
+                                y: 8000,
+                                label: "Russia"
+                            }
+                        ]
+                    }]
+                });
+                chart.render();
             }
-        }
-    });
-</script>
-       </div>
+        </script>
+        <div id="chartContainer" style="height: 300px; width: 60%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
 </div>
 @endsection
 <style>
