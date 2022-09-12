@@ -5,48 +5,47 @@
 <div style="background-color: #edf2f8;width:100%;height:100vh;">
     <div style="height: 150px;"></div>
     <div class="container">
-        <script>
-            window.onload = function() {
-
-                var chart = new CanvasJS.Chart("chartContainer", {
-                    animationEnabled: true,
-                    theme: "light2", // "light1", "light2", "dark1", "dark2"
-                    title: {
-                        text: "Physical Infrastructure"
-                    },
-                    axisY: {
-                        title: "No of Projects"
-                    },
-                    data: [{
-                        type: "column",
-                        showInLegend: true,
-                        legendMarkerColor: "grey",
-                        legendText: "Projects Name",
-                        dataPoints: [{
-                                y: 3008,
-                                label: "Khane Paani"
-                            },
-                            {
-                                y: 2664,
-                                label: "Yatayat"
-                            },
-                            {
-                                y: 1697,
-                                label: "Bhumi"
-                            },
-                            {
-                                y: 1584,
-                                label: "physical"
-                            },
-                        ]
-                    }]
-                });
-                chart.render();
-            }
-        </script>
-        <div id="chartContainer" class="ChartStyle" style="height: 300px; width: 50%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <canvas id="myChart"></canvas>
     </div>
+    <script>
+        var myChart = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(myChart, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
 </div>
 @endsection
 <style>
