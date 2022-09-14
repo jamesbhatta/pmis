@@ -36,5 +36,6 @@
 
     {{-- <script src="{{ asset('/js/app.js') }}"></script> --}}
     @include('layouts.partials.scripts')
+    @stack('scripts')
 </body>
 </html>
