@@ -2,13 +2,30 @@
 @section('content')
 @include('navbar')
 <div style="background-color: #edf2f8;width:100%;height:100vh;">
-    <div style="height: 150px;"></div>
-    <div class="container">
-        <canvas id="myBarChart" style="height: 180px; max-width: 480px; margin: 0px auto; float:right;"></canvas>
-    </div>
-    <div class="container">
-        <canvas id="myPieChart" style="height: 180px; max-width: 480px; margin: 0px auto; float:left;"></canvas>
+    <div style="height: 150px;">
 
+</div>
+    <div class="container">
+    <h2>Physical Infrastructure</h2>
+
+        <div class="row col-7" style="width: 100%; float:left; border: solid black 1px;">
+            <ul>
+                <li>red</li>
+                <li>blue</li>
+                <li>yellow</li>
+                <li>pink</li>
+                <li>purple</li>
+                <li> orange</li>
+            </ul>
+        </div>
+        <div class="row col-5" style=" width:100%; border: solid red 1px; float:right">
+            <div class="container">
+                <canvas id="myPieChart" style="height: 180px; max-width: 480px; margin: 0px auto;"></canvas>
+            </div>
+            <div class="container">
+                <canvas id="myBarChart" style="height: 180px; max-width: 480px; margin: 0px auto;"></canvas>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
@@ -51,9 +68,6 @@
             }
         }
     });
-
-
-
     const barPieChart = document.getElementById('myPieChart').getContext('2d');
     const labelsPie = [
         'red',
