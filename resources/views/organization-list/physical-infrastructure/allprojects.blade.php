@@ -1,7 +1,7 @@
 @extends('user_app')
 @section('content')
 @include('navbar')
-<div style="background-color: #edf2f8;width:100%;height:100vh;">
+<div style="background-color: #edf2f8;width:100%">
     <div style="height: 150px;"></div>
     <div class="container">
         <h2 class="mt-2">
