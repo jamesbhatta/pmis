@@ -16,9 +16,9 @@
             </thead>
             <tbody>
                 <tr class="fontsize1">
-                    <td><a href="{{route('view-details')}}">1</a></td>
-                    <td><a href="{{route('view-details')}}">Kailali</a></td>
-                    <td><a href="{{route('view-details')}}">10</a></td>
+                    <td><a href="{{route('all-projects')}}">1</a></td>
+                    <td><a href="{{route('all-projects')}}">Kailali</a></td>
+                    <td><a href="{{route('all-projects')}}">10</a></td>
                 </tr>
                 <tr class="fontsize1">
                     <td><a href="{{route('view-details')}}">2</a></td>
@@ -36,43 +36,3 @@
     </div>
 </div>
 @endsection
-<style>
-    #navbar {
-        background: linear-gradient(to right, #3f0fb7, #1e78de);
-        box-shadow: 0 3px 6px 0 rgb(0 0 0 / 12%) !important;
-        font-family: "Roboto", sans-serif;
-        position: fixed;
-        width: 100vw;
-    }
-
-    .card1 {
-        border-radius: 4px;
-    }
-
-    .card1 div span a {
-        color: black;
-
-    }
-
-    .card1 div:hover {
-        background-color: #4d3300;
-        color: #fff;
-        border-radius: 4px;
-    }
-
-    .card1 div:hover span a {
-        color: #fff;
-    }
-
-    .fontsize th {
-        font-weight: bold;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .fontsize1 td {
-        text-align: center;
-        font-size: 18px;
-        /* background-color: #acadb0; */
-    }
-</style>

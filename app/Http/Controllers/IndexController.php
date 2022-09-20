@@ -47,6 +47,11 @@ class IndexController extends Controller
     public function viewDetails(){
         return view('organization-list.physical-infrastructure.Details');
     }
+    public function allProjects(){
+        return view('organization-list.physical-infrastructure.allprojects');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
