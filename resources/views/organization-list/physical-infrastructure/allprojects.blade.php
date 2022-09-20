@@ -14,6 +14,7 @@
                         <th scope="col">#</th>
                         <th scope="col">जिल्लागत परियोजना</th>
                         <th scope="col">कुल परियोजना</th>
+                        <th scope="col">Status</th>
                     </thead>
                     <tbody>
                         <tr class="fontsize1">
