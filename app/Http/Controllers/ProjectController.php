@@ -24,7 +24,7 @@ class ProjectController extends Controller
         $organizations = Organization::with('district')->get();
         // dd($organizations);
         $projectTypes = ProjectType::with(['topic'])->get()->groupBy('topic.title');
-        dd($projectTypes);
+        // dd($projectTypes);
         return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
 
 
