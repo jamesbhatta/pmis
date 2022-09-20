@@ -17,7 +17,7 @@
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
             <!-- Links -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto image">
                 <li class="nav-item pr-1">
                     <a href="{{route('index')}}" class="nav-link h4" to="/">गृह पृष्ठ</a>
                 </li>
@@ -28,4 +28,13 @@
         </div>
         <!-- Collapsible content -->
     </div>
+
 </nav>
+<style>
+.image {
+    background-image: url("/assets/img/nepalflag.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+</style>

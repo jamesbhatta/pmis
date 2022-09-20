@@ -5,7 +5,7 @@
     <div style="height: 150px;"></div>
     <div class="container">
         <h2 class="mt-2">
-            कैलाली जिल्ला अंतर्गत परियोजनाहरु
+        जिल्ला कैलाली अंतर्गत परियोजनाहरु
         </h2>
         <div class="row d-flex flex-row">
             <div class="row col-6">
@@ -87,6 +87,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 <script>
     filterSelection("all")
