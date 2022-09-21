@@ -27,6 +27,8 @@
                             <td><a href="{{route('view-details')}}">2</a></td>
                             <td><a href="{{route('view-details')}}">Kanchanpur</a></td>
                             <td><a href="{{route('view-details')}}">12</a></td>
+                            <td><a href="{{route('all-projects')}}">सम्पन्न</a></td>
+
                         </tr>
                         <tr class="fontsize1">
                             <td><a href="{{route('view-details')}}">3</a></td>
