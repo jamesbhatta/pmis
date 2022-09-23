@@ -55,13 +55,13 @@
                     <canvas id="myBarChart" style="height: 300px; max-width: 640px; margin: 0px auto; opacity:2;"></canvas>
                 </div>
             </div>
-            <div class="row col-10" style="margin: 0px 20px 0px 20px; height: 150px; background-color: red;">
+            <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px; background-color: red;">
                 <h3>उल्लेखनिए कार्यहरू</h3>
                 <div class="image">
                     this is for important works
                 </div>
             </div>
-            <div class="row col-10" style=" height: 200px; margin: 0px 20px 0px 20px; background-color: green;">
+            <div class="row col-12  " style=" height: 200px; margin: 0px 20px 0px 20px; background-color: green;">
                 <h3>परियोजनाका तस्बिरहरू</h3>
                 <div class="image">
                     this is for image
