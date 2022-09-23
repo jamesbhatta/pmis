@@ -13,55 +13,23 @@
                     <thead class="fontsize filterDev all">
                         <th scope="col">#</th>
                         <th scope="col">परियोजनाको नाम</th>
+                        <th scope="col">Starting Date</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </thead>
                     <tbody>
+                        @foreach($projects as $item)
                         <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">1</a></td>
-                            <td><a href="{{route('view-details')}}">खाने पानी</a></td>
-                            <td><button type="button" style="background-color: #a6a6a2; color:#ffff;" class="btn"><a href="{{route('view-details')}}">View</a></button></td>
+                            <td><a>1</a></td>
+                            <td><a href="{{route('view-details',$item->id)}}">{{$item->title}}</a></td>
+                            <td>2022-02-02</td>
+                            <td>Success</td>
+                            <td><button type="button" style="background-color: #a6a6a2; color:#ffff;" class="btn"><a href="{{route('view-details',$item->id)}}">View</a></button></td>
 
                         </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">2</a></td>
-                            <td><a href="{{route('view-details')}}">Kanchanpur</a></td>
-                            <td><a href="{{route('view-details')}}">12</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">3</a></td>
-                            <td><a href="{{route('view-details')}}">Doti</a></td>
-                            <td><a href="{{route('view-details')}}">20</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('all-projects')}}">1</a></td>
-                            <td><a href="{{route('all-projects')}}">Kailali</a></td>
-                            <td><a href="{{route('all-projects')}}">10</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">2</a></td>
-                            <td><a href="{{route('view-details')}}">Kanchanpur</a></td>
-                            <td><a href="{{route('view-details')}}">12</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}" class="filter on_going">3</a></td>
-                            <td><a href="{{route('view-details')}}" cl>Doti</a></td>
-                            <td><a href="{{route('view-details')}}">20</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('all-projects')}}">1</a></td>
-                            <td><a href="{{route('all-projects')}}">Kailali</a></td>
-                            <td><a href="{{route('all-projects')}}">10</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">2</a></td>
-                            <td><a href="{{route('view-details')}}">Kanchanpur</a></td>
-                            <td><a href="{{route('view-details')}}">12</a></td>
-                        </tr>
-                        <tr class="fontsize1">
-                            <td><a href="{{route('view-details')}}">3</a></td>
-                            <td><a href="{{route('view-details')}}">Doti</a></td>
-                            <td><a href="{{route('view-details')}}">20</a></td>
-                        </tr>
+                        @endforeach
+
+
                     </tbody>
                 </table>
             </div>
@@ -146,7 +114,8 @@
         background-color: #666;
         color: white;
     }
-    .btn button{
+
+    .btn button {
         border-radius: 300px;
     }
 </style>

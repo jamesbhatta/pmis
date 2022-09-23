@@ -21,7 +21,7 @@ class IndexController extends Controller
     public function physicalInfrastructure($id)
     {
         // $physical_infrastures = Project::get();
-        $offices=Organization::withCount('project')->get();
+        $offices=Organization::withCount('project')->where('office',$id)->get();
         
         return view('organization-list.physical-infrastructure.index',compact('offices'));
     }
@@ -45,11 +45,16 @@ class IndexController extends Controller
     public function transportManagementOffice(){
         return view('organization-list.transport-management-office.index');
     }
-    public function viewDetails(){
-        return view('organization-list.physical-infrastructure.Details');
+    public function viewDetails($id){
+        $project=Project::with('projectType')->where('id',$id)->first();
+        // return $project;
+        return view('organization-list.physical-infrastructure.Details',compact('project'));
     }
-    public function allProjects(){
-        return view('organization-list.physical-infrastructure.allprojects');
+    public function allProjects($id){
+        $projects=Project::where('organization_id',$id)->get();
+        
+
+        return view('organization-list.physical-infrastructure.allprojects',compact('projects'));
     }
 
 

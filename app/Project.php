@@ -24,6 +24,8 @@ class Project extends Model
         return $this->belongsTo(Organization::class);
     }
 
+    
+
     public function projectType()
     {
         return $this->belongsTo(ProjectType::class);

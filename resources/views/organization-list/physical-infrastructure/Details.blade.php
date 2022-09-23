@@ -11,9 +11,9 @@
                 </div>
                 <div class="row listOfDetails" style="width: 100%; float:left;">
                     <ul>
-                        <li>परियोजनाको नाम:</li>
-                        <li>दर्ता नं :</li>
-                        <li>आर्थिक बर्ष :</li>
+                        <li>परियोजनाको नाम:{{$project->title}}</li>
+                        <li>दर्ता नं : {{$project->id}}</li>
+                        <li>आर्थिक बर्ष :{{$project->fiscal_year_id}}</li>
                     </ul>
                 </div>
                 <div class="row" style="width: 100%; float:left;">
@@ -21,13 +21,14 @@
                 </div>
                 <div class="row listOfDetails">
                     <ul>
-                        <li>बिषयगत क्षेत्रको किसिम :</li>
-                        <li>शिर्षकगत किसिम :</li>
-                        <li>गत आर्थिक वर्षको भौतिक प्रगति :</li>
-                        <li>लाभाम्वित हुने जनसंख्या :</li>
-                        <li>बजेट :</li>
-                        <li>बजेटको स्रोत : </li>
-                        <li>खर्चको किसिम :</li>
+                        <li>बिषयगत क्षेत्रको किसिम :{{$project->projectType->name}}</li>
+                        <li>शिर्षकगत किसिम :{{$project->projectType->topic->title}}</li>
+                        <li>गत आर्थिक वर्षको खर्च :रु. {{ $project->last_year_expenditure }}/-</li>
+                        <li>गत आर्थिक वर्षको भौतिक प्रगति :{{ $project->last_year_physical_progress }}(%)</li>
+                        <li>लाभाम्वित हुने जनसंख्या :{{ $project->population_to_be_benefited }}</li>
+                        <li>बजेट :रु.{{ $project->budget }}</li>
+                        <li>बजेटको स्रोत : {{ $project->budget_source }}</li>
+                        <li>खर्चको किसिम :{{ $project->expenditure_type }}</li>
                     </ul>
                 </div>
                 <div class="row" style="width: 100%; float:left;">

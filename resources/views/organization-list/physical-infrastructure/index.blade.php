@@ -17,9 +17,9 @@
             <tbody>
             @foreach($offices as $item)
                 <tr class="fontsize1">
-                    <td><a href="{{route('all-projects')}}">1</a></td>
-                    <td><a href="{{route('all-projects')}}">{{$item->name}}</a></td>
-                    <td><a href="{{route('all-projects')}}">{{$item->project_count}}</a></td>
+                    <td><a href="{{route('all-projects',$item->id)}}">1</a></td>
+                    <td><a href="{{route('all-projects',$item->id)}}">{{$item->name}}</a></td>
+                    <td><a href="{{route('all-projects',$item->id)}}">{{$item->project_count}}</a></td>
                 </tr>
                 @endforeach
                 

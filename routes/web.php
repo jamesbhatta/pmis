@@ -22,8 +22,8 @@ Route::get('/Water-And-Sanitation', [IndexController::class,'waterAndSanitation'
 Route::get('/Pathraiya-Mohana-Irrigation', [IndexController::class,'pathraiyaMohanIrrigation'])->name('pathraiya-mohana-irrigation');
 Route::get('/Urban-Development-and-Building-Construction', [IndexController::class,'urbanDevelopmentandBuildingConstruction'])->name('urban-development-and-building-construction');
 Route::get('/Transport-Management-Office', [IndexController::class,'transportManagementOffice'])->name('transport-management-office');
-Route::get('/View-Details', [IndexController::class,'viewDetails'])->name('view-details');
-Route::get('/All-Projects', [IndexController::class,'allProjects'])->name('all-projects');
+Route::get('/View-Details/{id}', [IndexController::class,'viewDetails'])->name('view-details');
+Route::get('/All-Projects/{id}', [IndexController::class,'allProjects'])->name('all-projects');
 
 Route::get('/registration', 'FrontendController@index')->name('organization.new');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');

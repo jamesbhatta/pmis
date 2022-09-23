@@ -15,21 +15,21 @@
             <div class=" p-3 mt-1">
               <span><a href="{{route('physical-infrastruture','1')}}">@lang('navigation.Ministry_of_Physical_Transport')</a> </span>
             </div>
-            <!-- <div class="p-3 mt-1">
-              <span><a href="{{route('water-resources')}}">@lang('navigation.water_irrigation')</a></span>
+            <div class="p-3 mt-1">
+              <span><a href="{{route('physical-infrastruture','2')}}">@lang('navigation.water_irrigation')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="{{route('water-and-sanitation')}}">@lang('navigation.Drinking_Water_Office')</a></span>
+              <span><a href="{{route('physical-infrastruture','3')}}">@lang('navigation.Drinking_Water_Office')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="{{route('pathraiya-mohana-irrigation')}}">@lang('navigation.patharaiya_mohna_sichaiya')</a></span>
+              <span><a href="{{route('physical-infrastruture','4')}}">@lang('navigation.patharaiya_mohna_sichaiya')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="{{route('urban-development-and-building-construction')}}">@lang('navigation.urban_development')</a></span>
+              <span><a href="{{route('physical-infrastruture','5')}}">@lang('navigation.urban_development')</a></span>
             </div>
             <div class="p-3 mt-1">
-              <span><a href="{{route('transport-management-office')}}">@lang('navigation.transport_management')</a></span>
-            </div> -->
+              <span><a href="{{route('physical-infrastruture','6')}}">@lang('navigation.urban_development')</a></span>
+            </div>
           </div>
         </div>
       </div>
@@ -44,9 +44,9 @@
                 <h4 class="text-white mt-4 text-center">@lang('navigation.Ministry_of_Physical_Transport')</h4>
             </a>
           </div>
-          <!-- <div class="col-lg-4">
+          <div class="col-lg-4">
             <div class="card" style="background-color:#000099; height:100%;">
-              <a href="{{route('water-resources')}}" class="p-3">
+              <a href="{{route('physical-infrastruture','2')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label class="ml-2 col-lg-8">10/25 COMPLETED</label>
@@ -57,7 +57,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card" style="background-color: #004d00; height:100%;">
-              <a href="{{route('water-and-sanitation')}}" class="p-3">
+              <a href="{{route('physical-infrastruture','3')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                  <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-lg-4 mt-4">
             <div class="card" style="background-color: #660000; height:100%;">
-              <a href="{{route('pathraiya-mohana-irrigation')}}" class="p-3">
+              <a href="{{route('physical-infrastruture','4')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
@@ -79,7 +79,7 @@
           </div>
           <div class="col-lg-4 mt-4" >
             <div class="card" style="background-color: #333300; height:100%; border-radius: 4px;">
-              <a href="{{route('urban-development-and-building-construction')}}" class="p-3">
+              <a href="{{route('physical-infrastruture','5')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/50 COMPLETED </label>
@@ -90,7 +90,7 @@
           </div>
           <div class="col-lg-4 mt-4">
             <div class="card" style="height:100%; background-color:  #000033; height:100%;" >
-              <a href="{{route('transport-management-office')}}" class="p-3" >
+              <a href="{{route('physical-infrastruture','6')}}" class="p-3" >
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
@@ -98,7 +98,7 @@
                 </span>
               </a>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
