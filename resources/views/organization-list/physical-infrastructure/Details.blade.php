@@ -46,12 +46,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="row col-5" style=" width:100%;float:right">
+            <div class="row col-6" style=" width:100%;float:right">
                 <!-- <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div> -->
                 <div class="container">
-                    <canvas id="myBarChart" style="height: 200px; max-width: 480px; margin: 0px auto; opacity:2;"></canvas>
+                    <canvas id="myBarChart" style="height: 300px; max-width: 640px; margin: 0px auto; opacity:2;"></canvas>
                 </div>
             </div>
             <div class="row col-10" style="margin: 0px 20px 0px 20px; height: 150px; background-color: red;">
