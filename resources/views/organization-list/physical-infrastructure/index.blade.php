@@ -11,26 +11,18 @@
         <table class="table table-striped">
             <thead class="fontsize">
                 <th scope="col">#</th>
-                <th scope="col">जिल्लागत परियोजना</th>
+                <th scope="col">कार्यालय</th>
                 <th scope="col">कुल परियोजना</th>
             </thead>
             <tbody>
+            @foreach($offices as $item)
                 <tr class="fontsize1">
                     <td><a href="{{route('all-projects')}}">1</a></td>
-                    <td><a href="{{route('all-projects')}}">Kailali</a></td>
-                    <td><a href="{{route('all-projects')}}">10</a></td>
+                    <td><a href="{{route('all-projects')}}">{{$item->name}}</a></td>
+                    <td><a href="{{route('all-projects')}}">{{$item->project_count}}</a></td>
                 </tr>
-                <tr class="fontsize1">
-                    <td><a href="{{route('view-details')}}">2</a></td>
-                    <td><a href="{{route('view-details')}}">Kanchanpur</a></td>
-                    <td><a href="{{route('view-details')}}">12</a></td>
-                </tr>
-                <tr class="fontsize1">
-                    <td><a href="{{route('view-details')}}">3</a></td>
-                    <td><a href="{{route('view-details')}}">Doti</a></td>
-                    <td><a href="{{route('view-details')}}">20</a></td>
-                </tr>
-
+                @endforeach
+                
             </tbody>
         </table>
     </div>

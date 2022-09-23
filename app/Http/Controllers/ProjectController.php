@@ -25,7 +25,7 @@ class ProjectController extends Controller
         // dd($organizations);
         $projectTypes = ProjectType::with(['topic'])->get()->groupBy('topic.title');
         // dd($projectTypes);
-        return view("p#roject.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
+        return view("project.index", compact(['projects', 'project', 'organizations', 'projectTypes']));
     }
 
     public function create()

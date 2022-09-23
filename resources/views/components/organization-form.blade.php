@@ -108,12 +108,12 @@
                         <label for="">कार्यालय</label>
                         <select name="office"  class="custom-select rounded-0 {{ invalid_class('district_id') }}" required>
                             <option value="">कार्यालय छान्नुहोस्</option>
-                            <option value="भौतिक पूर्वाधार तथा यातायात मन्त्रालय">भौतिक पूर्वाधार तथा यातायात मन्त्रालय</option>
-                            <option value="जलस्रोत तथा सिचाई विकास डिविजन कार्यालय">जलस्रोत तथा सिचाई विकास डिविजन कार्यालय</option>
-                            <option value="खानेपानी तथा सरसफाई डिविजन कार्यालय">खानेपानी तथा सरसफाई डिविजन कार्यालय</option>
-                            <option value="पथरैया मोहना सिचाई व्यवस्थापन कार्यालय">पथरैया मोहना सिचाई व्यवस्थापन कार्यालय</option>
-                            <option value="सहरी विकास तथा भवन निर्माण कार्यालय">सहरी विकास तथा भवन निर्माण कार्यालय</option>
-                            <option value="यातायात व्यवस्था कार्यालय">यातायात व्यवस्था कार्यालय</option>
+                            <option value="1">भौतिक पूर्वाधार तथा यातायात मन्त्रालय</option>
+                            <option value="2">जलस्रोत तथा सिचाई विकास डिविजन कार्यालय</option>
+                            <option value="3">खानेपानी तथा सरसफाई डिविजन कार्यालय</option>
+                            <option value="4">पथरैया मोहना सिचाई व्यवस्थापन कार्यालय</option>
+                            <option value="5">सहरी विकास तथा भवन निर्माण कार्यालय</option>
+                            <option value="6">यातायात व्यवस्था कार्यालय</option>
                             <!-- <option value="{{ $district->id }}" data-province-id="{{ $district->province->id}}" @if(old('district_id', $organization->district_id) == $district->id) selected @endif>{{ $district->name }}</option> -->
                         </select>
                         <x-invalid-feedback field="phone"></x-invalid-feedback>

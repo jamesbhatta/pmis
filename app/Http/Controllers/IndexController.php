@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Organization;
 use Illuminate\Http\Request;
 use App\Project ;
 
@@ -17,10 +18,12 @@ class IndexController extends Controller
         return view('index');
     }
 
-    public function physicalInfrastructure()
+    public function physicalInfrastructure($id)
     {
-        $physical_infrastures = Project::get();
-        return view('organization-list.physical-infrastructure.index',['physical_infrastures'=>$physical_infrastures]);
+        // $physical_infrastures = Project::get();
+        $offices=Organization::withCount('project')->get();
+        
+        return view('organization-list.physical-infrastructure.index',compact('offices'));
     }
     public function waterResources()
     {
