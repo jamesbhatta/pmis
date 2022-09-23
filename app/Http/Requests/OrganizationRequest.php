@@ -34,6 +34,7 @@ class OrganizationRequest extends FormRequest
             'address' => 'nullable',
             'email' => 'nullable|email',
             'phone' => 'nullable',
+            'office' => 'nullable',
         ];
     }
 }

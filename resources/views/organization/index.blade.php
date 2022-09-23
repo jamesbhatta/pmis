@@ -30,6 +30,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>@lang('navigation.Organization')</th>
                         <th>@lang('navigation.district')</th>
                         <th>@lang('navigation.type')</th>
@@ -42,6 +43,7 @@
                 <tbody>
                     @forelse($organizations as $organization)
                     <tr class="bg-white">
+                        <td></td>
                         <td>{{ $organization->name }}</td>
                         <td>{{ $organization->district->name ?? '' }}</td>
                         <td class="text-capitalize">{{ $organization->type }}</td>
