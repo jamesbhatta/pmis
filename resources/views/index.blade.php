@@ -76,7 +76,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-4 mt-4" >
+          <div class="col-lg-4 mt-4">
             <div class="card" style="background-color: #333300; height:100%; border-radius: 4px;">
               <a href="{{route('physical-infrastruture','5')}}" class="p-3">
                 <span class="text-white row">
@@ -88,8 +88,8 @@
             </div>
           </div>
           <div class="col-lg-4 mt-4">
-            <div class="card" style="height:100%; background-color:  #000033; height:100%;" >
-              <a href="{{route('physical-infrastruture','6')}}" class="p-3" >
+            <div class="card" style="height:100%; background-color:  #000033; height:100%;">
+              <a href="{{route('physical-infrastruture','6')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
                   <label for="" class="ml-2 col-lg-8">{{$complete_yatayat}}/{{$total_yatayat}} COMPLETED </label>
@@ -113,19 +113,21 @@
     width: 100vw;
   }
 
-  .card1{
-    border-radius:4px;
+  .card1 {
+    border-radius: 4px;
   }
+
   .card1 div span a {
     color: black;
 
   }
 
   .card1 div:hover {
-    background-color:#4d3300;
+    background-color: #4d3300;
     color: #fff;
-    border-radius:4px;
+    border-radius: 4px;
   }
+
   .card1 div:hover span a {
     color: #fff;
   }
