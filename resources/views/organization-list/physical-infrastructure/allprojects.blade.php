@@ -37,7 +37,7 @@
                             @endif
                             
                         </td>
-                        <td>{{$item->status ? "Success" : "On going"}}</td>
+                        <td>{{$item->status ? "Completed" : "On going"}}</td>
                         <td><a class="btn btn-primary" href="{{route('view-details',$item->id)}}">View</a></td>
 
                     </tr>
