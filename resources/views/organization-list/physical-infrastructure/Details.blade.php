@@ -21,7 +21,7 @@
                 </div>
                 <div class="row listOfDetails">
                     <ul>
-                        <li>बिषयगत क्षेत्रको किसिम :{{$project->projectType->name}}</li>
+                        <li><label class="">बिषयगत क्षेत्रको किसिम :</label>{{$project->projectType->name}}</li>
                         <li>शिर्षकगत किसिम :{{$project->projectType->topic->title}}</li>
                         <li>गत आर्थिक वर्षको खर्च :रु. {{ $project->last_year_expenditure }}/-</li>
                         <li>गत आर्थिक वर्षको भौतिक प्रगति :{{ $project->last_year_physical_progress }}(%)</li>
@@ -36,14 +36,16 @@
                 </div>
                 <div class="row listOfDetails">
                     <ul>
-                        <li>लागत अनुमान बनेको छ?:</li>
-                        <li>सम्झौता भएको छ?: </li>
-                        <li>सम्झौता भएको मिति:</li>
-                        <li>परियोजना सुरु मिति:</li>
-                        <li>परियोजना सम्पन्न मिति:</li>
-                        <li>ठेक्का मिति:</li>
-                        <li>काम हुदै छ?:</li>
-                        <li>अनुगमन हुदै छ?:</li>
+                        <li>लागत अनुमान बनेको छ?:@if($project->physicalProgress->estimate_completed == "")छैन@elseछ@endif
+                         
+                        </li>
+                        <li>सम्झौता भएको छ?: {{$project->physicalProgress->agreement_date ? "छ" : "छैन" }}</li>
+                        <li>सम्झौता भएको मिति:{{$project->physicalProgress->agreement_date}}</li>
+                        <li>परियोजना सुरु मिति:{{$project->physicalProgress->project_start_date}}</li>
+                        <li>परियोजना सम्पन्न मिति:{{$project->physicalProgress->project_completion_date}}</li>
+                        <li>ठेक्का मिति:{{$project->physicalProgress->tender_date}}</li>
+                        <li>काम हुदै छ?:{{$project->physicalProgress->wip ? "छ" : "छैन" }}</li>
+                        <li>अनुगमन हुदै छ?{{$project->physicalProgress->followed_up ? "छ" : "छैन" }}:</li>
                     </ul>
                 </div>
             </div>
@@ -55,10 +57,10 @@
                     <canvas id="myBarChart" style="height: 300px; max-width: 640px; margin: 0px auto; opacity:2;"></canvas>
                 </div>
             </div>
-            <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px; background-color: red;">
+            <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px;">
                 <h3>उल्लेखनिए कार्यहरू</h3>
-                <div class="image">
-                    this is for important works
+                <div>
+                    {{$project->acheivements}}
                 </div>
             </div>
             <div class="row col-12  " style=" height: 200px; margin: 0px 20px 0px 20px; background-color: green;">

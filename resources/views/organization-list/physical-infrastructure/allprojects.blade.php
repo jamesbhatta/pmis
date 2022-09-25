@@ -8,7 +8,7 @@
             जिल्ला कैलाली अंतर्गत परियोजनाहरु
         </h2>
         <div class="row d-flex flex-row">
-            <div class="row col-6">
+            <div class="row col-lg-12">
                 <table class="table table-striped">
                     <thead class="fontsize filterDev all">
                         <th scope="col">#</th>
@@ -20,11 +20,11 @@
                     <tbody>
                         @foreach($projects as $item)
                         <tr class="fontsize1">
-                            <td><a>1</a></td>
-                            <td><a href="{{route('view-details',$item->id)}}">{{$item->title}}</a></td>
-                            <td>2022-02-02</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{$item->title}}</td>
+                            <td>{{$item->physicalProgress->project_start_date}}</td>
                             <td>Success</td>
-                            <td><button type="button" style="background-color: #a6a6a2; color:#ffff;" class="btn"><a href="{{route('view-details',$item->id)}}">View</a></button></td>
+                            <td><a class="btn btn-primary" href="{{route('view-details',$item->id)}}">View</a></td>
 
                         </tr>
                         @endforeach
@@ -33,11 +33,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="myBtnContainer" style="height: 20px;" class="row col-5 ml-5 form-select" aria-label="Default select example">
-                <button class="btn active filterDiv" onclick="filterSelection('all')">All Projects</button>
-                <button class="btn filterDiv" onclick="filterSelection('on_going')">On Going</button>
-                <button class="btn filterDiv" onclick="filterSelection('completed')">Completed</button>
-            </div>
+            
         </div>
     </div>
 </div>

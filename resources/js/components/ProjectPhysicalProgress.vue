@@ -40,7 +40,7 @@
           </tr>
           <tr>
             <td>अनुगमन हुदै छ ?</td>
-            <td>{{ physicalProgress.followed_up ? "छ" : "छैन" }}</td>
+            <td>  </td>
           </tr>
         </table>
       </div>
