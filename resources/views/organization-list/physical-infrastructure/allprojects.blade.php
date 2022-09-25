@@ -7,8 +7,13 @@
         <h2 class="mt-2">
             जिल्ला कैलाली अंतर्गत परियोजनाहरु
         </h2>
+<<<<<<< HEAD
         <div class="row d-flex flex-row">
             <div class="row col-lg-12">
+=======
+        <div class="row">
+            <div class="row col-6">
+>>>>>>> af98f58 (wrp)
                 <table class="table table-striped">
                     <thead class="fontsize filterDev all">
                         <th scope="col">#</th>
@@ -24,12 +29,14 @@
                             <td>{{$item->title}}</td>
                             <td>{{$item->physicalProgress->project_start_date}}</td>
                             <td>Success</td>
+<<<<<<< HEAD
                             <td><a class="btn btn-primary" href="{{route('view-details',$item->id)}}">View</a></td>
 
+=======
+                            <td><button type="button" style="background-color: #a6a6a2; color:#ffff;" class="btn"><a href="{{route('view-details',$item->id)}}">View</a></button></td>
+>>>>>>> af98f58 (wrp)
                         </tr>
                         @endforeach
-
-
                     </tbody>
                 </table>
             </div>
@@ -37,7 +44,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 <script>
     filterSelection("all")

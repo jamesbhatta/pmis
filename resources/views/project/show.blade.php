@@ -29,7 +29,7 @@
 
             <div><span class="text-muted">बिषयगत क्षेत्रको किसिम :</span> {{ $project->projectType->name }}</div>
             <div><span class="text-muted">शिर्षकगत किसिम :</span> {{ $project->projectType->topic->title }}</div>
-            
+
             @if ($project->last_year_expenditure)
             <div><span class="text-muted">गत आर्थिक वर्षको खर्च :</span> रु. {{ $project->last_year_expenditure }}/-</div>
             @endif
