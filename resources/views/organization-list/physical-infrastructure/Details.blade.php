@@ -6,6 +6,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="row col-6">
+        
                 <div class="row">
                     <h5 class="font-weight-bold">परियोजनाको विवरण</h5>
                 </div>
@@ -35,18 +36,16 @@
                     <h5 class="font-weight-bold">भौतिक प्रगति</h5>
                 </div>
                 <div class="row listOfDetails">
-                    <ul>
-                        <li>लागत अनुमान बनेको छ?:@if($project->physicalProgress->estimate_completed == "")छैन@elseछ@endif
-                         
-                        </li>
-                        <li>सम्झौता भएको छ?: {{$project->physicalProgress->agreement_date ? "छ" : "छैन" }}</li>
-                        <li>सम्झौता भएको मिति:{{$project->physicalProgress->agreement_date}}</li>
-                        <li>परियोजना सुरु मिति:{{$project->physicalProgress->project_start_date}}</li>
-                        <li>परियोजना सम्पन्न मिति:{{$project->physicalProgress->project_completion_date}}</li>
-                        <li>ठेक्का मिति:{{$project->physicalProgress->tender_date}}</li>
-                        <li>काम हुदै छ?:{{$project->physicalProgress->wip ? "छ" : "छैन" }}</li>
-                        <li>अनुगमन हुदै छ?{{$project->physicalProgress->followed_up ? "छ" : "छैन" }}:</li>
-                    </ul>
+                    <ul >
+                        <li>लागत अनुमान बनेको छ?:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->estimate_completed ? "छ" : "छैन" }}@endif</li>
+                        <li>सम्झौता भएको छ?: @if ($project->physicalProgress=="")@else{{$project->physicalProgress->agreement_date ? "छ" : "छैन" }}@endif</li>
+                        <li>सम्झौता भएको मिति:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->agreement_date}}@endif</li>
+                        <li>परियोजना सुरु मिति:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->project_start_date}}@endif</li>
+                        <li>परियोजना सम्पन्न मिति:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->project_completion_date}}@endif</li>
+                        <li>ठेक्का मिति:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->tender_date}}@endif</li>
+                        <li>काम हुदै छ?:@if ($project->physicalProgress=="")@else{{$project->physicalProgress->wip ? "छ" : "छैन" }}@endif</li>
+                        <li>अनुगमन हुदै छ?@if ($project->physicalProgress=="")@else{{$project->physicalProgress->followed_up ? "छ" : "छैन" }}@endif</li>
+                    </ul >
                 </div>
             </div>
             <div class="row col-6" style=" width:100%;float:right">
@@ -56,17 +55,27 @@
                 <div class="container">
                     <canvas id="myBarChart" style="height: 300px; max-width: 640px; margin: 0px auto; opacity:2;"></canvas>
                 </div>
-            </div>
-            <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px;">
-                <h5 class="font-weight-bold">उल्लेखनिए कार्यहरू</h5>
-                <div>
-                    {{$project->acheivements}}
+                <div class="row" style="width: 100%; float:left;">
+                    <h5 class="font-weight-bold">उल्लेखनिए कार्यहरू</h5>
+                    <label>{{$project->acheivements}}</label>
+                </div>
+                <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px;">
+                   
                 </div>
             </div>
-            <div class="row col-12  " style=" height: 200px; margin: 0px 20px 0px 20px; background-color: green;">
-                <h3>परियोजनाका तस्बिरहरू</h3>
-                <div class="image">
-                    this is for image
+
+
+            <div class="row col-12  ">
+                <h5 class="font-weight-bold">परियोजनाका तस्बिरहरू</h5>
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <img src="{{asset('storage')}}{{'/'}}{{$project->photo_before_work}}" class="img-fluid" alt="Responsive image">
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{{asset('storage')}}{{'/'}}{{$project->photo_after_work}}" class="img-fluid" alt="Responsive image">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,14 +87,15 @@
 @endsection
 @push('scripts')
 <script>
+    let expenditure={{$project->last_year_expenditure }};
+    let budget={{$project->budget}};
+    let economic_progress=expenditure/budget;
+    let progress=economic_progress*100;
+    
     const barChart = document.getElementById('myBarChart').getContext('2d');
     const labels = [
-        'Red',
-        'Blue',
-        'Yellow',
-        'Green',
-        'Purple',
-        'Orange'
+        'भौतिक प्रगति',
+        'आर्थिक प्रगति',
     ];
     const myChart = new Chart(barChart, {
         type: 'bar',
@@ -97,13 +107,10 @@
                 backgroundColor: [
                     'red',
                     'blue',
-                    'yellow',
-                    'pink',
-                    'purple',
-                    'orange'
+                    
                 ],
 
-                data: [20, 30, 40, 50, 60, 70, 80, 90, 100, 0],
+                data: [{{ $project->last_year_physical_progress }}, progress,0,100],
             }]
         },
         options: {

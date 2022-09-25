@@ -38,7 +38,7 @@
             <a href="{{route('physical-infrastruture','1')}}" class="card p-3" style="background-color: #4d4d33; height:100%;">
               <span class="text-white row">
                 <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                <label for="" class="mt-3 ml-2 col-lg-8">@lang('navigation.total_project')&nbsp;10</label>
+                <label class="ml-2 col-lg-8">{{$complete_vautik}}/{{$total_vautik}} COMPLETED</label>
                 </span>
                 <h4 class="text-white mt-4 text-center h5">@lang('navigation.Ministry_of_Physical_Transport')</h4>
             </a>
@@ -48,7 +48,7 @@
               <a href="{{route('physical-infrastruture','2')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                  <label class="ml-2 col-lg-8">10/25 COMPLETED</label>
+                  <label class="ml-2 col-lg-8">{{$complete_jalsrot}}/{{$total_jalsrot}} COMPLETED</label>
                   </span>
                   <h4 class="text-white mt-4 text-center h5">@lang('navigation.water_irrigation')</h4>
               </a>
@@ -59,7 +59,7 @@
               <a href="{{route('physical-infrastruture','3')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                 <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
+                 <label for="" class="ml-2 col-lg-8">{{$complete_kahenpani}}/{{$total_kahenpani}} COMPLETED </label>
                   <h4 class="mt-4 text-center h5">@lang('navigation.Drinking_Water_Office')</h4>
                 </span>
               </a>
@@ -70,7 +70,7 @@
               <a href="{{route('physical-infrastruture','4')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                  <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
+                  <label for="" class="ml-2 col-lg-8">{{$complete_pathrahiya}}/{{$total_pathrahiya}} COMPLETED </label>
                   <h4 class="text-white mt-4 text-center h5">@lang('navigation.patharaiya_mohna_sichaiya')</h4>
                 </span>
               </a>
@@ -81,7 +81,7 @@
               <a href="{{route('physical-infrastruture','5')}}" class="p-3">
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                  <label for="" class="mh5l-2 col-lg-8">10/50 COMPLETED </label>
+                  <label for="" class="mh5l-2 col-lg-8">{{$complete_sahari}}/{{$total_sahari}} COMPLETED </label>
                   <h4 class="mt-4 text-center h5">@lang('navigation.urban_development')</h4>
                 </span>
               </a>
@@ -92,7 +92,7 @@
               <a href="{{route('physical-infrastruture','6')}}" class="p-3" >
                 <span class="text-white row">
                   <i class="fa fa-address-card fa-3x col-lg-3" aria-hidden="true"></i>
-                  <label for="" class="ml-2 col-lg-8">10/25 COMPLETED </label>
+                  <label for="" class="ml-2 col-lg-8">{{$complete_yatayat}}/{{$total_yatayat}} COMPLETED </label>
                   <h4 class="mt-4 text-center pl-3 h5">@lang('navigation.transport_management')</h4>
                 </span>
               </a>

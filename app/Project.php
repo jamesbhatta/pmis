@@ -40,4 +40,18 @@ class Project extends Model
     {
         return $this->hasMany(EconomicProgress::class);
     }
+
+    public function getStatusAttribute()
+    {
+        if($this->last_year_physical_progress==100){
+            return true;
+        }
+    }
+
+    public function getCountAttribute()
+    {
+        if($this->last_year_physical_progress==100){
+            
+        }
+    }
 }

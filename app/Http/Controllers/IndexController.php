@@ -16,7 +16,117 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $total_vautik=0;
+        $complete_vautik=0;
+
+        $total_jalsrot=0;
+        $complete_jalsrot=0;
+
+        $total_kahenpani=0;
+        $complete_kahenpani=0;
+
+        $total_pathrahiya=0;
+        $complete_pathrahiya=0;
+
+        $total_sahari=0;
+        $complete_sahari=0;
+
+        $total_yatayat=0;
+        $complete_yatayat=0;
+
+        $projects= Project::get();
+        $organizations=Organization::get();
+        foreach($organizations as $organization){
+            // $organization_id=;
+            if($organization->office==1){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_vautik=$total_vautik+1;
+                        if($project->status){
+                            $complete_vautik=$complete_vautik+1;
+                        }
+                        
+                    }
+
+                }
+            }
+            if($organization->office==2){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_jalsrot=$total_jalsrot+1;
+                        if($project->status){
+                            $complete_jalsrot=$complete_jalsrot+1;
+                        }
+                        
+                    }
+
+                }
+
+            }
+
+            if($organization->office==3){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_kahenpani=$total_kahenpani+1;
+                        if($project->status){
+                            $complete_kahenpani=$complete_kahenpani+1;
+                        }
+                        
+                    }
+
+                }
+                
+            }
+
+            if($organization->office==4){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_pathrahiya=$total_pathrahiya+1;
+                        if($project->status){
+                            $complete_pathrahiya=$complete_pathrahiya+1;
+                        }
+                        
+                    }
+
+                }
+                
+            }
+
+            if($organization->office==5){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_sahari=$total_sahari+1;
+                        if($project->status){
+                            $complete_sahari=$complete_sahari+1;
+                        }
+                        
+                    }
+
+                }
+                
+            }
+
+            if($organization->office==6){
+               
+                foreach($projects as $project){
+                    if($organization->id==$project->organization_id){
+                        $total_yatayat=$total_yatayat+1;
+                        if($project->status){
+                            $complete_yatayat=$complete_yatayat+1;
+                        }
+                        
+                    }
+
+                }
+                
+            }
+        }
+        return view('index',compact(['total_vautik','complete_vautik','total_jalsrot','complete_jalsrot','total_kahenpani','complete_kahenpani','total_pathrahiya','complete_pathrahiya','total_sahari','complete_sahari','total_yatayat','complete_yatayat']));
     }
 
     public function physicalInfrastructure($id)
@@ -49,9 +159,6 @@ class IndexController extends Controller
     public function viewDetails($id){
      
         $project=Project::with(['projectType','physicalProgress'])->where('id',$id)->first();
-        // $physicalProgress = $project->physicalProgress;
-        // return $physicalProgress;
-        // return $project;
 
         $progress= PhysicalProgress::where('project_id',$project->id)->first();
         return view('organization-list.physical-infrastructure.Details',compact(['project']));

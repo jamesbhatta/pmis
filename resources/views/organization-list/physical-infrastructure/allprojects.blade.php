@@ -17,18 +17,35 @@
                     <th scope="col">Action</th>
                 </thead>
                 <tbody>
+                    @php
+                        $i=0;
+                    @endphp
                     @foreach($projects as $item)
                     <tr class="fontsize1">
+                        @if ($item->status)
+                            @php
+                            
+                                $i=$i+1;
+                            @endphp
+                        @endif
                         <td>{{ $loop->iteration }}</td>
                         <td>{{$item->title}}</td>
-                        <td>{{$item->physicalProgress->project_start_date}}</td>
-                        <td>Success</td>
+                        <td>
+                            @if ($item->physicalProgress)
+                            
+                                {{$item->physicalProgress->project_start_date}}
+                            @endif
+                            
+                        </td>
+                        <td>{{$item->status ? "Success" : "On going"}}</td>
                         <td><a class="btn btn-primary" href="{{route('view-details',$item->id)}}">View</a></td>
 
                     </tr>
                     @endforeach
+                    
                 </tbody>
             </table>
+            {{$i}}
         </div>
 
     </div>
