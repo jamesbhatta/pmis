@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Organization;
+use App\PhysicalProgress;
 use Illuminate\Http\Request;
 use App\Project ;
 
@@ -46,9 +47,13 @@ class IndexController extends Controller
         return view('organization-list.transport-management-office.index');
     }
     public function viewDetails($id){
+     
         $project=Project::with('projectType')->where('id',$id)->first();
-        // return $project;
-        return view('organization-list.physical-infrastructure.Details',compact('project'));
+        // $physicalProgress = $project->physicalProgress;
+        // return $physicalProgress;
+
+        $progress= PhysicalProgress::where('project_id',$project->id)->first();
+        return view('organization-list.physical-infrastructure.Details',compact(['project','progress']));
     }
     public function allProjects($id){
         $projects=Project::where('organization_id',$id)->get();
