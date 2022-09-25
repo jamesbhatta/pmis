@@ -7,7 +7,7 @@
         <div class="row">
             <div class="row col-6">
                 <div class="row">
-                    <h3>परियोजनाको विवरण</h3>
+                    <h5 class="font-weight-bold">परियोजनाको विवरण</h5>
                 </div>
                 <div class="row listOfDetails" style="width: 100%; float:left;">
                     <ul>
@@ -17,7 +17,7 @@
                     </ul>
                 </div>
                 <div class="row" style="width: 100%; float:left;">
-                    <h3>आर्थिक प्रगति</h3>
+                    <h5 class="font-weight-bold">आर्थिक प्रगति</h5>
                 </div>
                 <div class="row listOfDetails">
                     <ul>
@@ -32,7 +32,7 @@
                     </ul>
                 </div>
                 <div class="row" style="width: 100%; float:left;">
-                    <h3>भौतिक प्रगति</h3>
+                    <h5 class="font-weight-bold">भौतिक प्रगति</h5>
                 </div>
                 <div class="row listOfDetails">
                     <ul>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="row col-12" style="margin: 0px 20px 0px 20px; height: 150px;">
-                <h3>उल्लेखनिए कार्यहरू</h3>
+                <h5 class="font-weight-bold">उल्लेखनिए कार्यहरू</h5>
                 <div>
                     {{$project->acheivements}}
                 </div>
