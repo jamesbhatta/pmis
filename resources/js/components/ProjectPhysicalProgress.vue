@@ -23,15 +23,15 @@
             <td>{{ physicalProgress.agreement_date }}</td>
           </tr>
           <tr>
-            <td>@lang('navigation.project_start_date')</td>
+            <td>परियोजना सुरु मिति</td>
             <td>{{ physicalProgress.project_start_date }}</td>
           </tr>
           <tr>
-            <td>@lang('navigation.project_completion_date')</td>
+            <td>परियोजना समाप्त मिति</td>
             <td>{{ physicalProgress.project_completion_date }}</td>
           </tr>
           <tr>
-            <td>@lang('navigation.tender_date')</td>
+            <td>टेंडर मिति</td>
             <td>{{ physicalProgress.tender_date }}</td>
           </tr>
           <tr>
