@@ -17,7 +17,7 @@
             <select class="custom-select" v-model="form.organization_id">
               <option value="">कृपया संगठन चयन गर्नुहोस्</option>
               <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{
-                  organization.name
+              organization.name
               }}</option>
             </select>
             <small class="text-danger">{{ form.errors.first("organization_id") }}</small>
@@ -79,32 +79,41 @@
             <small class="text-danger">{{ form.errors.first("expenditure_type") }}</small>
           </div>
 
-          <div class="form-group col-lg-6">
-            <label for="">गत आर्थिक वर्षको खर्च</label>
-            <div class="input-group mb-2">
-              <div class="input-group-prepend">
-                <div class="input-group-text">रु.</div>
-              </div>
-              <input type="number" v-model="form.last_year_expenditure" class="form-control" />
-            </div>
-            <small class="text-danger">{{ form.errors.first("last_year_expenditure") }}</small>
+          <div class="form-group col-lg-12 ml-3">
+            <input class="form-check-input" type="checkbox" value="" id="chk_box">
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
           </div>
 
-          <div class="form-group col-lg-6">
-            <label>गत आर्थिक वर्षको भौतिक प्रगति(%) </label>
-            <div class="input-group mb-2">
-              <input type="number" v-model="form.last_year_physical_progress" class="form-control" />
-              <div class="input-group-prepend">
-                <div class="input-group-text">%</div>
+          <div class="col-12 row" id="chk">
+            <div class="form-group col-lg-6">
+              <label for="">गत आर्थिक वर्षको खर्च</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">रु.</div>
+                </div>
+                <input type="number" v-model="form.last_year_expenditure" class="form-control" />
               </div>
+              <small class="text-danger">{{ form.errors.first("last_year_expenditure") }}</small>
             </div>
-            <small class="text-danger">{{ form.errors.first("last_year_physical_progress") }}</small>
-          </div>
 
-          <div class="form-group col-lg-6">
-            <label>लाभाम्वित हुने जनसंख्या</label>
-            <input type="text" v-model="form.population_to_be_benefited" class="form-control" />
-            <small class="text-danger">{{ form.errors.first("population_to_be_benefited") }}</small>
+            <div class="form-group col-lg-6">
+              <label>गत आर्थिक वर्षको भौतिक प्रगति(%) </label>
+              <div class="input-group mb-2">
+                <input type="number" v-model="form.last_year_physical_progress" class="form-control" />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">%</div>
+                </div>
+              </div>
+              <small class="text-danger">{{ form.errors.first("last_year_physical_progress") }}</small>
+            </div>
+
+            <div class="form-group col-lg-6">
+              <label>लाभाम्वित हुने जनसंख्या</label>
+              <input type="text" v-model="form.population_to_be_benefited" class="form-control" />
+              <small class="text-danger">{{ form.errors.first("population_to_be_benefited") }}</small>
+            </div>
           </div>
 
           <div class="form-group col-lg-12">
@@ -146,7 +155,7 @@ export default {
 
   data() {
     return {
-      
+
       updateMode: false,
       form: new Form(
         {
@@ -162,6 +171,7 @@ export default {
           description: "",
           budget_upashirshakh: "",
           expenditure_upashirshakh: "",
+
         },
         {
           resetOnSuccess: false,
@@ -205,5 +215,13 @@ export default {
       });
     },
   },
+
 };
+
 </script>
+
+<style>
+  #chk{
+    display: none;
+  }
+</style>

@@ -7,3 +7,15 @@
 <script type="text/javascript" src="{{ asset('assets/mdb/js/addons/datatables.min.js') }}"></script>
 <script src="{{ asset('assets/js/nepali.datepicker.v3.min.js') }}" type="text/javascript"></script>
 <script src="{{ mix('js/app.js') }}"></script>
+<script >
+    var checkbox = document.getElementById("chk_box");
+
+checkbox.addEventListener('change', function () {
+  if(checkbox.checked){
+      document.getElementById('chk').style.display="inline-flex";
+    }else{
+    document.getElementById('chk').style.display="none";
+
+  }
+});
+</script>
