@@ -2712,6 +2712,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -25674,112 +25675,6 @@ var render = function () {
             ]),
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group" },
-            [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("सम्झौता भएको मिति "),
-              ]),
-              _vm._v(" "),
-              _c("v-nepalidatepicker", {
-                attrs: {
-                  calenderType: "Nepali",
-                  classValue: "form-control",
-                  placeholder: _vm.form.agreement_date,
-                },
-                model: {
-                  value: _vm.form.agreement_date,
-                  callback: function ($$v) {
-                    _vm.$set(_vm.form, "agreement_date", $$v)
-                  },
-                  expression: "form.agreement_date",
-                },
-              }),
-              _vm._v(" "),
-              _c("small", { staticClass: "text-danger" }, [
-                _vm._v(_vm._s(_vm.form.errors.first("agreement_date"))),
-              ]),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group" },
-            [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Project Start Date "),
-              ]),
-              _vm._v(" "),
-              _c("v-nepalidatepicker", {
-                attrs: {
-                  calenderType: "Nepali",
-                  classValue: "form-control",
-                  placeholder: _vm.form.project_start_date,
-                },
-                model: {
-                  value: _vm.form.project_start_date,
-                  callback: function ($$v) {
-                    _vm.$set(_vm.form, "project_start_date", $$v)
-                  },
-                  expression: "form.project_start_date",
-                },
-              }),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group" },
-            [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Project Completion Date "),
-              ]),
-              _vm._v(" "),
-              _c("v-nepalidatepicker", {
-                attrs: {
-                  calenderType: "Nepali",
-                  classValue: "form-control",
-                  placeholder: _vm.form.project_completion_date,
-                },
-                model: {
-                  value: _vm.form.project_completion_date,
-                  callback: function ($$v) {
-                    _vm.$set(_vm.form, "project_completion_date", $$v)
-                  },
-                  expression: "form.project_completion_date",
-                },
-              }),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group" },
-            [
-              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date")]),
-              _vm._v(" "),
-              _c("v-nepalidatepicker", {
-                attrs: {
-                  calenderType: "Nepali",
-                  classValue: "form-control",
-                  placeholder: _vm.form.tender_date,
-                },
-                model: {
-                  value: _vm.form.tender_date,
-                  callback: function ($$v) {
-                    _vm.$set(_vm.form, "tender_date", $$v)
-                  },
-                  expression: "form.tender_date",
-                },
-              }),
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _c("label", [
               _c("input", {
@@ -25791,7 +25686,7 @@ var render = function () {
                     expression: "form.wip",
                   },
                 ],
-                attrs: { type: "checkbox", value: "1" },
+                attrs: { type: "checkbox", value: "1", id: "work" },
                 domProps: {
                   checked: Array.isArray(_vm.form.wip)
                     ? _vm._i(_vm.form.wip, "1") > -1
@@ -25878,6 +25773,112 @@ var render = function () {
               _vm._v(_vm._s(_vm.form.errors.first("followed_up"))),
             ]),
           ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("सम्झौता भएको मिति "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.agreement_date,
+                },
+                model: {
+                  value: _vm.form.agreement_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "agreement_date", $$v)
+                  },
+                  expression: "form.agreement_date",
+                },
+              }),
+              _vm._v(" "),
+              _c("small", { staticClass: "text-danger" }, [
+                _vm._v(_vm._s(_vm.form.errors.first("agreement_date"))),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Project Start Date "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.project_start_date,
+                },
+                model: {
+                  value: _vm.form.project_start_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "project_start_date", $$v)
+                  },
+                  expression: "form.project_start_date",
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group", attrs: { id: "complete_date" } },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Project Completion Date "),
+              ]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.project_completion_date,
+                },
+                model: {
+                  value: _vm.form.project_completion_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "project_completion_date", $$v)
+                  },
+                  expression: "form.project_completion_date",
+                },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group" },
+            [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Tender Date")]),
+              _vm._v(" "),
+              _c("v-nepalidatepicker", {
+                attrs: {
+                  calenderType: "Nepali",
+                  classValue: "form-control",
+                  placeholder: _vm.form.tender_date,
+                },
+                model: {
+                  value: _vm.form.tender_date,
+                  callback: function ($$v) {
+                    _vm.$set(_vm.form, "tender_date", $$v)
+                  },
+                  expression: "form.tender_date",
+                },
+              }),
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
             _c(

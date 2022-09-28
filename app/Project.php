@@ -41,6 +41,11 @@ class Project extends Model
         return $this->hasMany(EconomicProgress::class);
     }
 
+    public function image()
+    {
+        return $this->hasMany(photo::class);
+    }
+
     public function getStatusAttribute()
     {
         if($this->last_year_physical_progress==100){

@@ -43,3 +43,18 @@ checkbox.addEventListener('change', function () {
             survey_options.removeChild(input_tags[(input_tags.length) - 1]);
         }
     }</script>
+
+
+<script >
+    var checkbox1 = document.getElementById("work");
+
+checkbox1.addEventListener('change', function () {
+  if(checkbox1.checked){
+    // alert('sds');
+      document.getElementById('complete_date').style.display="none";
+    }else{
+    document.getElementById('complete_date').style.display="block";
+
+  }
+});
+</script>

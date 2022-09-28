@@ -158,8 +158,9 @@ class IndexController extends Controller
     }
     public function viewDetails($id){
      
-        $project=Project::with(['projectType','physicalProgress'])->where('id',$id)->first();
+        $project=Project::with(['projectType','physicalProgress','image'])->where('id',$id)->first();
 
+        // return $project;
         $progress= PhysicalProgress::where('project_id',$project->id)->first();
         return view('organization-list.physical-infrastructure.Details',compact(['project']));
     }

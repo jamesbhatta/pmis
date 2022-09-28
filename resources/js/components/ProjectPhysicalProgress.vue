@@ -51,6 +51,14 @@
           <small class="text-danger">{{ form.errors.first("estimate_completed") }}</small>
         </div>
         <div class="form-group">
+          <label> <input type="checkbox" v-model="form.wip" value="1" id="work" /> काम हुदै छ ? </label>
+          <small class="text-danger">{{ form.errors.first("wip") }}</small>
+        </div>
+        <div class="form-group">
+          <label> <input type="checkbox" v-model="form.followed_up" value="1" /> अनुगमन हुदै छ ? </label>
+          <small class="text-danger">{{ form.errors.first("followed_up") }}</small>
+        </div>
+        <div class="form-group">
           <label for="">सम्झौता भएको मिति </label>
           <v-nepalidatepicker v-model="form.agreement_date" calenderType="Nepali" classValue="form-control" :placeholder="form.agreement_date"></v-nepalidatepicker>
           <small class="text-danger">{{ form.errors.first("agreement_date") }}</small>
@@ -59,7 +67,7 @@
           <label for="">Project Start Date </label>
           <v-nepalidatepicker v-model="form.project_start_date" calenderType="Nepali" classValue="form-control" :placeholder="form.project_start_date"></v-nepalidatepicker>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="complete_date">
           <label for="">Project Completion Date </label>
           <v-nepalidatepicker v-model="form.project_completion_date" calenderType="Nepali" classValue="form-control" :placeholder="form.project_completion_date"></v-nepalidatepicker>
         </div>
@@ -67,14 +75,7 @@
           <label for="">Tender Date</label>
           <v-nepalidatepicker v-model="form.tender_date" calenderType="Nepali" classValue="form-control" :placeholder="form.tender_date"></v-nepalidatepicker>
         </div>
-        <div class="form-group">
-          <label> <input type="checkbox" v-model="form.wip" value="1" /> काम हुदै छ ? </label>
-          <small class="text-danger">{{ form.errors.first("wip") }}</small>
-        </div>
-        <div class="form-group">
-          <label> <input type="checkbox" v-model="form.followed_up" value="1" /> अनुगमन हुदै छ ? </label>
-          <small class="text-danger">{{ form.errors.first("followed_up") }}</small>
-        </div>
+        
         <div class="form-group">
           <button type="submit" v-on:click.prevent="submit" class="btn btn-primary z-depth-0 ml-0">Update</button>
         </div>

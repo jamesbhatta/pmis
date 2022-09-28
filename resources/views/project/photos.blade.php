@@ -47,10 +47,17 @@
         <div class="box__header">
             
             <div class="row">
-                <div class="col-md-4">
-                    <div class="mb-3">Photo before work</div>
-                    <img class="img-fluid" src="{{ get_file_url($project->photo_before_work) }}" alt="sdfs">
-                </div>
+                @foreach ($photos as $photo)
+                <div class="col-md-3">
+                    <div class="card">
+                        
+                        <img style="height: 180px" class="p-3" src="{{asset('storage')}}{{'/'}}{{$photo->image}}" class="img-fluid" alt="Responsive image">
+                    </div>
+                    {{-- {{}} --}}
+                    {{-- <img class="img-fluid" src="{{ get_file_url($photo->image) }}" alt="sdfs"> --}}
+                </div> 
+                @endforeach
+               
             
             </div>
         </div>

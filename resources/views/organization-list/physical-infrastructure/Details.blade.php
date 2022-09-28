@@ -67,15 +67,16 @@
 
             <div class="row col-12  ">
                 <h5 class="font-weight-bold">परियोजनाका तस्बिरहरू</h5>
-                <div class="row mt-4">
+                <div class="row mt-5">
+                    @foreach ($project->image as $item)
+                    {{-- {{$item}} --}}
                     <div class="col-lg-6">
-                        <img src="{{asset('storage')}}{{'/'}}{{$project->photo_before_work}}" class="img-fluid" alt="Responsive image">
+                        <img src="{{asset('storage')}}{{'/'}}{{$item->image}}" class="img-fluid" alt="Responsive image">
                         
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="{{asset('storage')}}{{'/'}}{{$project->photo_after_work}}" class="img-fluid" alt="Responsive image">
-                        
-                    </div>
+                    </div>    
+                    @endforeach
+                    
+                   
                 </div>
             </div>
         </div>

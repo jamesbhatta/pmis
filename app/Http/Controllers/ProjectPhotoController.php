@@ -12,10 +12,9 @@ class ProjectPhotoController extends Controller
     public function show(Project $project)
     {
         // return $project;
-        $photo=photo::where('project_id',$project->id)->get();
-        return view('project.photos', [
-            'project' => $project,'photo',
-        ]);
+        $photos=photo::where('project_id',$project->id)->get();
+        return view('project.photos',compact(['project','photos'])
+        );
     }
 
     public function update(Request $request, Project $project)
