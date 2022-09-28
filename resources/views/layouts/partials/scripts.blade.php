@@ -19,3 +19,27 @@ checkbox.addEventListener('change', function () {
   }
 });
 </script>
+<script>
+    var survey_options = document.getElementById('survey_options');
+    var add_more_fields = document.getElementById('add_more_fields');
+    var remove_fields = document.getElementById('remove_fields');
+
+    add_more_fields.onclick = function() {
+
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'file');
+        newField.setAttribute('name', 'image[]');
+        newField.setAttribute('class', 'form-control form-control-lg mt-3');
+        newField.setAttribute('siz', 50);
+        newField.setAttribute('id', 'documents');
+        survey_options.appendChild(newField);
+    }
+
+    remove_fields.onclick = function() {
+
+        var input_tags = survey_options.getElementsByTagName('input');
+
+        if (input_tags.length > 1) {
+            survey_options.removeChild(input_tags[(input_tags.length) - 1]);
+        }
+    }</script>
