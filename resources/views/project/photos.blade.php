@@ -51,10 +51,10 @@
                 <div class="col-md-3">
                     <div class="card">
                         
-                        <img style="height: 180px" class="p-3" src="{{asset('storage')}}{{'/'}}{{$photo->image}}" class="img-fluid" alt="Responsive image">
+                        <img style="height: 180px" class="p-3" src="{{get_file_url($photo->image)}}" class="img-fluid" alt="Responsive image">
                     </div>
                     {{-- {{}} --}}
-                    {{-- <img class="img-fluid" src="{{ get_file_url($photo->image) }}" alt="sdfs"> --}}
+                    <img class="img-fluid" src="{{ get_file_url($photo->image) }}" alt="sdfs">
                 </div> 
                 @endforeach
                
