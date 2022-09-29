@@ -12,9 +12,9 @@
 
 checkbox.addEventListener('change', function () {
   if(checkbox.checked){
-      document.getElementById('chk').style.display="inline-flex";
+      document.getElementById('chk').style.display="none";
     }else{
-    document.getElementById('chk').style.display="none";
+    document.getElementById('chk').style.display="inline-flex";
 
   }
 });

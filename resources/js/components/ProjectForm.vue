@@ -82,7 +82,7 @@
           <div class="form-group col-lg-12 ml-3">
             <input class="form-check-input" type="checkbox" value="" id="chk_box">
             <label class="form-check-label" for="flexCheckDefault">
-              Default checkbox
+              नयाँ परियोजना हो ?
             </label>
           </div>
 
@@ -221,7 +221,4 @@ export default {
 </script>
 
 <style>
-  #chk{
-    display: none;
-  }
 </style>

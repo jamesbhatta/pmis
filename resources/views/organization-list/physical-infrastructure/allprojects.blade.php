@@ -1,56 +1,55 @@
 @extends('user_app')
 @section('content')
-@include('navbar')
-<div style="background-color: #edf2f8;width:100%">
-    <div style="height: 150px;"></div>
-    <div class="container">
-        <h2 class="mt-2">
-            जिल्ला कैलाली अंतर्गत परियोजनाहरु
-        </h2>
-        <div>
-            <table class="table table-striped">
-                <thead class="fontsize filterDev all">
-                    <th scope="col">#</th>
-                    <th scope="col">परियोजनाको नाम</th>
-                    <th scope="col">Starting Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                </thead>
-                <tbody>
-                    @php
-                        $i=0;
-                    @endphp
-                    @foreach($projects as $item)
-                    <tr class="fontsize1">
-                        @if ($item->status)
-                            @php
-                            
-                                $i=$i+1;
-                            @endphp
-                        @endif
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{$item->title}}</td>
-                        <td>
-                            @if ($item->physicalProgress)
-                            
-                                {{$item->physicalProgress->project_start_date}}
-                            @endif
-                            
-                        </td>
-                        <td>{{$item->status ? "Completed" : "On going"}}</td>
-                        <td><a class="btn btn-primary" href="{{route('view-details',$item->id)}}">View</a></td>
+    @include('navbar')
+    <div style="background-color: #edf2f8;width:100%;min-height:100%">
+        <div style="height: 150px;"></div>
+        <div class="container">
+            <h2 class="mt-2">
+                जिल्ला कैलाली अंतर्गत परियोजनाहरु
+            </h2>
+            <div>
+                <table class="table table-striped">
+                    <thead class="fontsize filterDev all">
+                        <th scope="col">#</th>
+                        <th scope="col">परियोजनाको नाम</th>
+                        <th scope="col">Starting Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach ($projects as $item)
+                            <tr class="fontsize1">
+                                @if ($item->status)
+                                    @php
+                                        
+                                        $i = $i + 1;
+                                    @endphp
+                                @endif
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->title }}</td>
+                                <td>
+                                    @if ($item->physicalProgress)
+                                        {{ $item->physicalProgress->project_start_date }}
+                                    @endif
 
-                    </tr>
-                    @endforeach
-                    
-                </tbody>
-            </table>
-            {{$i}}
+                                </td>
+                                <td>{{ $item->status ? 'Completed' : 'On going' }}</td>
+                                <td><a class="btn btn-primary" href="{{ route('view-details', $item->id) }}">View</a></td>
+
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
-
     </div>
-</div>
-</div>
+    </div>
 @endsection
 <script>
     filterSelection("all")
