@@ -8,6 +8,7 @@ class ProjectTopic extends Model
 {
     use \Sushi\Sushi;
 
+    protected $table = 'project_topics';
     protected $rows = [
         ['id' => 1, 'title' => 'सिचाई',],
         ['id' => 2, 'title' => 'खाने पानी',],

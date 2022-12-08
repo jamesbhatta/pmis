@@ -15,7 +15,7 @@ class Project extends Model
     protected static function booted()
     {
         static::addGlobalScope('from_fiscal_year', function(Builder $builder) {
-            $builder->where('fiscal_year_id', active_fiscal_year()->id);
+            $builder->where('fiscal_year_id', \App\FiscalYear::latest()->where('is_running','1')->get()[0]->id);
         });
     }
 
@@ -24,7 +24,7 @@ class Project extends Model
         return $this->belongsTo(Organization::class);
     }
 
-    
+
 
     public function projectType()
     {
@@ -56,7 +56,7 @@ class Project extends Model
     public function getCountAttribute()
     {
         if($this->last_year_physical_progress==100){
-            
+
         }
     }
 }

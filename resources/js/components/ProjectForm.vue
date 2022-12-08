@@ -13,9 +13,9 @@
           </div>
 
           <div class="form-group col-lg-6">
-            <label>संगठन</label>
+            <label>कार्यालय</label>
             <select class="custom-select" v-model="form.organization_id">
-              <option value="">कृपया संगठन चयन गर्नुहोस्</option>
+              <option value="">कृपया कार्यालय चयन गर्नुहोस्</option>
               <option v-for="organization in organizations" :value="organization.id" :key="organization.id">{{
               organization.name
               }}</option>

@@ -6,7 +6,7 @@ use App\FiscalYear;
 use Illuminate\Support\Facades\Cache;
 
 class FiscalYearService
-{    
+{
     /**
      * Cache Key
      *
@@ -59,7 +59,7 @@ class FiscalYearService
     {
         return $this->fiscalYearsCacheKey;
     }
-    
+
     /**
      * Get the query
      *
@@ -69,7 +69,7 @@ class FiscalYearService
     {
         return FiscalYear::select($this->getSelectFields())->latest()->get();
     }
-    
+
     /**
      * Get all the fields to be selected
      *
@@ -80,4 +80,3 @@ class FiscalYearService
         return $this->selectFields;
     }
 }
-    

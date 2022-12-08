@@ -88,4 +88,5 @@ return [
     'add_user'=>"Add User",
     'indicator'=>"Indicator",
     'total_project'=>"Total Project",
+    'completed'=>'Completed',
 ];

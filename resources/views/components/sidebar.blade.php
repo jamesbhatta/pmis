@@ -27,7 +27,7 @@
         @hasrole('super-admin')
         <li class="nav-item {{ setActive('organization.index') }}">
             <a class="nav-link" href="{{ route('organization.index') }}">
-                <span class="text-light"><i class="fa fa-briefcase"></i></span>@lang('navigation.Organizations')
+                <span class="text-light"><i class="fa fa-briefcase"></i></span>@lang('navigation.offices')
             </a>
         </li>
         @endhasrole

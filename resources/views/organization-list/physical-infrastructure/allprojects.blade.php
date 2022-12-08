@@ -24,7 +24,7 @@
                             <tr class="fontsize1">
                                 @if ($item->status)
                                     @php
-                                        
+
                                         $i = $i + 1;
                                     @endphp
                                 @endif

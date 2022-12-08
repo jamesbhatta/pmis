@@ -17,8 +17,8 @@
         <nav aria-label="breadcrumb ">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('dashboard')}}">ड्यासबोर्ड</a></li>
-                <li class="breadcrumb-item"><a href="{{route('organization.index')}}">@lang('navigation.Organizations')</a></li>
-                <li class="breadcrumb-item active" aria-current="page">@lang('navigation.add_organization')</li>
+                <li class="breadcrumb-item"><a href="{{route('organization.index')}}">@lang('navigation.offices')</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@lang('navigation.add_office')</li>
             </ol>
         </nav>
         <div class="card-body">
@@ -48,7 +48,7 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="" class="required">@lang('navigation.organization_name')</label>
+                        <label for="" class="required">@lang('navigation.office_name')</label>
                         <input type="text" name="name" class="form-control romanized rounded-0 {{ invalid_class('name') }}" value="{{ old('name', $organization->name) }}" autocomplete="off" required>
                         <x-invalid-feedback field="name"></x-invalid-feedback>
                     </div>
@@ -106,14 +106,12 @@
                     </div>
                     <div class="col-md-6 form-group">
                         <label for="">कार्यालय</label>
-                        <select name="office"  class="custom-select rounded-0 {{ invalid_class('district_id') }}" required>
+                        <select name="office_id"  class="custom-select rounded-0 {{ invalid_class('district_id') }}">
                             <option value="">कार्यालय छान्नुहोस्</option>
-                            <option value="1">भौतिक पूर्वाधार तथा यातायात मन्त्रालय</option>
-                            <option value="2">जलस्रोत तथा सिचाई विकास डिविजन कार्यालय</option>
-                            <option value="3">खानेपानी तथा सरसफाई डिविजन कार्यालय</option>
-                            <option value="4">पथरैया मोहना सिचाई व्यवस्थापन कार्यालय</option>
-                            <option value="5">सहरी विकास तथा भवन निर्माण कार्यालय</option>
-                            <option value="6">यातायात व्यवस्था कार्यालय</option>
+                            @foreach ($organizations as $organization)
+                            <option value="{{$organization->id}}">{{$organization->name}}</option>
+
+                            @endforeach
                             <!-- <option value="{{ $district->id }}" data-province-id="{{ $district->province->id}}" @if(old('district_id', $organization->district_id) == $district->id) selected @endif>{{ $district->name }}</option> -->
                         </select>
                         <x-invalid-feedback field="phone"></x-invalid-feedback>

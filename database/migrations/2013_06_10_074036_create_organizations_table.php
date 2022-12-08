@@ -21,7 +21,8 @@ class CreateOrganizationsTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            
+            $table->Integer('office_id')->nullable();
+
             $table->timestamps();
         });
     }

@@ -24,7 +24,9 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
+        "caniuse-lite": "^1.0.30001435",
         "chart.js": "^3.9.1",
+        "font-awesome": "^4.7.0",
         "form-backend-validation": "^2.4.0",
         "sweetalert2": "^11.4.19",
         "v-nepalidatepicker": "^1.2.4",

@@ -30,7 +30,7 @@
             @can('user.*')
             <div class="col-md-3">
                 <x-dashboard-count-tile :link="route('project.index')">
-                    <x-slot name="count">{{ $totalProjectsCount }}</x-slot>
+                    <!-- <x-slot name="count">{{ $totalProjectsCount }}</x-slot> -->
                     <x-slot name="title">परियोजनाहरू</x-slot>
                 </x-dashboard-count-tile>
             </div>

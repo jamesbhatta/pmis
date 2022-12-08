@@ -16,124 +16,14 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $total_vautik=0;
-        $complete_vautik=0;
-
-        $total_jalsrot=0;
-        $complete_jalsrot=0;
-
-        $total_kahenpani=0;
-        $complete_kahenpani=0;
-
-        $total_pathrahiya=0;
-        $complete_pathrahiya=0;
-
-        $total_sahari=0;
-        $complete_sahari=0;
-
-        $total_yatayat=0;
-        $complete_yatayat=0;
-
-        $projects= Project::get();
-        $organizations=Organization::get();
-        foreach($organizations as $organization){
-            // $organization_id=;
-            if($organization->office==1){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_vautik=$total_vautik+1;
-                        if($project->status){
-                            $complete_vautik=$complete_vautik+1;
-                        }
-                        
-                    }
-
-                }
-            }
-            if($organization->office==2){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_jalsrot=$total_jalsrot+1;
-                        if($project->status){
-                            $complete_jalsrot=$complete_jalsrot+1;
-                        }
-                        
-                    }
-
-                }
-
-            }
-
-            if($organization->office==3){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_kahenpani=$total_kahenpani+1;
-                        if($project->status){
-                            $complete_kahenpani=$complete_kahenpani+1;
-                        }
-                        
-                    }
-
-                }
-                
-            }
-
-            if($organization->office==4){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_pathrahiya=$total_pathrahiya+1;
-                        if($project->status){
-                            $complete_pathrahiya=$complete_pathrahiya+1;
-                        }
-                        
-                    }
-
-                }
-                
-            }
-
-            if($organization->office==5){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_sahari=$total_sahari+1;
-                        if($project->status){
-                            $complete_sahari=$complete_sahari+1;
-                        }
-                        
-                    }
-
-                }
-                
-            }
-
-            if($organization->office==6){
-               
-                foreach($projects as $project){
-                    if($organization->id==$project->organization_id){
-                        $total_yatayat=$total_yatayat+1;
-                        if($project->status){
-                            $complete_yatayat=$complete_yatayat+1;
-                        }
-                        
-                    }
-
-                }
-                
-            }
-        }
-        return view('index',compact(['total_vautik','complete_vautik','total_jalsrot','complete_jalsrot','total_kahenpani','complete_kahenpani','total_pathrahiya','complete_pathrahiya','total_sahari','complete_sahari','total_yatayat','complete_yatayat']));
+        $organizations=Organization::where('type','division')->get();
+        return view('index',compact(['organizations']));
     }
 
     public function physicalInfrastructure($id)
     {
-        // $physical_infrastures = Project::get();
+        $physical_infrastures = Project::get();
         $offices=Organization::withCount('project')->where('office',$id)->get();
-        
         return view('organization-list.physical-infrastructure.index',compact('offices'));
     }
     public function waterResources()
@@ -157,7 +47,7 @@ class IndexController extends Controller
         return view('organization-list.transport-management-office.index');
     }
     public function viewDetails($id){
-     
+
         $project=Project::with(['projectType','physicalProgress','image'])->where('id',$id)->first();
 
         // return $project;
@@ -165,10 +55,14 @@ class IndexController extends Controller
         return view('organization-list.physical-infrastructure.Details',compact(['project']));
     }
     public function allProjects($id){
-        $projects=Project::with(['physicalProgress'])->where('organization_id',$id)->get();
-        
-
+        // $projects=Project::with(['physicalProgress'])->where('organization_id',$id)->get();
         return view('organization-list.physical-infrastructure.allprojects',compact('projects'));
+    }
+
+    public function allPhysicalInfrastructureOfficeList(Organization $organization){
+        $organizations=Organization::where('office_id',$organization->id)->get();
+        // $offices=Organization::withCount('project')->where('office',$id)->get();
+        return view('organization-list.physical-infrastructure.index',compact('organizations'));
     }
 
 

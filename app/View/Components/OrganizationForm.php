@@ -15,6 +15,7 @@ class OrganizationForm extends Component
     public $municipalities;
     public $wards;
     public $fiscalYears;
+    public $organizations;
 
     /**
      * Create a new component instance.
@@ -30,6 +31,7 @@ class OrganizationForm extends Component
         $this->municipalities = \App\Municipality::with('district')->get(['id', 'name', 'name_en', 'district_id']);
         $this->wards = \App\Ward::all('id', 'name', 'name_en')->sortBy('name_en');
         $this->fiscalYears = app()->make(FiscalYearService::class)->get();
+        $this->organizations = Organization::get();
     }
 
     /**

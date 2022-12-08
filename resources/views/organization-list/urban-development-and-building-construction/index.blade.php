@@ -16,20 +16,11 @@
             </thead>
             <tbody>
                 <tr class="fontsize1">
-                    <td><a href="https://sagarkathariya.com.np">1</a></td>
-                    <td><a href="https://sagarkathariya.com.np">Kailali</a></td>
-                    <td><a href="https://sagarkathariya.com.np">10</a></td>
+                    <td><a href="https://mohrain.com">1</a></td>
+                    <td><a href="https://mohrain.com">Kailali</a></td>
+                    <td><a href="https://mohrain.com">10</a></td>
                 </tr>
-                <tr class="fontsize1">
-                    <td><a href="https://sagarkathariya.com.np">2</a></td>
-                    <td><a href="https://sagarkathariya.com.np">Kanchanpur</a></td>
-                    <td><a href="https://sagarkathariya.com.np">12</a></td>
-                </tr>
-                <tr class="fontsize1">
-                    <td><a href="https://sagarkathariya.com.np">3</a></td>
-                    <td><a href="https://sagarkathariya.com.np">Doti</a></td>
-                    <td><a href="https://sagarkathariya.com.np">20</a></td>
-                </tr>
+
 
             </tbody>
         </table>

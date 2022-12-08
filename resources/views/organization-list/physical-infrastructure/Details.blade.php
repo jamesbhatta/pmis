@@ -101,8 +101,6 @@
 
                             </div>
                         @endforeach
-
-
                     </div>
                 </div>
             </div>
@@ -114,7 +112,7 @@
 @endsection
 @push('scripts')
     <script>
-        <?php 
+        <?php
             if($project->last_year_expenditure){?>
 
         let expenditure = {{ $project->last_year_expenditure }};

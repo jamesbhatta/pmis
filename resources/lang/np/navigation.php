@@ -31,6 +31,10 @@ return [
     'address'=>"ठेगाना",
     'phone'=>"फोन",
     'email'=>"इमेल",
+    'offices'=>"कार्यालयहरु",
+    'office'=>"कार्यालय",
+    'add_office'=>"कार्यालय थप्नुहोस्",
+    'office_name'=>"कार्यालयको नाम",
     'office_website'=>"कार्यालयको वेबसाइट",
     'office_type'=>"कार्यालयको प्रकार",
     'office_type_list'=>"कार्यालयको प्रकार सूची",
@@ -61,5 +65,6 @@ return [
     'progress_report'=>"प्रगति रिपोर्ट",
     'total_project'=>"कुल परियोजना",
     'title'=>"शीर्षक",
+    'completed'=>"सम्पन्न"
 
 ];
