@@ -63,6 +63,7 @@ class ProjectController extends Controller
             'description' => ['nullable'],
         ]));
 
+
         return response()->json([
             'status' => 200,
             'message' => 'Project has been created.'

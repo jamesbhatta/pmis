@@ -10,7 +10,7 @@
           <div class="p-3 h4 font-weight-bold text-white text-center" style="background-color:#0603ab; border-radius: 4px;">
             <span>डाटासेटहरु</span>
           </div>
-          <div class="text-left text-dark h5 card1" style="background-color: #c68c53; overflow:scroll; height:70vh;">
+          <div class="text-left text-dark h5 card1" style="background-color: #c68c53; overflow:scroll; height:65vh;">
             @foreach ($organizations as $organization)
             <div class=" p-3 mb-1">
               <span><a href="{{route('physical-infrastruture.all-offices',$organization)}}">{{$organization->name}}</a> </span>
@@ -65,6 +65,7 @@
   }
 
   .card1::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
-}
+    display: none;
+    /* Safari and Chrome */
+  }
 </style>
