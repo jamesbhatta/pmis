@@ -7,17 +7,21 @@ use App\Project;
 use App\Organization;
 use App\ProjectType;
 use App\Queries\ProjectsQuery;
+use App\Services\FiscalYearService;
+use Google\Service\CloudSearch\Id;
 
 class ProjectController extends Controller
 {
     public function index(Project $project)
     {
+        $fiscalYear = (new FiscalYearService())->getRunning();
+
         // $projects = Project::with(['organization', 'projectType'])
         //     ->when(auth()->user()->user_type == 'sub-division', function ($query) {
         //         $query->where('organization_id', auth()->user()->organization_id);
         //     })->latest()->get();
 
-        $projects = (new ProjectsQuery())->when(auth()->user()->user_type == 'sub-division', function ($query) {
+        $projects = (new ProjectsQuery())->FiscalYear($fiscalYear->id)->when(auth()->user()->user_type == 'sub-division', function ($query) {
             $query->where('organization_id', auth()->user()->organization_id);
         })->paginate(20);
 
@@ -107,6 +111,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->back()->with('success', 'Record has been removed');
+        return redirect()->back()->with('success', 'Project has been deleted');
     }
 }

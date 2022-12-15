@@ -11,7 +11,7 @@
             <div class="d-flex">
                 <h5 class="box__title">परियोजना विवरण</h5>
                 <div class="ml-auto">
-                    <a href="{{ route('project.edit', $project) }}">Edit</a>
+                    <a href="{{ route('project.edit', $project) }}"><button type="button" class="btn btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit</button></a>
                 </div>
             </div>
             <div class="d-flex">

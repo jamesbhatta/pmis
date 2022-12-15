@@ -16,6 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
+
+        return redirect('login');
         $organizations=Organization::where('type','division')->get();
 
         return view('index',compact(['organizations']));

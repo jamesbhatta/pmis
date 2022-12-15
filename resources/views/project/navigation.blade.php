@@ -1,8 +1,8 @@
 @section('breadcrumb')
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">ड्यासबोर्ड</a></li>
-        <li class="breadcrumb-item" aria-current="page">परियोजना </li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">ड्यासबोर्ड</a></li>
+        <li class="breadcrumb-item"><a href="{{route('project.index')}}">परियोजना</a></li>
         <li class="breadcrumb-item" aria-current="page">{{ $project->title ?? ''}} </li>
     </ol>
 </nav>

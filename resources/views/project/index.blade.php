@@ -28,7 +28,7 @@
                     <th>क्र.स.</th>
                     <th>दर्ता नं.</th>
                     <th>आयोजना / कार्यक्रम</th>
-                    <th>संगठन</th>
+                    <th>कार्यालय</th>
                     <th>परियोजना प्रकार</th>
                     <th>बजेट</th>
                     <th>बजेट स्रोत</th>
@@ -47,14 +47,14 @@
                     <td class="font-roboto">{{ $project->projectType->name}}</td>
                     <td class="font-roboto">रु. {{ $project->budget}}</td>
                     <td class="font-roboto">{{ $project->budget_source}}</td>
-                    <td class="text-right">
-                        <a href="{{ route('project.show', $project) }}" class="btn btn-primary btn-md font-noto my-0 py-2 px-3 z-depth-0"><i class="fa fa-eye mr-2"></i>View</a>
+                    <td class="text-center d-flex">
+                        <a href="{{ route('project.show', $project) }}" class="action-btn text-primary"><i class="fa fa-eye mr-2"></i></a>
                         {{-- <a href="{{ route('project.edit', $project) }}" class="action-btn text-primary"><i class="far fa-edit"></i></a> --}}
-                        {{-- <form action="{{ route('project.destroy', $project) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
+                        <form action="{{ route('project.destroy', $project) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
                         @csrf
                         @method('delete')
                         <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>
-                        </form> --}}
+                        </form>
                     </td>
                 </tr>
                 @empty

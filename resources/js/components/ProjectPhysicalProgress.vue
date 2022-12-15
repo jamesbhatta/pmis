@@ -5,7 +5,7 @@
         <h5 class="box__title">भौतिक प्रगति</h5>
         <div class="ml-auto">
           <!-- <a href="#" type="button" v-on:click="alert">Edit</a> -->
-          <button v-on:click="toggleMode()">Edit</button>
+          <button v-on:click="toggleMode()" class="btn btn-primary"><i class="far fa-edit"></i>&nbsp;Edit</button>
         </div>
       </div>
       <div v-show="mode == 'view-mode'">
@@ -40,7 +40,7 @@
           </tr>
           <tr>
             <td>अनुगमन हुदै छ ?</td>
-            <td>  </td>
+            <td>{{ physicalProgress.followed_up ? "छ" : "छैन" }}</td>
           </tr>
         </table>
       </div>
@@ -75,7 +75,7 @@
           <label for="">Tender Date</label>
           <v-nepalidatepicker v-model="form.tender_date" calenderType="Nepali" classValue="form-control" :placeholder="form.tender_date"></v-nepalidatepicker>
         </div>
-        
+
         <div class="form-group">
           <button type="submit" v-on:click.prevent="submit" class="btn btn-primary z-depth-0 ml-0">Update</button>
         </div>

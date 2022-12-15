@@ -19,6 +19,10 @@ class Project extends Model
         });
     }
 
+    public function scopeFiscalYear($query,$fiscal_year_id){
+        return $query->where('fiscal_year_id',$fiscal_year_id);
+    }
+
     public function organization()
     {
         return $this->belongsTo(Organization::class);
