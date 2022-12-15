@@ -19,7 +19,7 @@ class FiscalYearService
      *
      * @var array
      */
-    protected $selectFields = ['name', 'start', 'start_ad', 'end', 'end_ad'];
+    protected $selectFields = ['id', 'name', 'start', 'start_ad', 'end', 'end_ad'];
 
     /**
      * Get all fiscal years

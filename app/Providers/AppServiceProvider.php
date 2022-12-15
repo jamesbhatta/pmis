@@ -36,9 +36,9 @@ class AppServiceProvider extends ServiceProvider
         Project::observe(ProjectObserver::class);
 
         if(Schema::hasTable('fiscal_years')) {
-            if (!session()->has('active_fiscal_year')) {
+            // if (!session()->has('active_fiscal_year')) {
                 session()->put('active_fiscal_year', runningFiscalYear());
-            }
+            // }
         }
     }
 }
