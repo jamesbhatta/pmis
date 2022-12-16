@@ -113,6 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('configuration-checklist', 'ConfigurationChecklistController@index')->name('configuration-checklist.index');
     Route::resource('project-type', ProjectTypeController::class);
+    Route::delete('project-type', ProjectTypeController::class)->name('project-type.destroy');
     // Route::get('/project-type/{projectType}/edit', [ProjectTypeController::class, 'edit'])->name('project-type.edit');
 });
 

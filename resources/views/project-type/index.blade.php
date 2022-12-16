@@ -74,7 +74,7 @@
                                 <td class="text-nowrap text-right">
                                     <a href="{{route('project-type.edit',$projectType)}}" class="action-btn text-primary"><i class="fa fa-edit"></i></a>
                                     <span class="mx-2">|</span>
-                                    <form action="{{ route('project-type.destroy', $projectType) }}" method="post" onsubmit="return confirm('Are you sure to delete ?')" class="form-inline d-inline">
+                                    <form action="{{ route('project-type.destroy', $projectType) }}" method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')" class="form-inline d-inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="action-btn text-danger"><i class="far fa-trash-alt"></i></button>

@@ -15,12 +15,12 @@ class Project extends Model
     protected static function booted()
     {
         static::addGlobalScope('from_fiscal_year', function(Builder $builder) {
-            $builder->where('fiscal_year_id', \App\FiscalYear::latest()->where('is_running','1')->get()[0]->id);
+            $builder->where('fiscal_year_id', session()->get('active_fiscal_year')->id);
         });
     }
 
     public function scopeFiscalYear($query,$fiscal_year_id){
-        return $query->where('fiscal_year_id',$fiscal_year_id);
+        return $query->where('fiscal_year_id',session()->get('active_fiscal_year')->id);
     }
 
     public function organization()

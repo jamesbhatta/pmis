@@ -12,7 +12,7 @@ class FiscalYear extends Model
         'start_ad',
         'end_ad',
     ];
-    
+
     /**
      * Filter the current running fiscal year
      *

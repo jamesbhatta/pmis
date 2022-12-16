@@ -50,9 +50,9 @@ class ProjectTypeController extends Controller
 
     public function destroy(ProjectType  $projectType)
     {
-        if ($projectType->projects()->count()) {
-            return redirect()->route('project-type.index')->with('error', 'Sorry you cannot delete this project type.');
-        }
+        // if ($projectType->projects()->count()) {
+        //     return redirect()->route('project-type.index')->with('error', 'Sorry you cannot delete this project type.');
+        // }
 
         $projectType->delete();
 
