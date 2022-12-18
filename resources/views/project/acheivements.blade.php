@@ -15,7 +15,7 @@
                     <textarea name="acheivements" class="form-control" cols="30" rows="10">{!! $project->acheivements !!}</textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary z-depth-0 ml-0">Save</button>
+                    <button type="submit" class="btn btn-primary z-depth-0 ml-0">Save</button>
                 </div>
             </form>
         </div>

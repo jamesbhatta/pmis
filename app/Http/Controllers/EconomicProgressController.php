@@ -37,9 +37,16 @@ class EconomicProgressController extends Controller
             $totalAmount = $project->budget;
             $paidAmount = $project->economicProgresses()->sum('amount') + $data['amount'];
             $data['progress_percent'] = ($paidAmount / $totalAmount) * 100;
-            $project->update([
-                'economic_progress_percent' => $data['progress_percent']
-            ]);
+            if ($paidAmount > $totalAmount) {
+                return response()->json([
+                    'status' => 500,
+                    'message' => 'OOPS!! Paid amount is greater than total amount.'
+                ], 500);
+            } else {
+                $project->update([
+                    'economic_progress_percent' => $data['progress_percent']
+                ]);
+            }
             $project->economicProgresses()->create($data);
             DB::commit();
             return response()->json([
